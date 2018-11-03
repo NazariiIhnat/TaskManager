@@ -9,7 +9,7 @@ public class DatabaseInitializer {
     public static void main(String[] args) {
         DatabaseInitializer databaseInitializer = new DatabaseInitializer();
     }
-    private Connection connection;
+    protected Connection connection;
     {
         try {
             String url = "jdbc:sqlite:Tasks.db";
@@ -52,6 +52,7 @@ public class DatabaseInitializer {
     private void createTaskTableIfNotExists() throws SQLException {
         String query = "CREATE TABLE IF NOT EXISTS task " +
                 "(id INT AUTO_INCREMENT PRIMARY KEY," +
+                "date DATE," +
                 "description TEXT," +
                 "priority VARCHAR(1)," +
                 "FOREIGN KEY(priority) REFERENCES task_priority (priority_letter));";
