@@ -17,4 +17,16 @@ public class Task {
         System.out.println("Set priority of task from A to D");
         taskPriority = scanner.nextLine();
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getTaskDescription() {
+        return taskDescription;
+    }
+
+    public String getTaskPriority() {
+        return taskPriority;
+    }
 }
