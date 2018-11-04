@@ -17,5 +17,19 @@ public class TaskDatabaseModifier {
         preparedStatement.setString(2, task.getTaskDescription());
         preparedStatement.setString(3, task.getTaskPriority());
         preparedStatement.executeUpdate();
+        System.out.println("Task was added");
+    }
+
+    public void deleteTaskFromDatabase(Task task) throws SQLException {
+        String query = "DELETE FROM task WHERE " +
+                "date = ? AND " +
+                "description = ? AND " +
+                "priority = ?;";
+        PreparedStatement preparedStatement = DatabaseInitializer.CONNECTION.prepareStatement(query);
+        preparedStatement.setString(1, task.getDate());
+        preparedStatement.setString(2, task.getTaskDescription());
+        preparedStatement.setString(3, task.getTaskPriority());
+        preparedStatement.executeUpdate();
+        System.out.println("Task was deleted");
     }
 }
