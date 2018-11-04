@@ -6,14 +6,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseInitializer {
-    public static void main(String[] args) {
-        DatabaseInitializer databaseInitializer = new DatabaseInitializer();
-    }
-    protected Connection connection;
+    static Connection CONNECTION;
     {
         try {
             String url = "jdbc:sqlite:Tasks.db";
-            connection = DriverManager.getConnection(url);
+            CONNECTION = DriverManager.getConnection(url);
             createPriorityTableIfNotExists();
             createTaskTableIfNotExists();
         } catch (SQLException e) {
@@ -25,7 +22,7 @@ public class DatabaseInitializer {
         String query = "CREATE TABLE IF NOT EXISTS task_priority " +
                 "(priority_letter VARCHAR(1)," +
                 "priority_description VARCHAR(30));";
-        Statement statement = connection.createStatement();
+        Statement statement = CONNECTION.createStatement();
         statement.execute(query);
         addDataToPriorityTable();
     }
@@ -44,19 +41,18 @@ public class DatabaseInitializer {
                 "('D'," +
                 "'unimportant and nor urgent');";
         String arrayOfQueries[] = {queryForPriorityA, queryForPriorityB, queryForPriorityC, queryForPriorityD};
-        Statement statement = connection.createStatement();
+        Statement statement = CONNECTION.createStatement();
         for (String query : arrayOfQueries)
             statement.execute(query);
     }
 
     private void createTaskTableIfNotExists() throws SQLException {
         String query = "CREATE TABLE IF NOT EXISTS task " +
-                "(id INT AUTO_INCREMENT PRIMARY KEY," +
-                "date DATE," +
-                "description TEXT," +
-                "priority VARCHAR(1)," +
-                "FOREIGN KEY(priority) REFERENCES task_priority (priority_letter));";
-        Statement statement = connection.createStatement();
+                "(date DATE, " +
+                "description TEXT, " +
+                "priority VARCHAR(1), " +
+                "FOREIGN KEY (priority) REFERENCES task_priority (priority_letter));";
+        Statement statement = CONNECTION.createStatement();
         statement.execute(query);
     }
 }
