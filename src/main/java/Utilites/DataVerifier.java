@@ -1,6 +1,5 @@
 package Utilites;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -20,5 +19,14 @@ class DataVerifier {
             System.out.println("Invalid date " + inputData + ".");
             return false;
         }
+    }
+
+    boolean isEmptyDescription(String inputDate){
+        String [] arrayOfInputDateWithoutSpaces = inputDate.split(" ");
+        if (arrayOfInputDateWithoutSpaces.length == 0 || inputDate.equals("")) {
+            System.out.println("Task description can not be empty.");
+            return true;
+        }
+        else return false;
     }
 }
