@@ -19,7 +19,7 @@ public class LoopScanner {
         String inputData;
         do{
             inputData = scanner.nextLine();
-        } while (inputData.equals(""));
+        } while (dataVerifier.isEmptyDescription(inputData));
         return inputData;
     }
 }
