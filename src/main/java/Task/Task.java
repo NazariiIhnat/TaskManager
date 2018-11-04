@@ -1,11 +1,12 @@
 package Task;
 
 import Database.*;
-
+import Utilites.LoopScanner;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Task {
+    private LoopScanner loopScanner = new LoopScanner();
     private String date;
     private String taskDescription;
     private String taskPriority;
@@ -20,9 +21,9 @@ public class Task {
         TaskDatabaseModifier taskDatabaseModifier = new TaskDatabaseModifier();
 
         System.out.println("Set the start day of your task.");
-        date = scanner.nextLine();
+        date = loopScanner.readDate();
         System.out.println("Describe your task.");
-        taskDescription = scanner.nextLine();
+        taskDescription = loopScanner.readDescription();
         System.out.println("Set priority of task from A to D");
         taskPriority = scanner.nextLine();
         scanner.close();
