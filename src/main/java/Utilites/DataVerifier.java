@@ -8,9 +8,8 @@ import java.time.format.DateTimeParseException;
 class DataVerifier {
     boolean isDate(String inputData) {
         try {
-            new SimpleDateFormat("yyyy-MM-dd").parse(inputData); //checks if in format yyyy-MM-dd
-            LocalDate.parse(inputData);  //checks if is valid date
-            return true;
+            new SimpleDateFormat("yyyy-MM-dd").parse(inputData); //checks if in format yyyy-MM-dd. If not - catched by ParseException.
+            return !isPastDay(LocalDate.parse(inputData)); //return false if day is past and LocalDate.parse(inputData) return true if day is valid. If not - catched by  DateTimeParseException.
         } catch (ParseException e) {
             System.out.println("Date format error. Write in format yyyy-MM-dd.");
             return false;
@@ -19,6 +18,14 @@ class DataVerifier {
             System.out.println("Invalid date " + inputData + ".");
             return false;
         }
+    }
+
+    private boolean isPastDay(LocalDate inputData){ //поправити код
+        if(inputData.isBefore(LocalDate.now())){
+            System.out.println("You can't add task to past days. Today is " + LocalDate.now());
+            return true;
+        }
+        else return false;
     }
 
     boolean isEmptyDescription(String inputData){
