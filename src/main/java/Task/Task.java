@@ -17,7 +17,6 @@ public class Task {
 
     public Task() throws SQLException {
         DatabaseInitializer databaseInitializer = new DatabaseInitializer();
-        Scanner scanner = new Scanner(System.in);
         TaskDatabaseModifier taskDatabaseModifier = new TaskDatabaseModifier();
 
         System.out.println("Set the start day of your task.");
@@ -25,8 +24,7 @@ public class Task {
         System.out.println("Describe your task.");
         taskDescription = loopScanner.readDescription();
         System.out.println("Set priority of task from A to D");
-        taskPriority = scanner.nextLine();
-        scanner.close();
+        taskPriority = loopScanner.readPriority();
         taskDatabaseModifier.addTaskToDatabase(this);
     }
 
