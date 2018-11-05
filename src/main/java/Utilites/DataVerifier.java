@@ -21,12 +21,22 @@ class DataVerifier {
         }
     }
 
-    boolean isEmptyDescription(String inputDate){
-        String [] arrayOfInputDateWithoutSpaces = inputDate.split(" ");
-        if (arrayOfInputDateWithoutSpaces.length == 0 || inputDate.equals("")) {
+    boolean isEmptyDescription(String inputData){
+        String [] arrayOfInputDateWithoutSpaces = inputData.split(" ");
+        if (arrayOfInputDateWithoutSpaces.length == 0 || inputData.equals("")) {
             System.out.println("Task description can not be empty.");
             return true;
         }
         else return false;
+    }
+
+    boolean isPriorityLetter(String inputData) {
+        if(inputData.toLowerCase().equals("a") || inputData.toLowerCase().equals("b")
+                || inputData.toLowerCase().equals("c") || inputData.toLowerCase().equals("d"))
+            return true;
+        else {
+            System.out.println("Choose one of priority letter: A, B, C, D.");
+            return false;
+        }
     }
 }
