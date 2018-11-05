@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class LoopScanner {
     private Scanner scanner = new Scanner(System.in);
     private DataVerifier dataVerifier = new DataVerifier();
+    private String inputData;
 
     public String readDate(){
-        String inputData;
         do {
             inputData = scanner.nextLine();
         }
@@ -16,10 +16,16 @@ public class LoopScanner {
     }
 
     public String readDescription() {
-        String inputData;
         do{
             inputData = scanner.nextLine();
         } while (dataVerifier.isEmptyDescription(inputData));
         return inputData;
+    }
+
+    public String readPriority() {
+        do{
+            inputData = scanner.nextLine();
+        } while (!(dataVerifier.isPriorityLetter(inputData)));
+        return inputData.toUpperCase();
     }
 }
