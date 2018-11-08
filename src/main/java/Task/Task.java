@@ -1,12 +1,14 @@
 package Task;
 
 import Database.*;
+import Utilites.DataVerifier;
 import Utilites.LoopScanner;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Task {
     private LoopScanner loopScanner = new LoopScanner();
+    private DataVerifier dataVerifier = new DataVerifier();
     private String date;
     private String taskDescription;
     private String taskPriority;
@@ -20,7 +22,9 @@ public class Task {
         TaskDatabaseModifier taskDatabaseModifier = new TaskDatabaseModifier();
 
         System.out.println("Set the start day of your task.");
-        date = loopScanner.readDate();
+        do {
+            date = loopScanner.readDate();
+        }while (dataVerifier.isPastDay(date));
         System.out.println("Describe your task.");
         taskDescription = loopScanner.readDescription();
         System.out.println("Set priority of task from A to D");
