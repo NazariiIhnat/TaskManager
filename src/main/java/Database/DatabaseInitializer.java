@@ -6,11 +6,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseInitializer {
-    static Connection CONNECTION;
+    public Connection connection;
     {
         try {
             String url = "jdbc:sqlite:Tasks.db";
-            CONNECTION = DriverManager.getConnection(url);
+            connection = DriverManager.getConnection(url);
             createPriorityTableIfNotExists();
             createTaskTableIfNotExists();
         } catch (SQLException e) {
@@ -22,7 +22,7 @@ public class DatabaseInitializer {
         String query = "CREATE TABLE IF NOT EXISTS task_priority " +
                 "(priority_letter VARCHAR(1)," +
                 "priority_description VARCHAR(30));";
-        Statement statement = CONNECTION.createStatement();
+        Statement statement = connection.createStatement();
         statement.execute(query);
         addDataToPriorityTable();
     }
@@ -41,7 +41,7 @@ public class DatabaseInitializer {
                 "('D'," +
                 "'unimportant and nor urgent');";
         String arrayOfQueries[] = {queryForPriorityA, queryForPriorityB, queryForPriorityC, queryForPriorityD};
-        Statement statement = CONNECTION.createStatement();
+        Statement statement = connection.createStatement();
         for (String query : arrayOfQueries)
             statement.execute(query);
     }
@@ -52,7 +52,7 @@ public class DatabaseInitializer {
                 "description TEXT, " +
                 "priority VARCHAR(1), " +
                 "FOREIGN KEY (priority) REFERENCES task_priority (priority_letter));";
-        Statement statement = CONNECTION.createStatement();
+        Statement statement = connection.createStatement();
         statement.execute(query);
     }
 }
