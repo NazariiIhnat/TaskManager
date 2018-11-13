@@ -12,43 +12,34 @@ public class TaskSearcher {
     public static void main(String[] args) throws SQLException {
         TaskSearcher taskSearcher = new TaskSearcher();
         taskSearcher.searchTasksByDate();
-        taskSearcher.searchTasksByDescription();
         taskSearcher.searchTasksByPriority();
-        taskSearcher.searchTasksByKeyWord();
+        taskSearcher.searchTasksByPartOfDescription();
         taskSearcher.searchTasksByRangeOfDate();
     }
 
     public void searchTasksByDate() throws SQLException {
-        String query = "SELECT * FROM task " +
-                "WHERE date = '" + loopScanner.readDate() + "';";
-        searchTasks(query);
-    }
-
-    public void searchTasksByDescription() throws SQLException {
-        String query = "SELECT * FROM task " +
-                "WHERE description = '" + loopScanner.readDescription() + "';";
-        searchTasks(query);
+        String subQuery = "date = '" + loopScanner.readDate() + "';";
+        searchTasks(subQuery);
     }
 
     public void searchTasksByPriority() throws SQLException {
-        String query = "SELECT * FROM task " +
-                "WHERE priority = '" + loopScanner.readPriority() + "';";
-        searchTasks(query);
+        String subQuery = "priority = '" + loopScanner.readPriority() + "';";
+        searchTasks(subQuery);
     }
 
-    public void searchTasksByKeyWord() throws SQLException {
-        String query = "SELECT * FROM task " +
-                "WHERE description LIKE '%" + loopScanner.readDescription() + "%';";
-        searchTasks(query);
+    public void searchTasksByPartOfDescription() throws SQLException {
+        String subQuery = "description LIKE '%" + loopScanner.readDescription() + "%';";
+        searchTasks(subQuery);
     }
 
     public void searchTasksByRangeOfDate() throws SQLException {
-        String query = "SELECT * FROM task " +
-                "WHERE date BETWEEN '" + loopScanner.readDate() + "' AND '" + loopScanner.readDate() + "';";
-        searchTasks(query);
+        String subQuery = "date BETWEEN '" + loopScanner.readDate() + "' AND '" + loopScanner.readDate() + "';";
+        searchTasks(subQuery);
     }
 
-    private void searchTasks(String query) throws SQLException {
+    private void searchTasks(String subQuery) throws SQLException {
+        String query = "SELECT * FROM task " +
+                "WHERE " + subQuery;
 
         Statement statement = databaseInitializer.connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
