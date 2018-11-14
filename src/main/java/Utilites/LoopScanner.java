@@ -28,4 +28,11 @@ public class LoopScanner {
         } while (!(dataVerifier.isPriorityLetter(inputData)));
         return inputData.toUpperCase();
     }
+
+    public int readID() {
+        do {
+            inputData = scanner.nextLine();
+        } while (!dataVerifier.isNumber(inputData));
+        return Integer.parseInt(inputData);
+    }
 }
