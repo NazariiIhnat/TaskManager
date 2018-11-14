@@ -48,7 +48,7 @@ public class DatabaseInitializer {
 
     private void createTaskTableIfNotExists() throws SQLException {
         String query = "CREATE TABLE IF NOT EXISTS task " +
-                "(date DATE, " +
+                "(start_date DATE, " +
                 "description TEXT, " +
                 "priority VARCHAR(1), " +
                 "FOREIGN KEY (priority) REFERENCES task_priority (priority_letter));";
