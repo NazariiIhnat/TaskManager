@@ -21,7 +21,7 @@ public class DataVerifier {
         return true;
     }
 
-    public boolean isPastDay(String inputData){ //поправити код
+    public boolean isPastDay(String inputData){
         if(LocalDate.parse(inputData).isBefore(LocalDate.now())){
             System.out.println("You can't add task to past days. Today is " + LocalDate.now());
             return true;
@@ -44,6 +44,16 @@ public class DataVerifier {
             return true;
         else {
             System.out.println("Choose one of priority letter: A, B, C, D.");
+            return false;
+        }
+    }
+
+    boolean isNumber(String inputData) {
+        try{
+            Integer.parseInt(inputData);
+            return true;
+        } catch (Exception e) {
+            System.out.println("Task ID is integer. Try again.");
             return false;
         }
     }
