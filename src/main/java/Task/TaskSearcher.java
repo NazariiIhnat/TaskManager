@@ -9,16 +9,8 @@ public class TaskSearcher {
     private  DatabaseInitializer databaseInitializer = new DatabaseInitializer();
     private  LoopScanner loopScanner = new LoopScanner();
 
-    public static void main(String[] args) throws SQLException {
-        TaskSearcher taskSearcher = new TaskSearcher();
-        taskSearcher.searchTasksByDate();
-        taskSearcher.searchTasksByPriority();
-        taskSearcher.searchTasksByPartOfDescription();
-        taskSearcher.searchTasksByRangeOfDate();
-    }
-
     public void searchTasksByDate() throws SQLException {
-        String subQuery = "date = '" + loopScanner.readDate() + "';";
+        String subQuery = "start_date = '" + loopScanner.readDate() + "';";
         searchTasks(subQuery);
     }
 
@@ -33,17 +25,26 @@ public class TaskSearcher {
     }
 
     public void searchTasksByRangeOfDate() throws SQLException {
-        String subQuery = "date BETWEEN '" + loopScanner.readDate() + "' AND '" + loopScanner.readDate() + "';";
+        String subQuery = "start_date BETWEEN '" + loopScanner.readDate() + "' AND '" + loopScanner.readDate() + "';";
+        searchTasks(subQuery);
+    }
+
+    public void showTaskByID() throws SQLException {
+        String subQuery = "rowid = " + loopScanner.readID() + ";";
         searchTasks(subQuery);
     }
 
     private void searchTasks(String subQuery) throws SQLException {
-        String query = "SELECT * FROM task " +
+        String query = "SELECT rowid, start_date, description, priority FROM task " +
                 "WHERE " + subQuery;
 
         Statement statement = databaseInitializer.connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
         ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+        showTasks(resultSet, resultSetMetaData);
+    }
+
+    private void showTasks(ResultSet resultSet, ResultSetMetaData resultSetMetaData) throws SQLException {
 
         int columnsNumber = resultSetMetaData.getColumnCount();
         int counter = 1;
