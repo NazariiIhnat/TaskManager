@@ -1,13 +1,18 @@
-package Task;
+package TaskMenegment;
 
 import Database.DatabaseInitializer;
 import Utilites.LoopScanner;
 
 import java.sql.*;
 
-public class TaskSearcher {
+public class TasksSearcher {
     private  DatabaseInitializer databaseInitializer = new DatabaseInitializer();
     private  LoopScanner loopScanner = new LoopScanner();
+
+    public static void main(String[] args) throws SQLException {
+        TasksSearcher tasksSearcher = new TasksSearcher();
+        tasksSearcher.showTaskByID();
+    }
 
     public void searchTasksByDate() throws SQLException {
         String subQuery = "start_date = '" + loopScanner.readDate() + "';";

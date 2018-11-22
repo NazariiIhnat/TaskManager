@@ -6,7 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseInitializer {
-    public Connection connection;
+    private Connection connection;
+
     {
         try {
             String url = "jdbc:sqlite:Tasks.db";
@@ -54,5 +55,9 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (priority) REFERENCES task_priority (priority_letter));";
         Statement statement = connection.createStatement();
         statement.execute(query);
+    }
+
+    public Connection getConnection() {
+        return connection;
     }
 }
