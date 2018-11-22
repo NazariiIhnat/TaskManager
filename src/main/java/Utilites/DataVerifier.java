@@ -6,39 +6,35 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
 public class DataVerifier {
-    boolean isDate(String inputData) {
+    public final boolean isDate(String inputData) {
         try {
             new SimpleDateFormat("yyyy-MM-dd").parse(inputData); //checks if in format yyyy-MM-dd. If not - catched by ParseException.
-            LocalDate.parse(inputData); //return false if day is past and LocalDate.parse(inputData) return true if day is valid. If not - catched by  DateTimeParseException.
-        } catch (ParseException e) {
-            System.out.println("Date format error. Write in format yyyy-MM-dd.");
-            return false;
-        }
-        catch (DateTimeParseException e) {
-            System.out.println("Invalid date " + inputData + ".");
+            LocalDate.parse(inputData);
+        } catch (ParseException | DateTimeParseException e) {
             return false;
         }
         return true;
     }
 
-    public boolean isPastDay(String inputData){
-        if(LocalDate.parse(inputData).isBefore(LocalDate.now())){
-            System.out.println("You can't add task to past days. Today is " + LocalDate.now());
+    public final boolean isValidDate(String inputData) {
+        try{
+            LocalDate.parse(inputData);
             return true;
+        } catch(DateTimeParseException e) {
+            return false;
         }
-        else return false;
     }
 
-    boolean isEmptyDescription(String inputData){
+    public final boolean isPastDay(String inputData){
+        return LocalDate.parse(inputData).isBefore(LocalDate.now());
+    }
+
+    public final boolean isEmptyInput(String inputData){
         String [] arrayOfInputDateWithoutSpaces = inputData.split(" ");
-        if (arrayOfInputDateWithoutSpaces.length == 0 || inputData.equals("")) {
-            System.out.println("Task description can not be empty.");
-            return true;
-        }
-        else return false;
+        return arrayOfInputDateWithoutSpaces.length == 0 || inputData.equals("");
     }
 
-    boolean isPriorityLetter(String inputData) {
+    public final boolean isPriorityLetter(String inputData) {
         if(inputData.toLowerCase().equals("a") || inputData.toLowerCase().equals("b")
                 || inputData.toLowerCase().equals("c") || inputData.toLowerCase().equals("d"))
             return true;
@@ -48,7 +44,7 @@ public class DataVerifier {
         }
     }
 
-    boolean isNumber(String inputData) {
+    public final boolean isNumber(String inputData) {
         try{
             Integer.parseInt(inputData);
             return true;
