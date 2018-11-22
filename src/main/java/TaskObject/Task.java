@@ -1,35 +1,33 @@
-package Task;
+package TaskObject;
 
-import Database.*;
+import TaskManagement.TasksUpdater;
 import Utilites.DataVerifier;
 import Utilites.LoopScanner;
 import java.sql.SQLException;
-import java.util.Scanner;
 
 public class Task {
     private LoopScanner loopScanner = new LoopScanner();
     private DataVerifier dataVerifier = new DataVerifier();
+    private TasksUpdater tasksUpdater = new TasksUpdater();
+    private String id;
     private String date;
     private String taskDescription;
     private String taskPriority;
 
-    public static void main(String[] args) throws SQLException {
-        Task task = new Task();
-    }
-
     public Task() throws SQLException {
-        DatabaseInitializer databaseInitializer = new DatabaseInitializer();
-        TaskDatabaseModifier taskDatabaseModifier = new TaskDatabaseModifier();
-
-        System.out.println("Set the start day of your task.");
         do {
             date = loopScanner.readDate();
         }while (dataVerifier.isPastDay(date));
-        System.out.println("Describe your task.");
         taskDescription = loopScanner.readDescription();
-        System.out.println("Set priority of task from A to D");
         taskPriority = loopScanner.readPriority();
-        taskDatabaseModifier.addTaskToDatabase(this);
+        tasksUpdater.addTaskToDatabase(this);
+    }
+
+    public Task(String id, String date, String taskDescription, String taskPriority) {
+        this.id = id;
+        this.date = date;
+        this.taskDescription = taskDescription;
+        this.taskPriority = taskPriority;
     }
 
     public String getDate() {
@@ -42,5 +40,35 @@ public class Task {
 
     public String getTaskPriority() {
         return taskPriority;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public void setTaskDescription(String taskDescription) {
+        this.taskDescription = taskDescription;
+    }
+
+    public void setTaskPriority(String taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", date='" + date + '\'' +
+                ", taskDescription='" + taskDescription + '\'' +
+                ", taskPriority='" + taskPriority + '\'' +
+                '}';
     }
 }
