@@ -1,4 +1,4 @@
-package GUI.ActionListeners;
+package GUI.TaskAddingComponents;
 
 import GUI.TextFieldsObject.TextField;
 import TaskObject.Task;
@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-public class AddButtonActionListener {
+class AddButtonActionListener {
     private boolean isCorrectDate = false;
     private boolean isCorrectDescription = false;
     private boolean isCorrectPriority = false;
@@ -68,7 +68,7 @@ public class AddButtonActionListener {
             isCorrectPriority = true;
     }
 
-    public ActionListener getAddButtonActionListener() {
+    ActionListener getAddButtonActionListener() {
         return addButtonActionListener;
     }
 
@@ -77,6 +77,6 @@ public class AddButtonActionListener {
     private void createNewTaskObject() throws SQLException {
         new Task(TextField.getDateInputTextField().getText(),
                  TextField.getDescriptionInputTextField().getText(),
-                 TextField.getPriorityInputTextField().getText());
+                 TextField.getPriorityInputTextField().getText().toUpperCase());
     }
 }
