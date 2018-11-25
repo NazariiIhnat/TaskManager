@@ -1,24 +1,21 @@
 package TaskManagement;
 
+import TaskObject.Task;
 import Utilites.LoopScanner;
 
 import java.sql.*;
+import java.util.ArrayList;
 
-public class TasksSearcher extends AbstractManager {
+public class TasksSearcher extends AbstractTaskManager {
     private  LoopScanner loopScanner = new LoopScanner();
-
-    public static void main(String[] args) throws SQLException {
-        TasksSearcher tasksSearcher = new TasksSearcher();
-        tasksSearcher.showAllTasks();
-    }
 
     public void searchTasksByDate() throws SQLException {
         String subQuery = " WHERE start_date = '" + loopScanner.readDate() + "';";
         searchTasks(subQuery);
     }
 
-    public void searchTasksByPriority() throws SQLException {
-        String subQuery = " WHERE priority = '" + loopScanner.readPriority() + "';";
+    public void searchTasksByPriority(String priorityLetter) throws SQLException {
+        String subQuery = " WHERE priority = '" + priorityLetter + "';";
         searchTasks(subQuery);
     }
 
@@ -40,5 +37,9 @@ public class TasksSearcher extends AbstractManager {
     public void showAllTasks() throws  SQLException {
         String subQuery = ";";
         searchTasks(subQuery);
+    }
+
+    public static ArrayList<Task> getListOfFoundedTaskObjects() {
+        return listOfFoundedTaskObjects;
     }
 }
