@@ -5,7 +5,7 @@ import Utilites.LoopScanner;
 
 import java.sql.SQLException;
 
-public class TasksUpdater extends AbstractManager {
+public class TasksUpdater extends AbstractTaskManager {
     private LoopScanner loopScanner = new LoopScanner();
 
     public static void main(String[] args) throws SQLException {
