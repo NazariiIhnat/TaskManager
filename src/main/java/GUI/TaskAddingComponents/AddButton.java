@@ -1,6 +1,4 @@
-package GUI.Buttons;
-
-import GUI.ActionListeners.AddButtonActionListener;
+package GUI.TaskAddingComponents;
 
 import javax.swing.*;
 
