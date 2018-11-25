@@ -18,7 +18,7 @@ public class LoopScanner {
     public String readDescription() {
         do{
             inputData = scanner.nextLine();
-        } while (dataVerifier.isEmptyDescription(inputData));
+        } while (dataVerifier.isEmptyInput(inputData));
         return inputData;
     }
 
