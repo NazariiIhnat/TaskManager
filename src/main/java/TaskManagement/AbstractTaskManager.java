@@ -1,13 +1,18 @@
 package TaskManagement;
 import Database.DatabaseInitializer;
+import GUI.TaskTableObject.TaskTable;
+import GUI.TaskTableObject.TaskTableModel;
 import TaskObject.Task;
 import Utilites.LoopScanner;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 abstract class AbstractManager {
     private LoopScanner loopScanner = new LoopScanner();
     private DatabaseInitializer databaseInitializer = new DatabaseInitializer();
+    private ArrayList<Task> listOfTasks = new ArrayList<>();
+    private TaskTableModel taskTableModel;
 
     final void addTask(Task task) throws SQLException {
         String query = "INSERT INTO task VALUES" +
@@ -16,7 +21,7 @@ abstract class AbstractManager {
                 "?);";
         PreparedStatement preparedStatement = databaseInitializer.getConnection().prepareStatement(query);
         preparedStatement.setString(1, task.getDate());
-        preparedStatement.setString(2, task.getTaskDescription());
+        preparedStatement.setString(2, task.getDescription());
         preparedStatement.setString(3, task.getTaskPriority());
         preparedStatement.executeUpdate();
         System.out.println("Task was added");
@@ -57,22 +62,22 @@ abstract class AbstractManager {
 
     final void searchTasks(String subQuery) throws SQLException {
         String query = "SELECT rowid, start_date, description, priority FROM task" + subQuery;
-
         Statement statement = databaseInitializer.getConnection().createStatement();
         ResultSet resultSet = statement.executeQuery(query);
-        ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
-        showFoundedTasks(resultSet, resultSetMetaData);
+        importFoundedTasksToArrayListOfTaskObjects(query, resultSet);
     }
 
-    private void showFoundedTasks(ResultSet resultSet, ResultSetMetaData resultSetMetaData) throws SQLException {
-        int columnsNumber = resultSetMetaData.getColumnCount();
-        int counter = 1;
+    public final void importFoundedTasksToArrayListOfTaskObjects(String query, ResultSet resultSet) throws SQLException {
+        Statement statement = databaseInitializer.getConnection().createStatement();
+        resultSet = statement.executeQuery(query);
         while (resultSet.next()){
-            System.out.print(counter++ + ". ");
-            for(int i = 1; i<= columnsNumber; i++)
-                System.out.print(resultSet.getString(i) + " ");
-            System.out.println();
+            String rowid = resultSet.getString("rowid");
+            String date = resultSet.getString("start_date");
+            String description = resultSet.getString("description");
+            String priority = resultSet.getString("priority");
+            listOfTasks.add(new Task(rowid, date, description, priority));
         }
-        System.out.println();
+        taskTableModel = new TaskTableModel();
+        taskTableModel.setListOfTasks(listOfTasks);
     }
 }
