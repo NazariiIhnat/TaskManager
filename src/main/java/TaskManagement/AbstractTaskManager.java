@@ -1,18 +1,15 @@
 package TaskManagement;
 import Database.DatabaseInitializer;
-import GUI.TaskTableObject.TaskTable;
-import GUI.TaskTableObject.TaskTableModel;
 import TaskObject.Task;
 import Utilites.LoopScanner;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-abstract class AbstractManager {
+abstract class AbstractTaskManager {
     private LoopScanner loopScanner = new LoopScanner();
     private DatabaseInitializer databaseInitializer = new DatabaseInitializer();
-    private ArrayList<Task> listOfTasks = new ArrayList<>();
-    private TaskTableModel taskTableModel;
+    static ArrayList<Task> listOfFoundedTaskObjects = new ArrayList<>();
 
     final void addTask(Task task) throws SQLException {
         String query = "INSERT INTO task VALUES" +
@@ -64,20 +61,17 @@ abstract class AbstractManager {
         String query = "SELECT rowid, start_date, description, priority FROM task" + subQuery;
         Statement statement = databaseInitializer.getConnection().createStatement();
         ResultSet resultSet = statement.executeQuery(query);
-        importFoundedTasksToArrayListOfTaskObjects(query, resultSet);
+        importFoundedTaskObjectsToArrayList(resultSet);
     }
 
-    public final void importFoundedTasksToArrayListOfTaskObjects(String query, ResultSet resultSet) throws SQLException {
-        Statement statement = databaseInitializer.getConnection().createStatement();
-        resultSet = statement.executeQuery(query);
+    private void importFoundedTaskObjectsToArrayList(ResultSet resultSet) throws SQLException {
+        listOfFoundedTaskObjects.clear();
         while (resultSet.next()){
             String rowid = resultSet.getString("rowid");
             String date = resultSet.getString("start_date");
             String description = resultSet.getString("description");
             String priority = resultSet.getString("priority");
-            listOfTasks.add(new Task(rowid, date, description, priority));
+            listOfFoundedTaskObjects.add(new Task(rowid, date, description, priority));
         }
-        taskTableModel = new TaskTableModel();
-        taskTableModel.setListOfTasks(listOfTasks);
     }
 }
