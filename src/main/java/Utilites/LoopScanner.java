@@ -11,7 +11,7 @@ public class LoopScanner {
         do {
             inputData = scanner.nextLine();
         }
-        while (!dataVerifier.isDate(inputData));
+        while (!dataVerifier.isDateFormat(inputData));
         return inputData;
     }
 
