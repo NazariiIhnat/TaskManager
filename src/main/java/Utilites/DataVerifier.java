@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
 public class DataVerifier {
-    public final boolean isDate(String inputData) {
+    public final boolean isDateFormat(String inputData) {
         try {
             new SimpleDateFormat("yyyy-MM-dd").parse(inputData); //checks if in format yyyy-MM-dd. If not - catched by ParseException.
             LocalDate.parse(inputData);
@@ -35,13 +35,8 @@ public class DataVerifier {
     }
 
     public final boolean isPriorityLetter(String inputData) {
-        if(inputData.toLowerCase().equals("a") || inputData.toLowerCase().equals("b")
-                || inputData.toLowerCase().equals("c") || inputData.toLowerCase().equals("d"))
-            return true;
-        else {
-            System.out.println("Choose one of priority letter: A, B, C, D.");
-            return false;
-        }
+        return inputData.toLowerCase().equals("a") || inputData.toLowerCase().equals("b")
+                || inputData.toLowerCase().equals("c") || inputData.toLowerCase().equals("d");
     }
 
     public final boolean isNumber(String inputData) {
