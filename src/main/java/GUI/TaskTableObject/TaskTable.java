@@ -1,16 +1,22 @@
 package GUI.TaskTableObject;
 
+import TaskManagement.TasksSearcher;
+
 import javax.swing.*;
+import java.awt.*;
+import java.sql.SQLException;
 
 public class TaskTable {
     private static JTable taskTable = new JTable();
     private static JScrollPane taskTableScrollPane = new JScrollPane(taskTable);
 
-    public TaskTable(){
-        taskTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+    public TaskTable() throws SQLException {
+        taskTable.setSize(new Dimension(100, 400));
+        refreshTable();
     }
 
-    public void refreshTable() {
+    public void refreshTable() throws SQLException {
+        new TasksSearcher().showAllTasks();
         taskTable.setModel(new TaskTableModel());
     }
 
