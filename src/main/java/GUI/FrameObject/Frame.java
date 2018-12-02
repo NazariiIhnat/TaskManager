@@ -3,69 +3,62 @@ package GUI.FrameObject;
 import GUI.TaskAddingComponents.AddButton;
 import GUI.TaskSearchingComponents.SearchButton;
 import GUI.TaskTableObject.TaskTable;
-import GUI.TextFieldsObject.TextField;
-import TaskManagement.TasksSearcher;
 
 import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;
 
 public class Frame {
-    private JFrame frame = new JFrame("Task manager");
+    private JPanel tablePanel;
+    private JPanel buttonsPanel;
+    private JFrame frame;
     private TaskTable taskTable = new TaskTable();
-    private GridBagConstraints gridBagConstraints = new GridBagConstraints();
-    private static SearchButton searchButton;
-    private static AddButton guiAddButtons;
+    private AddButton addButton = new AddButton();
+    private SearchButton searchButton = new SearchButton();
+
+
+    Frame() throws SQLException {
+        tablePanel = new JPanel();
+        buttonsPanel = new JPanel();
+        frame = new JFrame("Task manager");
+        setFrameParameters();
+        addTableOnPanel();
+        addButtonsOnPanel();
+    }
 
     public static void main(String[] args) throws SQLException {
-        new TasksSearcher().showAllTasks();
-        new TaskTable().refreshTable();
-        guiAddButtons = new AddButton();
-        Frame guiFrame = new Frame();
-        guiFrame.setAddButton();
-        guiFrame.setFrameParameters();
-        guiFrame.setTaskTable();
-        searchButton = new SearchButton();
-        guiFrame.setSearchButton();
+        Frame frame = new Frame();
     }
 
-    public void setFrameParameters() {
-        frame.setLayout(new GridBagLayout());
-        frame.setSize(600, 600);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    private void setFrameParameters() {
+        frame.setMinimumSize(new Dimension(500, 500));
         frame.setVisible(true);
-        setTextFields();
-        frame.pack();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new FlowLayout());
+        setPanelsParameters();
+        frame.add(tablePanel);
+        frame.add(buttonsPanel, new GridBagConstraints(0, 1, 5, 1,
+                0, 0,
+                GridBagConstraints.CENTER, GridBagConstraints.NONE,
+                new Insets(0, 0, 0, 0),
+                0, 0));
     }
 
-    private void setAddButton() {
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        frame.add(guiAddButtons.getAddButton());
+    private void setPanelsParameters() {
+        tablePanel.setLayout(new GridBagLayout());
+        buttonsPanel.setLayout(new GridLayout(1, 2));
     }
 
-    public void setTextFields() {
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        frame.add(TextField.getDateInputTextField(), gridBagConstraints);
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        frame.add(TextField.getDescriptionInputTextField(), gridBagConstraints);
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        frame.add(TextField.getPriorityInputTextField(), gridBagConstraints);
-        frame.add(TextField.getSerchByPriorityTextField());
+    private void addTableOnPanel() {
+        tablePanel.add(taskTable.getTaskTableScrollPane(), new GridBagConstraints(0, 0, 5, 1,
+                0, 0,
+                GridBagConstraints.CENTER, GridBagConstraints.BOTH,
+                new Insets(0, 0, 0, 0),
+                0, 0));
     }
 
-    public void setTaskTable() {
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridheight = 100;
-        gridBagConstraints.gridwidth = 100;
-        frame.add(taskTable.getTaskTableScrollPane());
-    }
-
-    public void setSearchButton() {
-        frame.add(searchButton.getSearchButton());
+    private void addButtonsOnPanel() {
+        buttonsPanel.add(addButton.getAddButton());
+        buttonsPanel.add(searchButton.getSearchButton());
     }
 }
