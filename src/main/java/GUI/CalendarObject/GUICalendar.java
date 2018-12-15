@@ -7,14 +7,16 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class GUICalendar {
-    private static JXDatePicker calendar = new JXDatePicker();
+    private static JXDatePicker calendar;
+    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     public GUICalendar() {
-        calendar.getEditor().setEditable(false);
+        calendar = new JXDatePicker();
+        calendar.setVisible(true);
     }
 
-    public String getDate() {
-        return new SimpleDateFormat("yyyy-MM-dd").format(calendar.getDate());
+    public static String getDate() {
+        return simpleDateFormat.format(calendar.getDate());
     }
 
     public void enableToChoosePastDays(boolean choice) {
@@ -27,7 +29,15 @@ public class GUICalendar {
         }
     }
 
+    public void enableDateEdition(boolean flag) {
+        calendar.getEditor().setEditable(flag);
+    }
+
     public JXDatePicker getCalendar() {
         return calendar;
+    }
+
+    public void nullifyCalendar() {
+        calendar.setDate(null);
     }
 }
