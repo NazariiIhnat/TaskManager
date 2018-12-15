@@ -3,6 +3,7 @@ package GUI.FrameObject;
 import GUI.TaskAddingComponents.AddButton;
 import GUI.TaskSearchingComponents.SearchButton;
 import GUI.TaskTableObject.TaskTable;
+import TaskManagement.TasksSearcher;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +16,7 @@ public class Frame {
     private TaskTable taskTable = new TaskTable();
     private AddButton addButton = new AddButton();
     private SearchButton searchButton = new SearchButton();
+    private TasksSearcher tasksSearcher = new TasksSearcher();
 
 
     Frame() throws SQLException {
@@ -24,6 +26,7 @@ public class Frame {
         setFrameParameters();
         addTableOnPanel();
         addButtonsOnPanel();
+        tasksSearcher.searchAllTasks();
     }
 
     public static void main(String[] args) throws SQLException {
