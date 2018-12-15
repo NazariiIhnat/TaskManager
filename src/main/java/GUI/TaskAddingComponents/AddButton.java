@@ -1,6 +1,5 @@
 package GUI.TaskAddingComponents;
 
-import GUI.CalendarObject.GUICalendar;
 import GUI.TaskAddingComponents.SecondFrameComponents.Frame;
 
 import javax.swing.*;

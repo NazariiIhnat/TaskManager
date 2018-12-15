@@ -1,6 +1,5 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
-import GUI.CalendarObject.GUICalendar;
 import GUI.PrioritySelectorObject.PrioritySelector;
 
 import javax.swing.*;
@@ -10,7 +9,6 @@ public class Frame {
     private PrioritySelector prioritySelector = new PrioritySelector();
     private JPanel componentsPanel = new JPanel();
     private TextField textField = new TextField();
-    private GUICalendar calendar;
     private OkButton okButton = new OkButton();
     private Labels labels = new Labels();
 
@@ -49,9 +47,7 @@ public class Frame {
     }
 
     private void addCalendarOnPanel() {
-        calendar = new GUICalendar();
-        calendar.nullifyCalendar();
-        componentsPanel.add(calendar.getCalendar(), new GridBagConstraints(1, 0, 2, 1, 0, 0,
+        componentsPanel.add(Calendar.getJxDatePicker(), new GridBagConstraints(1, 0, 2, 1, 0, 0,
                 GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL, new Insets(1, 1, 1, 1), 0, 0));
     }
 

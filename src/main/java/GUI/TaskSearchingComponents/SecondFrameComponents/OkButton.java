@@ -1,9 +1,9 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
-import GUI.CalendarObject.GUICalendar;
 import GUI.PrioritySelectorObject.PrioritySelector;
 import GUI.TaskTableObject.TaskTable;
 import TaskManagement.TasksSearcher;
+import Utilites.DateUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -16,7 +16,6 @@ class OkButton {
     private DataTypeSelector dataTypeSelector = new DataTypeSelector();
     private ValueReader valueReader = new ValueReader();
     private TasksSearcher tasksSearcher = new TasksSearcher();
-    private GUICalendar calendar = new GUICalendar();
     private PrioritySelector prioritySelector = new PrioritySelector();
 
     OkButton() {
@@ -38,7 +37,7 @@ class OkButton {
             case "today's" : tasksSearcher.searchTasksByDate(String.valueOf(LocalDate.now())); break;
             case "all" : tasksSearcher.searchAllTasks(); break;
             case "id" : tasksSearcher.searchTaskByID(usersInput); break;
-            case "date" : tasksSearcher.searchTasksByDate(GUICalendar.getDate()); break;
+            case "date" : tasksSearcher.searchTasksByDate(DateUtils.getDate(Calendar.getJxDatePicker())); break;
             case "description" : tasksSearcher.searchTasksByDescription(usersInput); break;
             case "priority" : tasksSearcher.searchTasksByPriority(prioritySelector.getSelectedPriorityLetter()); break;
         }

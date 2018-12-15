@@ -1,7 +1,7 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
-import GUI.CalendarObject.GUICalendar;
 import GUI.PrioritySelectorObject.PrioritySelector;
+import Utilites.DateUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -16,7 +16,6 @@ class DataTypeSelector {
     private static JRadioButton priorityRadioButton = new JRadioButton("By priority", false);
     private ValueReader searchingValueReader = new ValueReader();
     private PrioritySelector prioritySelector = new PrioritySelector();
-    private GUICalendar calendar = new GUICalendar();
     private static ButtonGroup groupOfSelectors = new ButtonGroup();
 
     DataTypeSelector() {
@@ -50,8 +49,8 @@ class DataTypeSelector {
             public void actionPerformed(ActionEvent e) {
                 if(dateRadioButton.isSelected()){
                     enableValueReader("date");
-                    calendar.enableDateEdition(true);
-                    calendar.enableToChoosePastDays(true);
+                    DateUtils.enableDateEdition(Calendar.getJxDatePicker(), true);
+                    DateUtils.enableToChoosePastDays(Calendar.getJxDatePicker(), true);
                 } else if(priorityRadioButton.isSelected())
                     enableValueReader("priority");
                 else if(descriptionRadioButton.isSelected() || idRadioButton.isSelected())
@@ -71,14 +70,14 @@ class DataTypeSelector {
     private void enableValueReader(String valueReader) {
         disableAllValueReaders();
         switch (valueReader) {
-            case "date" : calendar.getCalendar().setEnabled(true); break;
+            case "date" : Calendar.getJxDatePicker().setEnabled(true); break;
             case "priority" : prioritySelector.getPrioritySelector().setEnabled(true); break;
             case "text" : searchingValueReader.getSearchingValueTextField().setEnabled(true);
         }
     }
 
     private void disableAllValueReaders() {
-        calendar.getCalendar().setEnabled(false);
+        Calendar.getJxDatePicker().setEnabled(false);
         searchingValueReader.getSearchingValueTextField().setEnabled(false);
         prioritySelector.getPrioritySelector().setEnabled(false);
     }

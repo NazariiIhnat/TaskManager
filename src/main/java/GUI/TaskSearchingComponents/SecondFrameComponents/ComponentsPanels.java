@@ -1,6 +1,5 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
-import GUI.CalendarObject.GUICalendar;
 import GUI.PrioritySelectorObject.PrioritySelector;
 
 import javax.swing.*;
@@ -8,7 +7,6 @@ import java.awt.*;
 
 class ComponentsPanels {
     private DataTypeSelector selectors = new DataTypeSelector();
-    private GUICalendar calendar = new GUICalendar();
     private PrioritySelector prioritySelector = new PrioritySelector();
     private ValueReader valueReader = new ValueReader();
     private JPanel selectorsPanel = new JPanel();
@@ -34,11 +32,10 @@ class ComponentsPanels {
 
     private void addValueReadersOnPanel() {
         valueReader.nullifySearchingValueTextField();
-        calendar.nullifyCalendar();
         searchingTextFieldPanel.setLayout(new GridLayout(4, 1));
         searchingTextFieldPanel.add(valueReader.getSearchingValueTextField());
         searchingTextFieldPanel.add(prioritySelector.getPrioritySelector());
-        searchingTextFieldPanel.add(calendar.getCalendar());
+        searchingTextFieldPanel.add(Calendar.getJxDatePicker());
     }
 
     private void addOkButtonOnPanel() {
