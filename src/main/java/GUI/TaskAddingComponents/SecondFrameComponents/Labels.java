@@ -6,7 +6,7 @@ class Labels {
     private JLabel dateLabel = new JLabel("Date: ");
     private JLabel descriptionLabel = new JLabel("Description: ");
     private JLabel priorityLabel = new JLabel("Priority: ");
-    private static JLabel taskAddResultLabel = new JLabel();
+    private static JLabel taskAddResultLabel = new JLabel(" ");
 
     JLabel getDateLabel() {
         return dateLabel;
