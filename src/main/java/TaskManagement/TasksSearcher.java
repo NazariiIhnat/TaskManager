@@ -7,10 +7,9 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class TasksSearcher extends AbstractTaskManager {
-    private  LoopScanner loopScanner = new LoopScanner();
 
-    public void searchTasksByDate() throws SQLException {
-        String subQuery = " WHERE start_date = '" + loopScanner.readDate() + "';";
+    public void searchTasksByDate(String date) throws SQLException {
+        String subQuery = " WHERE start_date = '" + date + "';";
         searchTasks(subQuery);
     }
 
@@ -19,22 +18,32 @@ public class TasksSearcher extends AbstractTaskManager {
         searchTasks(subQuery);
     }
 
-    public void searchTasksByPartOfDescription() throws SQLException {
-        String subQuery = " WHERE description LIKE '%" + loopScanner.readDescription() + "%';";
+    public void searchTasksByDescription(String description) throws SQLException {
+        String subQuery = " WHERE description LIKE '%" + description + "%';";
         searchTasks(subQuery);
     }
 
-    public void searchTasksByRangeOfDate() throws SQLException {
-        String subQuery = " WHERE start_date BETWEEN '" + loopScanner.readDate() + "' AND '" + loopScanner.readDate() + "';";
+    public void searchTasksFromInputedDateToLast(String date) throws SQLException {
+        String subQuery = " WHERE start_date >= '" + date + "';";
         searchTasks(subQuery);
     }
 
-    public void searchTaskByID() throws SQLException {
-        String subQuery = " WHERE rowid = " + loopScanner.readID() + ";";
+    public void searchTasksFromFirstToInputedDate(String date) throws SQLException {
+        String subQuery = " WHERE start_date <= '" + date + "';";
         searchTasks(subQuery);
     }
 
-    public void showAllTasks() throws  SQLException {
+    public void searchTasksByRangeOfDate(String from, String to) throws SQLException {
+        String subQuery = " WHERE start_date >= '" + from + "' AND start_date <= '" + to + "';";
+        searchTasks(subQuery);
+    }
+
+    public void searchTaskByID(String id) throws SQLException {
+        String subQuery = " WHERE rowid = '" + id + "';";
+        searchTasks(subQuery);
+    }
+
+    public void searchAllTasks() throws  SQLException {
         String subQuery = ";";
         searchTasks(subQuery);
     }
