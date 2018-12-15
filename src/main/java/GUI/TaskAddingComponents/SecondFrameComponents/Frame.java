@@ -18,8 +18,8 @@ public class Frame {
         secondFrame.setPreferredSize(new Dimension(260, 175));
         secondFrame.pack();
         addLabelsOnPanel();
+        addPrioritySelectorOnPanel();
         addTextFieldsOnPanel();
-        addComboBoxOnPanel();
         addCalendarOnPanel();
         addOkButtonOnPanel();
     }
@@ -35,13 +35,13 @@ public class Frame {
                 GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(1, 1, 1, 1), 0, 0));
     }
 
-    private void addTextFieldsOnPanel() {
-        textField.nullifyDescriptionTextField();
+    private void addPrioritySelectorOnPanel() {
+        prioritySelector.getPrioritySelector().setEnabled(true);
         componentsPanel.add(prioritySelector.getPrioritySelector(), new GridBagConstraints(1, 2, 2, 1, 0, 0,
                 GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL, new Insets(1, 1, 1, 1), 0, 0));
     }
 
-    private void addComboBoxOnPanel() {
+    private void addTextFieldsOnPanel() {
         componentsPanel.add(textField.getDescriptionTextField(), new GridBagConstraints(1, 1, 2, 1, 0, 0,
                 GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL, new Insets(1, 1, 1, 1), 0, 0));
     }

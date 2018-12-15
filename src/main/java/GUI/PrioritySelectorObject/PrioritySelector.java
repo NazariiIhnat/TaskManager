@@ -12,6 +12,7 @@ public class PrioritySelector {
         priorityComboBox.addItem("B");
         priorityComboBox.addItem("C");
         priorityComboBox.addItem("D");
+        priorityComboBox.setEnabled(false);
     }
 
     public String getSelectedPriorityLetter() {

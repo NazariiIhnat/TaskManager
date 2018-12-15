@@ -19,10 +19,10 @@ class DataTypeSelector {
     private static ButtonGroup groupOfSelectors = new ButtonGroup();
 
     DataTypeSelector() {
+        disableAllValueReaders();
         groupRadioButtons();
         addRadioButtonsActionListener();
         setRadioButtonsActionCommands();
-        disableAllValueReaders();
     }
 
     private void groupRadioButtons() {
@@ -72,7 +72,7 @@ class DataTypeSelector {
         switch (valueReader) {
             case "date" : Calendar.getJxDatePicker().setEnabled(true); break;
             case "priority" : prioritySelector.getPrioritySelector().setEnabled(true); break;
-            case "text" : searchingValueReader.getSearchingValueTextField().setEnabled(true);
+            case "text" : searchingValueReader.getSearchingValueTextField().setEnabled(true); break;
         }
     }
 
