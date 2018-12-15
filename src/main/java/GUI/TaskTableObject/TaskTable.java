@@ -16,7 +16,6 @@ public class TaskTable {
     }
 
     public void refreshTable() throws SQLException {
-        new TasksSearcher().showAllTasks();
         taskTable.setModel(new TaskTableModel());
     }
 
