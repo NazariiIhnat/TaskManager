@@ -8,7 +8,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AddButton {
-    private GUICalendar calendar = new GUICalendar();
     private JButton addButton = new JButton("Add");
     private Frame secondFrame = new Frame();
 
@@ -17,7 +16,6 @@ public class AddButton {
         ActionListener addButtonActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                calendar.enableToChoosePastDays(false);
                 secondFrame.getSecondFrame().setVisible(true);
             }
         };
