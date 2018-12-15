@@ -1,4 +1,4 @@
-package GUI.FrameObject;
+package GUI.MainFrame;
 
 import GUI.TaskAddingComponents.AddButton;
 import GUI.TaskSearchingComponents.SearchButton;
