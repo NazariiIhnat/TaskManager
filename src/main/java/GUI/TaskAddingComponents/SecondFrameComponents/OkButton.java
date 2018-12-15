@@ -1,6 +1,7 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
 import GUI.CalendarObject.GUICalendar;
+import GUI.PrioritySelectorObject.PrioritySelector;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Task;
 
@@ -13,7 +14,7 @@ class OkButton {
     private JButton okButton = new JButton("OK");
     private TextField textFields = new TextField();
     private GUICalendar calendar = new GUICalendar();
-    private ComboBox priorityComboBox = new ComboBox();
+    private PrioritySelector prioritySelector = new PrioritySelector();
     private Labels labels = new Labels();
     private String usersDate = null;
     private String usersDescription = null;
@@ -41,7 +42,7 @@ class OkButton {
 
     private boolean isSelectedDate() {
         try {
-            usersDate = calendar.getDate();
+            usersDate = GUICalendar.getDate();
         } catch (NullPointerException e) {
             labels.getTaskAddResultLabel().setForeground(Color.red);
             labels.getTaskAddResultLabel().setText("Date hasn't been selected. ");
@@ -61,7 +62,7 @@ class OkButton {
 
     private boolean isSelectedPriority() {
         try{
-            usersPriority = priorityComboBox.getSelectedPriorityLetter();
+            usersPriority = prioritySelector.getSelectedPriorityLetter();
             return true;
         } catch (NullPointerException e) {
             System.out.println(usersPriority);
