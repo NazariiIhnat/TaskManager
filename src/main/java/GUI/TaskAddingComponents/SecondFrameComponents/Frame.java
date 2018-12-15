@@ -1,16 +1,16 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
 import GUI.CalendarObject.GUICalendar;
+import GUI.PrioritySelectorObject.PrioritySelector;
 
 import javax.swing.*;
 import java.awt.*;
-
 public class Frame {
     private JFrame secondFrame = new JFrame("Input data");
-    private ComboBox priorityComboBox = new ComboBox();
+    private PrioritySelector prioritySelector = new PrioritySelector();
     private JPanel componentsPanel = new JPanel();
     private TextField textField = new TextField();
-    private GUICalendar calendar = new GUICalendar();
+    private GUICalendar calendar;
     private OkButton okButton = new OkButton();
     private Labels labels = new Labels();
 
@@ -38,7 +38,8 @@ public class Frame {
     }
 
     private void addTextFieldsOnPanel() {
-        componentsPanel.add(priorityComboBox.getPriorityComboBox(), new GridBagConstraints(1, 2, 2, 1, 0, 0,
+        textField.nullifyDescriptionTextField();
+        componentsPanel.add(prioritySelector.getPrioritySelector(), new GridBagConstraints(1, 2, 2, 1, 0, 0,
                 GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL, new Insets(1, 1, 1, 1), 0, 0));
     }
 
@@ -48,6 +49,8 @@ public class Frame {
     }
 
     private void addCalendarOnPanel() {
+        calendar = new GUICalendar();
+        calendar.nullifyCalendar();
         componentsPanel.add(calendar.getCalendar(), new GridBagConstraints(1, 0, 2, 1, 0, 0,
                 GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL, new Insets(1, 1, 1, 1), 0, 0));
     }
