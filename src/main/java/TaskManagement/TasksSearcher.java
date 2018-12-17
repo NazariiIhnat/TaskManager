@@ -23,16 +23,6 @@ public class TasksSearcher extends AbstractTaskManager {
         searchTasks(subQuery);
     }
 
-    public void searchTasksFromInputedDateToLast(String date) throws SQLException {
-        String subQuery = " WHERE start_date >= '" + date + "';";
-        searchTasks(subQuery);
-    }
-
-    public void searchTasksFromFirstToInputedDate(String date) throws SQLException {
-        String subQuery = " WHERE start_date <= '" + date + "';";
-        searchTasks(subQuery);
-    }
-
     public void searchTasksByRangeOfDate(String from, String to) throws SQLException {
         String subQuery = " WHERE start_date >= '" + from + "' AND start_date <= '" + to + "';";
         searchTasks(subQuery);

@@ -7,8 +7,18 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtils {
+
+    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
     public static String getDate(JXDatePicker calendar) {
-        return new SimpleDateFormat("yyyy-MM-dd").format(calendar.getDate());
+        return simpleDateFormat.format(calendar.getDate());
+    }
+
+    public static String[] getRangeOfDates(JXDatePicker calendar) {
+        String[] firstAndLastSelectedDates = new String[2];
+        firstAndLastSelectedDates[0] = simpleDateFormat.format(calendar.getMonthView().getSelection().first());
+        firstAndLastSelectedDates[1] = simpleDateFormat.format(calendar.getMonthView().getSelection().last());
+        return firstAndLastSelectedDates;
     }
 
     public static void enableToChoosePastDays(JXDatePicker calendar, boolean choice) {
