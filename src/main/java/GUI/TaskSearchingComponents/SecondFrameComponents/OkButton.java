@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 class OkButton {
+    private static String usersInput = null;
     private JButton okButton = new JButton("OK");
     private DataTypeSelector dataTypeSelector = new DataTypeSelector();
     private ValueReader valueReader = new ValueReader();
@@ -31,22 +32,35 @@ class OkButton {
         });
     }
 
-    private void searchTasks() throws SQLException {
-        String usersInput = valueReader.getSearchingValueTextField().getText();
+    public void searchTasks() throws SQLException {
+        usersInput = valueReader.getSearchingValueTextField().getText();
         switch(dataTypeSelector.getGroupOfSelectors().getSelection().getActionCommand()){
-            case "today's" : tasksSearcher.searchTasksByDate(String.valueOf(LocalDate.now())); break;
-            case "all" : tasksSearcher.searchAllTasks(); break;
-            case "id" : tasksSearcher.searchTaskByID(usersInput); break;
+            case "today's" : tasksSearcher.searchTasksByDate(String.valueOf(LocalDate.now()));
+            TaskTable.setLastSearchingValue(String.valueOf(LocalDate.now()));
+            break;
+            case "all" : tasksSearcher.searchAllTasks();
+            TaskTable.setLastSearchingValue(null);
+            break;
+            case "id" : tasksSearcher.searchTaskByID(usersInput);
+            TaskTable.setLastSearchingValue(usersInput);
+            break;
             case "date" :
-                if(Calendar.getJxDatePicker().getMonthView().getSelection().size() == 1)
+                if(Calendar.getJxDatePicker().getMonthView().getSelection().size() == 1) {
                     tasksSearcher.searchTasksByDate(DateUtils.getDate(Calendar.getJxDatePicker()));
+                    TaskTable.setLastSearchingValue(DateUtils.getDate(Calendar.getJxDatePicker()));
+                }
                 else {
                     String[] firstAndLastSelectedDays = DateUtils.getRangeOfDates(Calendar.getJxDatePicker());
                     tasksSearcher.searchTasksByRangeOfDate(firstAndLastSelectedDays[0], firstAndLastSelectedDays[1]);
+                    TaskTable.setLastSearchingValue(firstAndLastSelectedDays[0] + " " + firstAndLastSelectedDays [1]);
                 }
                 break;
-            case "description" : tasksSearcher.searchTasksByDescription(usersInput); break;
-            case "priority" : tasksSearcher.searchTasksByPriority(prioritySelector.getSelectedPriorityLetter()); break;
+            case "description" : tasksSearcher.searchTasksByDescription(usersInput);
+            TaskTable.setLastSearchingValue(usersInput);
+            break;
+            case "priority" : tasksSearcher.searchTasksByPriority(prioritySelector.getSelectedPriorityLetter());
+            TaskTable.setLastSearchingValue(prioritySelector.getSelectedPriorityLetter());
+            break;
         }
         new TaskTable().refreshTable();
     }
