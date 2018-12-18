@@ -1,6 +1,5 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
-import GUI.PrioritySelectorObject.PrioritySelector;
 import Utilites.DateUtils;
 
 import javax.swing.*;
@@ -15,7 +14,6 @@ class DataTypeSelector {
     private static JRadioButton descriptionRadioButton = new JRadioButton("By description",false);
     private static JRadioButton priorityRadioButton = new JRadioButton("By priority", false);
     private ValueReader searchingValueReader = new ValueReader();
-    private PrioritySelector prioritySelector = new PrioritySelector();
     private static ButtonGroup groupOfSelectors = new ButtonGroup();
 
     DataTypeSelector() {
@@ -71,7 +69,7 @@ class DataTypeSelector {
         disableAllValueReaders();
         switch (valueReader) {
             case "date" : Calendar.getJxDatePicker().setEnabled(true); break;
-            case "priority" : prioritySelector.getPrioritySelector().setEnabled(true); break;
+            case "priority" : PrioritySelector.getPrioritySelector().setEnabled(true); break;
             case "text" : searchingValueReader.getSearchingValueTextField().setEnabled(true); break;
         }
     }
@@ -79,7 +77,7 @@ class DataTypeSelector {
     private void disableAllValueReaders() {
         Calendar.getJxDatePicker().setEnabled(false);
         searchingValueReader.getSearchingValueTextField().setEnabled(false);
-        prioritySelector.getPrioritySelector().setEnabled(false);
+        PrioritySelector.getPrioritySelector().setEnabled(false);
     }
 
     JRadioButton getTodayTasksRadioButton() {

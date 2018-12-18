@@ -1,8 +1,8 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
-import GUI.PrioritySelectorObject.PrioritySelector;
 import GUI.TaskTableObject.TaskTable;
 import TaskManagement.TasksSearcher;
+import Utilites.ComboBoxUtils;
 import Utilites.DateUtils;
 
 import javax.swing.*;
@@ -12,12 +12,10 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 class OkButton {
-    private static String usersInput = null;
     private JButton okButton = new JButton("OK");
     private DataTypeSelector dataTypeSelector = new DataTypeSelector();
     private ValueReader valueReader = new ValueReader();
     private TasksSearcher tasksSearcher = new TasksSearcher();
-    private PrioritySelector prioritySelector = new PrioritySelector();
 
     OkButton() {
         okButton.addActionListener(new ActionListener() {
@@ -32,8 +30,8 @@ class OkButton {
         });
     }
 
-    public void searchTasks() throws SQLException {
-        usersInput = valueReader.getSearchingValueTextField().getText();
+    void searchTasks() throws SQLException {
+        String usersInput = valueReader.getSearchingValueTextField().getText();
         switch(dataTypeSelector.getGroupOfSelectors().getSelection().getActionCommand()){
             case "today's" : tasksSearcher.searchTasksByDate(String.valueOf(LocalDate.now()));
             TaskTable.setLastSearchingValue(String.valueOf(LocalDate.now()));
@@ -58,8 +56,10 @@ class OkButton {
             case "description" : tasksSearcher.searchTasksByDescription(usersInput);
             TaskTable.setLastSearchingValue(usersInput);
             break;
-            case "priority" : tasksSearcher.searchTasksByPriority(prioritySelector.getSelectedPriorityLetter());
-            TaskTable.setLastSearchingValue(prioritySelector.getSelectedPriorityLetter());
+            case "priority" : tasksSearcher.searchTasksByPriority
+                    (ComboBoxUtils.getSelectedPriorityLetter(PrioritySelector.getPrioritySelector()));
+            TaskTable.setLastSearchingValue
+                    (ComboBoxUtils.getSelectedPriorityLetter(PrioritySelector.getPrioritySelector()));
             break;
         }
         new TaskTable().refreshTable();

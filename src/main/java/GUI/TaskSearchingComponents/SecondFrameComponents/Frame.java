@@ -5,12 +5,12 @@ import java.awt.*;
 
 public class Frame {
     private JFrame secondFrame = new JFrame();
-    private ComponentsPanels componentsPanels = new ComponentsPanels();
 
     public Frame() {
         secondFrame.setName("Search");
         secondFrame.setVisible(false);
         secondFrame.setLayout(new GridBagLayout());
+        ComponentsPanels componentsPanels = new ComponentsPanels();
         secondFrame.add(componentsPanels.getSelectorsPanel(), new GridBagConstraints(0, 0, 1,
                 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                 new Insets(1, 1, 1, 1), 0, 0));

@@ -1,8 +1,8 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
-import GUI.PrioritySelectorObject.PrioritySelector;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Task;
+import Utilites.ComboBoxUtils;
 import Utilites.DateUtils;
 
 import javax.swing.*;
@@ -61,7 +61,7 @@ class OkButton {
 
     private boolean isSelectedPriority() {
         try{
-            usersPriority = prioritySelector.getSelectedPriorityLetter();
+            usersPriority = ComboBoxUtils.getSelectedPriorityLetter(PrioritySelector.getPrioritySelector());
             return true;
         } catch (NullPointerException e) {
             System.out.println(usersPriority);

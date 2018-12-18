@@ -10,7 +10,7 @@ class ValueReader {
         searchingValueTextField.setPreferredSize(new Dimension(100, 20));
     }
 
-    public void nullifySearchingValueTextField() {
+    void nullifySearchingValueTextField() {
         searchingValueTextField.setText(null);
     }
 

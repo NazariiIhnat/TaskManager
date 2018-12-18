@@ -1,7 +1,5 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
-import GUI.PrioritySelectorObject.PrioritySelector;
-
 import javax.swing.*;
 import java.awt.*;
 public class Frame {
@@ -36,8 +34,8 @@ public class Frame {
     }
 
     private void addPrioritySelectorOnPanel() {
-        prioritySelector.getPrioritySelector().setEnabled(true);
-        componentsPanel.add(prioritySelector.getPrioritySelector(), new GridBagConstraints(1, 2, 2, 1, 0, 0,
+        PrioritySelector.getPrioritySelector().setEnabled(true);
+        componentsPanel.add(PrioritySelector.getPrioritySelector(), new GridBagConstraints(1, 2, 2, 1, 0, 0,
                 GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL, new Insets(1, 1, 1, 1), 0, 0));
     }
 
