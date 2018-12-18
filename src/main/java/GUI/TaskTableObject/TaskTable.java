@@ -20,6 +20,7 @@ public class TaskTable {
 
     public void refreshTable() throws SQLException {
         doLastSearch();
+        taskTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         taskTable.setModel(new TaskTableModel());
     }
 

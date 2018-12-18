@@ -30,7 +30,7 @@ class OkButton {
         });
     }
 
-    void searchTasks() throws SQLException {
+    private void searchTasks() throws SQLException {
         String usersInput = valueReader.getSearchingValueTextField().getText();
         switch(dataTypeSelector.getGroupOfSelectors().getSelection().getActionCommand()){
             case "today's" : tasksSearcher.searchTasksByDate(String.valueOf(LocalDate.now()));
@@ -43,14 +43,15 @@ class OkButton {
             TaskTable.setLastSearchingValue(usersInput);
             break;
             case "date" :
-                if(Calendar.getJxDatePicker().getMonthView().getSelection().size() == 1) {
-                    tasksSearcher.searchTasksByDate(DateUtils.getDate(Calendar.getJxDatePicker()));
-                    TaskTable.setLastSearchingValue(DateUtils.getDate(Calendar.getJxDatePicker()));
-                }
-                else {
-                    String[] firstAndLastSelectedDays = DateUtils.getRangeOfDates(Calendar.getJxDatePicker());
-                    tasksSearcher.searchTasksByRangeOfDate(firstAndLastSelectedDays[0], firstAndLastSelectedDays[1]);
-                    TaskTable.setLastSearchingValue(firstAndLastSelectedDays[0] + " " + firstAndLastSelectedDays [1]);
+                if(Calendar.getJxDatePicker().getDate() != null) {
+                    if (Calendar.getJxDatePicker().getMonthView().getSelection().size() == 1) {
+                        tasksSearcher.searchTasksByDate(DateUtils.getDate(Calendar.getJxDatePicker()));
+                        TaskTable.setLastSearchingValue(DateUtils.getDate(Calendar.getJxDatePicker()));
+                    } else {
+                        String[] firstAndLastSelectedDays = DateUtils.getRangeOfDates(Calendar.getJxDatePicker());
+                        tasksSearcher.searchTasksByRangeOfDate(firstAndLastSelectedDays[0], firstAndLastSelectedDays[1]);
+                        TaskTable.setLastSearchingValue(firstAndLastSelectedDays[0] + " " + firstAndLastSelectedDays[1]);
+                    }
                 }
                 break;
             case "description" : tasksSearcher.searchTasksByDescription(usersInput);
