@@ -6,15 +6,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseInitializer {
-    private Connection connection;
+    private static Connection connection;
 
     {
         try {
-            String url = "jdbc:sqlite:Tasks.db";
-            connection = DriverManager.getConnection(url);
+            if(connection == null){
+                Class.forName("org.sqlite.JDBC");
+                connection = DriverManager.getConnection("jdbc:sqlite:Tasks.db");
+            }
             createPriorityTableIfNotExists();
             createTaskTableIfNotExists();
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
