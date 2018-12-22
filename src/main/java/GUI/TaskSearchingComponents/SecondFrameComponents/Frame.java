@@ -4,10 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Frame {
-    private JFrame secondFrame = new JFrame();
+    private JFrame secondFrame = new JFrame("Search");
 
     public Frame() {
-        secondFrame.setName("Search");
         secondFrame.setVisible(false);
         secondFrame.setLayout(new GridBagLayout());
         ComponentsPanels componentsPanels = new ComponentsPanels();

@@ -31,7 +31,6 @@ public class TaskTableModel extends AbstractTableModel {
             case 2: return task.getDescription();
             case 3: return task.getTaskPriority();
         }
-        fireTableCellUpdated(rowIndex, columnIndex);
         return null;
     }
 

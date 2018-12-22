@@ -1,6 +1,7 @@
 package GUI.MainFrame;
 
 import GUI.TaskAddingComponents.AddButton;
+import GUI.TaskModifyingComponents.ModifyButton;
 import GUI.TaskSearchingComponents.SearchButton;
 import GUI.TaskTableObject.TaskTable;
 import TaskManagement.TasksSearcher;
@@ -16,7 +17,7 @@ public class Frame {
     private TaskTable taskTable = new TaskTable();
     private AddButton addButton = new AddButton();
     private SearchButton searchButton = new SearchButton();
-    //private TasksSearcher tasksSearcher = new TasksSearcher();
+    private ModifyButton modifyButton = new ModifyButton();
 
 
     Frame() throws SQLException {
@@ -63,5 +64,6 @@ public class Frame {
     private void addButtonsOnPanel() {
         buttonsPanel.add(addButton.getAddButton());
         buttonsPanel.add(searchButton.getSearchButton());
+        buttonsPanel.add(modifyButton.getModifyButton());
     }
 }

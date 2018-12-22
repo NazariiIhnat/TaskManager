@@ -1,0 +1,53 @@
+package GUI.TaskModifyingComponents.SecondFrameComponents;
+
+import javax.swing.*;
+import java.awt.*;
+
+class ComponentsPanels {
+    private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
+    private Calendar calendar = new Calendar();
+    private PrioritySelector prioritySelector = new PrioritySelector();
+    private SaveButton saveButton = new SaveButton();
+    private JPanel textAreaPanel = new JPanel();
+    private JPanel calendarAndPrioritySelectorPanel = new JPanel();
+    private JPanel saveButtonPanel = new JPanel();
+
+    ComponentsPanels() {
+        addTextAreaOnPanel();
+        addCalendarOnPanel();
+        addPrioritySelectorOnPanel();
+        addSaveButtonOnPanel();
+    }
+
+    private void addTextAreaOnPanel() {
+        textAreaPanel.setPreferredSize(new Dimension(300, 110));
+        textAreaPanel.setLayout(new BorderLayout());
+        textAreaPanel.add(descriptionTextArea.getDescriptionTextAreaScrollPane(), BorderLayout.CENTER);
+    }
+
+    private void addCalendarOnPanel() {
+        calendarAndPrioritySelectorPanel.setLayout(new GridLayout(1, 2));
+        calendarAndPrioritySelectorPanel.add(calendar.getCalendar());
+    }
+
+    private void addPrioritySelectorOnPanel() {
+        calendarAndPrioritySelectorPanel.add(prioritySelector.getPrioritySelectorComboBox());
+    }
+
+    private void addSaveButtonOnPanel() {
+        saveButtonPanel.setLayout(new FlowLayout());
+        saveButtonPanel.add(saveButton.getSaveButton());
+    }
+
+    JPanel getTextAreaPanel() {
+        return textAreaPanel;
+    }
+
+    JPanel getCalendarAndPrioritySelectorPanel() {
+        return calendarAndPrioritySelectorPanel;
+    }
+
+    JPanel getSaveButtonPanel() {
+        return saveButtonPanel;
+    }
+}

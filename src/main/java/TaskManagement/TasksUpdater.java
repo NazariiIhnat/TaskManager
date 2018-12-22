@@ -6,12 +6,6 @@ import Utilites.LoopScanner;
 import java.sql.SQLException;
 
 public class TasksUpdater extends AbstractTaskManager {
-    private LoopScanner loopScanner = new LoopScanner();
-
-    public static void main(String[] args) throws SQLException {
-        TasksUpdater tasksUpdater = new TasksUpdater();
-        tasksUpdater.updateTaskDescription();
-    }
 
     public void addTaskToDatabase(Task task) throws SQLException {
         super.addTask(task);
@@ -21,15 +15,15 @@ public class TasksUpdater extends AbstractTaskManager {
         super.deleteTask();
     }
 
-    public void updateTaskDate() throws SQLException {
-        updateTask("start_date", loopScanner.readDate(), loopScanner.readID());
+    public void updateTaskDate(int taskID, String date) throws SQLException {
+        updateTask("start_date", date, taskID);
     }
 
-    public void updateTaskDescription() throws SQLException {
-        updateTask("description", loopScanner.readDescription(), loopScanner.readID());
+    public void updateTaskDescription(int taskID, String description) throws SQLException {
+        updateTask("description", description, taskID);
     }
 
-    public void updateTaskPriority() throws SQLException {
-        updateTask("priority", loopScanner.readPriority(), loopScanner.readID());
+    public void updateTaskPriority(int taskID, String priority) throws SQLException {
+        updateTask("priority", priority, taskID);
     }
 }

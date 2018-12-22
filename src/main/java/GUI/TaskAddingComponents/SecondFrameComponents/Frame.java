@@ -3,8 +3,7 @@ package GUI.TaskAddingComponents.SecondFrameComponents;
 import javax.swing.*;
 import java.awt.*;
 public class Frame {
-    private JFrame secondFrame = new JFrame("Input data");
-    private PrioritySelector prioritySelector = new PrioritySelector();
+    private JFrame secondFrame = new JFrame("Add");
     private JPanel componentsPanel = new JPanel();
     private TextField textField = new TextField();
     private OkButton okButton = new OkButton();
