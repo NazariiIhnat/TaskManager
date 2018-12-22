@@ -1,13 +1,12 @@
 package TaskManagement;
 import Database.DatabaseInitializer;
+import GUI.TaskTableObject.TaskTable;
 import TaskObject.Task;
-import Utilites.LoopScanner;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 abstract class AbstractTaskManager {
-    private LoopScanner loopScanner = new LoopScanner();
     private DatabaseInitializer databaseInitializer = new DatabaseInitializer();
     static ArrayList<Task> listOfFoundedTaskObjects = new ArrayList<>();
 
@@ -25,7 +24,7 @@ abstract class AbstractTaskManager {
     }
 
     final void deleteTask() throws SQLException {
-        int rowid = loopScanner.readID();
+        int rowid = Integer.parseInt(TaskTable.getSelectedTaskID());
         if (isExistingID(rowid)) {
             String query = "DELETE FROM task WHERE rowid = " + rowid + ";";
             PreparedStatement preparedStatement = databaseInitializer.getConnection().prepareStatement(query);

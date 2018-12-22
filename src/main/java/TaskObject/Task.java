@@ -1,8 +1,7 @@
 package TaskObject;
 
 import TaskManagement.TasksUpdater;
-import Utilites.DataVerifier;
-import Utilites.LoopScanner;
+
 import java.sql.SQLException;
 
 public class Task {

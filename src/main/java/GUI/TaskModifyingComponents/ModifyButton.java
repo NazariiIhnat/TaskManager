@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.sql.Date;
 
 public class ModifyButton {
-    private JButton modifyButton = new JButton("Modify");
+    private JButton modifyButton = new JButton("Update");
     private Frame secondFrame = new Frame();
     private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
     private Calendar calendar = new Calendar();

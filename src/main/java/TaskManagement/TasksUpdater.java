@@ -1,7 +1,6 @@
 package TaskManagement;
 
 import TaskObject.Task;
-import Utilites.LoopScanner;
 
 import java.sql.SQLException;
 

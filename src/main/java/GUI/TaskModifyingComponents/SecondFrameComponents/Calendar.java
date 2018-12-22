@@ -7,6 +7,7 @@ public class Calendar {
 
     public Calendar() {
         Utilites.DateUtils.enableToChoosePastDays(calendar, false);
+        calendar.getEditor().setEditable(false);
     }
 
     public JXDatePicker getCalendar() {

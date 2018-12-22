@@ -2,7 +2,6 @@ package TaskManagement;
 
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Task;
-import Utilites.LoopScanner;
 
 import java.sql.*;
 import java.util.ArrayList;

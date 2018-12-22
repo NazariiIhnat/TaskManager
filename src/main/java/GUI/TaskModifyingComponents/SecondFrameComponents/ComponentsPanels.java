@@ -8,15 +8,18 @@ class ComponentsPanels {
     private Calendar calendar = new Calendar();
     private PrioritySelector prioritySelector = new PrioritySelector();
     private SaveButton saveButton = new SaveButton();
+    private ResultLabel label = new ResultLabel();
     private JPanel textAreaPanel = new JPanel();
     private JPanel calendarAndPrioritySelectorPanel = new JPanel();
     private JPanel saveButtonPanel = new JPanel();
+    private JPanel labelsPanel = new JPanel();
 
     ComponentsPanels() {
         addTextAreaOnPanel();
         addCalendarOnPanel();
         addPrioritySelectorOnPanel();
         addSaveButtonOnPanel();
+        addLabelOnPanel();
     }
 
     private void addTextAreaOnPanel() {
@@ -39,6 +42,11 @@ class ComponentsPanels {
         saveButtonPanel.add(saveButton.getSaveButton());
     }
 
+    private void addLabelOnPanel() {
+        labelsPanel.setLayout(new GridLayout(1, 1));
+        labelsPanel.add(label.getLabel());
+    }
+
     JPanel getTextAreaPanel() {
         return textAreaPanel;
     }
@@ -49,5 +57,9 @@ class ComponentsPanels {
 
     JPanel getSaveButtonPanel() {
         return saveButtonPanel;
+    }
+
+    JPanel getLabelsPanel() {
+        return labelsPanel;
     }
 }
