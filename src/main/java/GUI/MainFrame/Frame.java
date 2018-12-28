@@ -1,10 +1,10 @@
 package GUI.MainFrame;
 
 import GUI.TaskAddingComponents.AddButton;
-import GUI.TaskModifyingComponents.ModifyButton;
+import GUI.TaskDeletingComponents.DeleteButton;
+import GUI.TaskModifyingComponents.UpdateButton;
 import GUI.TaskSearchingComponents.SearchButton;
 import GUI.TaskTableObject.TaskTable;
-import TaskManagement.TasksSearcher;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +17,8 @@ public class Frame {
     private TaskTable taskTable = new TaskTable();
     private AddButton addButton = new AddButton();
     private SearchButton searchButton = new SearchButton();
-    private ModifyButton modifyButton = new ModifyButton();
+    private UpdateButton updateButton = new UpdateButton();
+    private DeleteButton deleteButton = new DeleteButton();
 
 
     Frame() throws SQLException {
@@ -27,7 +28,6 @@ public class Frame {
         setFrameParameters();
         addTableOnPanel();
         addButtonsOnPanel();
-        //tasksSearcher.searchAllTasks();
     }
 
     public static void main(String[] args) throws SQLException {
@@ -64,6 +64,7 @@ public class Frame {
     private void addButtonsOnPanel() {
         buttonsPanel.add(addButton.getAddButton());
         buttonsPanel.add(searchButton.getSearchButton());
-        buttonsPanel.add(modifyButton.getModifyButton());
+        buttonsPanel.add(updateButton.getModifyButton());
+        buttonsPanel.add(deleteButton.getDeleteButton());
     }
 }

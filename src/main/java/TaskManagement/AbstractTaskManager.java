@@ -23,8 +23,7 @@ abstract class AbstractTaskManager {
         System.out.println("Task was added");
     }
 
-    final void deleteTask() throws SQLException {
-        int rowid = Integer.parseInt(TaskTable.getSelectedTaskID());
+    final void deleteTask(int rowid) throws SQLException {
         if (isExistingID(rowid)) {
             String query = "DELETE FROM task WHERE rowid = " + rowid + ";";
             PreparedStatement preparedStatement = databaseInitializer.getConnection().prepareStatement(query);

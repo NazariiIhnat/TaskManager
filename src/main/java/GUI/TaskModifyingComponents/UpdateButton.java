@@ -11,24 +11,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Date;
 
-public class ModifyButton {
-    private JButton modifyButton = new JButton("Update");
+public class UpdateButton {
+    private static JButton updateButton = new JButton("Update");
     private Frame secondFrame = new Frame();
     private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
     private Calendar calendar = new Calendar();
     private PrioritySelector prioritySelector = new PrioritySelector();
 
-    public ModifyButton() {
-        ActionListener modifyButtonActionListener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                secondFrame.getSecondFrame().setVisible(true);
-                setTextToDescriptionTextArea();
-                setDateToCalendar();
-                setPriorityLetterToPrioritySelector();
-            }
-        };
-        modifyButton.addActionListener(modifyButtonActionListener);
+    {
+        if(updateButton.getActionListeners().length == 0) {
+            ActionListener modifyButtonActionListener = new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    secondFrame.getSecondFrame().setVisible(true);
+                    setTextToDescriptionTextArea();
+                    setDateToCalendar();
+                    setPriorityLetterToPrioritySelector();
+                }
+            };
+            updateButton.addActionListener(modifyButtonActionListener);
+        }
+        updateButton.setEnabled(false);
     }
 
     private void setTextToDescriptionTextArea() {
@@ -43,7 +46,7 @@ public class ModifyButton {
         prioritySelector.getPrioritySelectorComboBox().setSelectedItem(TaskTable.getSelectedTaskPriority());
     }
 
-    public JButton getModifyButton() {
-        return modifyButton;
+    public static JButton getModifyButton() {
+        return updateButton;
     }
 }

@@ -10,8 +10,8 @@ public class TasksUpdater extends AbstractTaskManager {
         super.addTask(task);
     }
 
-    public void deleteTaskFromDatabase() throws SQLException {
-        super.deleteTask();
+    public void deleteTaskFromDatabase(int rowid) throws SQLException {
+        super.deleteTask(rowid);
     }
 
     public void updateTaskDate(int taskID, String date) throws SQLException {
