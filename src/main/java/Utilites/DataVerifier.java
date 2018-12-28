@@ -26,8 +26,7 @@ public class DataVerifier {
     }
 
     public static boolean isEmptyInput(String inputData){
-        String [] arrayOfInputDateWithoutSpaces = inputData.split(" ");
-        return arrayOfInputDateWithoutSpaces.length == 0 || inputData.equals("");
+        return inputData.trim().equals("");
     }
 
     public static boolean isPriorityLetter(String inputData) {

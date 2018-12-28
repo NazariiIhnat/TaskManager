@@ -3,6 +3,7 @@ package GUI.TaskAddingComponents.SecondFrameComponents;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Task;
 import Utilites.ComboBoxUtils;
+import Utilites.DataVerifier;
 import Utilites.DateUtils;
 
 import javax.swing.*;
@@ -12,8 +13,7 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 class OkButton {
     private JButton okButton = new JButton("OK");
-    private DescriptionTextArea descriptionTextFields = new DescriptionTextArea();
-    private PrioritySelector prioritySelector = new PrioritySelector();
+    private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
     private Labels labels = new Labels();
     private String usersDate = null;
     private String usersDescription = null;
@@ -50,9 +50,8 @@ class OkButton {
     }
 
     private boolean isEmptyDescription(){
-        usersDescription = descriptionTextFields.getDescriptionTextArea().getText();
-        String [] arrayOfInputDescriptionWithoutSpaces = usersDescription.split(" ");
-        if(arrayOfInputDescriptionWithoutSpaces.length == 0 || descriptionTextFields.getDescriptionTextArea().getText().equals("")) {
+        usersDescription = descriptionTextArea.getDescriptionTextArea().getText();
+        if(DataVerifier.isEmptyInput(usersDescription)) {
             labels.getTaskAddResultLabel().setForeground(Color.red);
             labels.getTaskAddResultLabel().setText("Description couldn't be empty. ");
             return true;
