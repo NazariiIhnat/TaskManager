@@ -5,7 +5,7 @@ import java.awt.*;
 public class Frame {
     private JFrame secondFrame = new JFrame("Add");
     private JPanel componentsPanel = new JPanel();
-    private TextField textField = new TextField();
+    private DescriptionTextArea textArea = new DescriptionTextArea();
     private OkButton okButton = new OkButton();
     private Labels labels = new Labels();
 
@@ -13,12 +13,12 @@ public class Frame {
         componentsPanel.setLayout(new GridBagLayout());
         secondFrame.add(componentsPanel);
         secondFrame.setPreferredSize(new Dimension(260, 175));
-        secondFrame.pack();
         addLabelsOnPanel();
         addPrioritySelectorOnPanel();
-        addTextFieldsOnPanel();
+        addTextAreaOnPanel();
         addCalendarOnPanel();
         addOkButtonOnPanel();
+        //secondFrame.pack();
     }
 
     private void addLabelsOnPanel() {
@@ -38,8 +38,8 @@ public class Frame {
                 GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL, new Insets(1, 1, 1, 1), 0, 0));
     }
 
-    private void addTextFieldsOnPanel() {
-        componentsPanel.add(textField.getDescriptionTextField(), new GridBagConstraints(1, 1, 2, 1, 0, 0,
+    private void addTextAreaOnPanel() {
+        componentsPanel.add(textArea.getDescriptionScrollPane(), new GridBagConstraints(1, 1, 2, 1, 0, 0,
                 GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL, new Insets(1, 1, 1, 1), 0, 0));
     }
 

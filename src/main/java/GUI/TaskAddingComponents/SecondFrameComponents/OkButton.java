@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 class OkButton {
     private JButton okButton = new JButton("OK");
-    private TextField textFields = new TextField();
+    private DescriptionTextArea descriptionTextFields = new DescriptionTextArea();
     private PrioritySelector prioritySelector = new PrioritySelector();
     private Labels labels = new Labels();
     private String usersDate = null;
@@ -50,9 +50,9 @@ class OkButton {
     }
 
     private boolean isEmptyDescription(){
-        usersDescription = textFields.getDescriptionTextField().getText();
+        usersDescription = descriptionTextFields.getDescriptionTextArea().getText();
         String [] arrayOfInputDescriptionWithoutSpaces = usersDescription.split(" ");
-        if(arrayOfInputDescriptionWithoutSpaces.length == 0 || textFields.getDescriptionTextField().getText().equals("")) {
+        if(arrayOfInputDescriptionWithoutSpaces.length == 0 || descriptionTextFields.getDescriptionTextArea().getText().equals("")) {
             labels.getTaskAddResultLabel().setForeground(Color.red);
             labels.getTaskAddResultLabel().setText("Description couldn't be empty. ");
             return true;
