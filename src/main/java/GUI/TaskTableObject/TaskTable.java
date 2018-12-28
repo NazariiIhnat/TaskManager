@@ -1,8 +1,12 @@
 package GUI.TaskTableObject;
 
+import GUI.TaskDeletingComponents.DeleteButton;
+import GUI.TaskModifyingComponents.UpdateButton;
 import TaskManagement.TasksSearcher;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.sql.SQLException;
 
@@ -12,17 +16,33 @@ public class TaskTable {
     private static String nameOfLastSearchingMethod = "all";
     private static JTable taskTable = new JTable();
     private static JScrollPane taskTableScrollPane = new JScrollPane(taskTable);
-    private static int numberOfSelectedRowBeforeTableRefreshing;
+    private DeleteButton deleteButton = new DeleteButton();
 
     public TaskTable() throws SQLException {
         taskTable.setSize(new Dimension(100, 400));
         taskTable.getTableHeader().setReorderingAllowed(false);
         taskTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         refreshTable();
+        disableModifyAndDeleteButtonsWhenTaskIsNotSelected();
+    }
+
+    private void disableModifyAndDeleteButtonsWhenTaskIsNotSelected() {
+        taskTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if(taskTable.getSelectedRow() > -1) {
+                    UpdateButton.getModifyButton().setEnabled(true);
+                    deleteButton.getDeleteButton().setEnabled(true);
+                } else {
+                    UpdateButton.getModifyButton().setEnabled(false);
+                    deleteButton.getDeleteButton().setEnabled(false);
+                }
+            }
+        });
     }
 
     public void refreshTable() throws SQLException {
-        numberOfSelectedRowBeforeTableRefreshing = taskTable.getSelectedRow();
+        int numberOfSelectedRowBeforeTableRefreshing = taskTable.getSelectedRow();
         doLastSearch();
         taskTable.setModel(new TaskTableModel());
         refreshRowSelection(numberOfSelectedRowBeforeTableRefreshing);
