@@ -21,7 +21,7 @@ public class DeleteButton {
                         tasksUpdater.deleteTaskFromDatabase(Integer.parseInt(TaskTable.getSelectedTaskID()));
                         new TaskTable().refreshTable();
                     } catch (SQLException e1) {
-                        e1.printStackTrace();
+                            e1.printStackTrace();
                     }
                 }
             };

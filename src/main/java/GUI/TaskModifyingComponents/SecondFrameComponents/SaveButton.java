@@ -34,8 +34,8 @@ class SaveButton {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     if (isCorrectDescription() && isCorrectDate()) {
-                        int id = Integer.parseInt(TaskTable.getSelectedTaskID());
                         try {
+                            int id = Integer.parseInt(TaskTable.getSelectedTaskID());
                             tasksUpdater.updateTaskDate(id, DateUtils.getDate(calendar.getCalendar()));
                             tasksUpdater.updateTaskDescription(id, descriptionTextArea.getDescriptionTextArea().getText());
                             tasksUpdater.updateTaskPriority(id,
@@ -44,6 +44,11 @@ class SaveButton {
                             ResultLabel.setColorMessage("Updates successfully saved", Color.green);
                         } catch (SQLException e1) {
                             e1.printStackTrace();
+                        } catch (IndexOutOfBoundsException b) {
+                            descriptionTextArea.getDescriptionTextArea().setText
+                                    ("Task was deleted or you try to update non-existent task.");
+                            calendar.getCalendar().setDate(null);
+                            prioritySelector.getPrioritySelectorComboBox().setSelectedItem(null);
                         }
 
                     }
