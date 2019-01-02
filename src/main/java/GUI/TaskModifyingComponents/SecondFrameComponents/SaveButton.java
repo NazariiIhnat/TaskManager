@@ -41,7 +41,7 @@ class SaveButton {
                             tasksUpdater.updateTaskPriority(id,
                                     ComboBoxUtils.getSelectedPriorityLetter(prioritySelector.getPrioritySelectorComboBox()));
                             taskTable.refreshTable();
-                            ResultLabel.setColorMessage("Updates successfully saved", Color.green);
+                            ResultLabel.setMessage("Updates successfully saved", Color.green);
                         } catch (SQLException e1) {
                             e1.printStackTrace();
                         } catch (IndexOutOfBoundsException b) {
@@ -58,21 +58,21 @@ class SaveButton {
 
     private boolean isCorrectDescription() {
         if(DataVerifier.isEmptyInput(descriptionTextArea.getDescriptionTextArea().getText())) {
-            ResultLabel.setColorMessage("Description couldn't be empty", Color.red);
+            ResultLabel.setMessage("Description couldn't be empty", Color.red);
             return false;
         }
         else {
-            ResultLabel.setColorMessage(null, Color.BLACK);
+            ResultLabel.setMessage(null, Color.BLACK);
             return true;
         }
     }
 
     private boolean isCorrectDate() {
         if(DataVerifier.isEmptyInput(calendar.getCalendar().getEditor().getText())){
-            ResultLabel.setColorMessage("Choose date", Color.red);
+            ResultLabel.setMessage("Choose date", Color.red);
             return false;
         } else {
-            ResultLabel.setColorMessage(null, Color.BLACK);
+            ResultLabel.setMessage(null, Color.BLACK);
             return true;
         }
     }

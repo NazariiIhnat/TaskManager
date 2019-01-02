@@ -10,7 +10,7 @@ class ResultLabel {
         return label;
     }
 
-    static void setColorMessage(String text, Color color) {
+    static void setMessage(String text, Color color) {
         label.setText(text);
         label.setForeground(color);
     }

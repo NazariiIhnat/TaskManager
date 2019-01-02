@@ -46,7 +46,7 @@ public class UpdateButton {
         prioritySelector.getPrioritySelectorComboBox().setSelectedItem(TaskTable.getSelectedTaskPriority());
     }
 
-    public static JButton getModifyButton() {
+    public JButton getUpdateButton() {
         return updateButton;
     }
 }

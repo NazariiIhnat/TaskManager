@@ -17,8 +17,8 @@ public class Frame {
     private TaskTable taskTable = new TaskTable();
     private AddButton addButton = new AddButton();
     private SearchButton searchButton = new SearchButton();
-    private UpdateButton updateButton = new UpdateButton();
     private DeleteButton deleteButton = new DeleteButton();
+    private UpdateButton updateButton = new UpdateButton();
 
 
     Frame() throws SQLException {
@@ -35,7 +35,7 @@ public class Frame {
     }
 
     private void setFrameParameters() {
-        frame.setMinimumSize(new Dimension(500, 500));
+        frame.setMinimumSize(new Dimension(370, 380));
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
@@ -64,7 +64,7 @@ public class Frame {
     private void addButtonsOnPanel() {
         buttonsPanel.add(addButton.getAddButton());
         buttonsPanel.add(searchButton.getSearchButton());
-        buttonsPanel.add(updateButton.getModifyButton());
+        buttonsPanel.add(updateButton.getUpdateButton());
         buttonsPanel.add(deleteButton.getDeleteButton());
     }
 }

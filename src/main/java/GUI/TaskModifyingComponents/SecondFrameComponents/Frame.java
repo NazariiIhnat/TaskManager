@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Frame {
-    private JFrame secondFrame = new JFrame("Modify");
+    private static JFrame secondFrame = new JFrame("Update");
     private ComponentsPanels componentsPanels = new ComponentsPanels();
 
     public Frame() {

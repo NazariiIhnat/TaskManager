@@ -9,10 +9,10 @@ class ComponentsPanels {
     private PrioritySelector prioritySelector = new PrioritySelector();
     private SaveButton saveButton = new SaveButton();
     private ResultLabel label = new ResultLabel();
-    private JPanel textAreaPanel = new JPanel();
-    private JPanel calendarAndPrioritySelectorPanel = new JPanel();
-    private JPanel saveButtonPanel = new JPanel();
-    private JPanel labelsPanel = new JPanel();
+    private static JPanel textAreaPanel = new JPanel();
+    private static JPanel calendarAndPrioritySelectorPanel = new JPanel();
+    private static JPanel saveButtonPanel = new JPanel();
+    private static JPanel labelsPanel = new JPanel();
 
     ComponentsPanels() {
         addTextAreaOnPanel();

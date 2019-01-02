@@ -7,23 +7,27 @@ import TaskManagement.TasksSearcher;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
 public class TaskTable {
-    private TasksSearcher tasksSearcher = new TasksSearcher();
+    private static JTable taskTable = new JTable();
     private static String lastSearchingValue = null;
     private static String nameOfLastSearchingMethod = "all";
-    private static JTable taskTable = new JTable();
     private static JScrollPane taskTableScrollPane = new JScrollPane(taskTable);
+    private TasksSearcher tasksSearcher = new TasksSearcher();
     private DeleteButton deleteButton = new DeleteButton();
+    private UpdateButton updateButton = new UpdateButton();
 
     public TaskTable() throws SQLException {
-        taskTable.setSize(new Dimension(100, 400));
+        taskTableScrollPane.setPreferredSize(new Dimension(350, 300));
         taskTable.getTableHeader().setReorderingAllowed(false);
         taskTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        refreshTable();
+        taskTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         disableModifyAndDeleteButtonsWhenTaskIsNotSelected();
+        refreshTable();
     }
 
     private void disableModifyAndDeleteButtonsWhenTaskIsNotSelected() {
@@ -31,10 +35,10 @@ public class TaskTable {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 if(taskTable.getSelectedRow() > -1) {
-                    UpdateButton.getModifyButton().setEnabled(true);
+                    updateButton.getUpdateButton().setEnabled(true);
                     deleteButton.getDeleteButton().setEnabled(true);
                 } else {
-                    UpdateButton.getModifyButton().setEnabled(false);
+                    updateButton.getUpdateButton().setEnabled(false);
                     deleteButton.getDeleteButton().setEnabled(false);
                 }
             }
@@ -46,6 +50,10 @@ public class TaskTable {
         doLastSearch();
         taskTable.setModel(new TaskTableModel());
         refreshRowSelection(numberOfSelectedRowBeforeTableRefreshing);
+        setCellsSize();
+        disableColumnResizing();
+        taskTable.getColumnModel().getColumn(2).setCellRenderer(new DescriptionColumnRenderer());
+        taskTable.setDefaultRenderer(Object.class, new PriorityColumnRenderer());
     }
 
     private void doLastSearch() throws SQLException {
@@ -63,6 +71,19 @@ public class TaskTable {
 
     private void refreshRowSelection(int row) {
         taskTable.getSelectionModel().addSelectionInterval(row, row);
+    }
+
+    private void setCellsSize() {
+        TableColumnModel columnModel = taskTable.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(33);
+        columnModel.getColumn(1).setPreferredWidth(75);
+        columnModel.getColumn(2).setPreferredWidth(187);
+        columnModel.getColumn(3).setPreferredWidth(40);
+    }
+
+    private void disableColumnResizing() {
+        for (int i = 0; i < taskTable.getColumnCount(); i++)
+            taskTable.getColumnModel().getColumn(i).setResizable(false);
     }
 
     public static String getSelectedTaskID() {
