@@ -1,5 +1,6 @@
 package TaskManagement;
 
+import TaskObject.Status;
 import TaskObject.Task;
 
 import java.sql.SQLException;
@@ -24,5 +25,9 @@ public class TasksUpdater extends AbstractTaskManager {
 
     public void updateTaskPriority(int taskID, String priority) throws SQLException {
         updateTask("priority", priority, taskID);
+    }
+
+    public void updateTaskStatus(int taskID, Status status) throws SQLException {
+        updateTask("status", status.name(), taskID);
     }
 }

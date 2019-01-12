@@ -1,9 +1,12 @@
 package TaskManagement;
 import Database.DatabaseInitializer;
 import GUI.TaskTableObject.TaskTable;
+import TaskObject.Status;
 import TaskObject.Task;
 
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 abstract class AbstractTaskManager {
@@ -14,11 +17,13 @@ abstract class AbstractTaskManager {
         String query = "INSERT INTO task VALUES" +
                 "(?," +
                 "?," +
+                "?," +
                 "?);";
         PreparedStatement preparedStatement = databaseInitializer.getConnection().prepareStatement(query);
         preparedStatement.setString(1, task.getDate());
         preparedStatement.setString(2, task.getDescription());
         preparedStatement.setString(3, task.getTaskPriority());
+        preparedStatement.setString(4, task.getStatus().name());
         preparedStatement.executeUpdate();
         System.out.println("Task was added");
     }
@@ -56,7 +61,7 @@ abstract class AbstractTaskManager {
 
 
     final void searchTasks(String subQuery) throws SQLException {
-        String query = "SELECT rowid, start_date, description, priority FROM task" + subQuery;
+        String query = "SELECT rowid, start_date, description, priority, status FROM task" + subQuery;
         Statement statement = databaseInitializer.getConnection().createStatement();
         ResultSet resultSet = statement.executeQuery(query);
         importFoundedTaskObjectsToArrayList(resultSet);
@@ -69,7 +74,18 @@ abstract class AbstractTaskManager {
             String date = resultSet.getString("start_date");
             String description = resultSet.getString("description");
             String priority = resultSet.getString("priority");
-            listOfFoundedTaskObjects.add(new Task(rowid, date, description, priority));
+            String status;
+            if(isNotFulFilledTask(date))
+                status = Status.NOT_FULFILLED.name();
+            else
+                status = resultSet.getString("status");
+            listOfFoundedTaskObjects.add(new Task(rowid, date, description, priority, Status.valueOf(status)));
         }
+    }
+
+    private boolean isNotFulFilledTask(String date){
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate taskDate = LocalDate.parse(date, dateTimeFormatter);
+        return taskDate.isBefore(LocalDate.now());
     }
 }

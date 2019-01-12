@@ -7,7 +7,7 @@ class Calendar {
     private static JXDatePicker jxDatePicker = new JXDatePicker();
 
     static {
-        DateUtils.enableToChoosePastDays(jxDatePicker, false);
+        //DateUtils.enableToChoosePastDays(jxDatePicker, false);
     }
 
     static JXDatePicker getJxDatePicker() {

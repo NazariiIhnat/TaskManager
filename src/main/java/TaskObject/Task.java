@@ -9,6 +9,8 @@ public class Task {
     private String startDate;
     private String description;
     private String priority;
+
+    private Status status;
     private TasksUpdater tasksUpdater;
 
     public Task(String startDate, String description, String priority) throws SQLException {
@@ -16,14 +18,16 @@ public class Task {
         this.startDate = startDate;
         this.description = description;
         this.priority = priority;
+        this.status = Status.IN_PROGRESS;
         tasksUpdater.addTaskToDatabase(this);
     }
 
-    public Task(String id, String date, String taskDescription, String taskPriority) {
+    public Task(String id, String date, String taskDescription, String taskPriority, Status taskStatus) {
         this.id = id;
         this.startDate = date;
         this.description = taskDescription;
         this.priority = taskPriority;
+        this.status = taskStatus;
     }
 
     public String getDate() {
@@ -41,6 +45,12 @@ public class Task {
     public String getId() {
         return id;
     }
+
+    public Status getStatus() {
+        return status;
+    }
+
+
 
     @Override
     public String toString() {

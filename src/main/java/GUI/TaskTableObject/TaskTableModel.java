@@ -1,8 +1,10 @@
 package GUI.TaskTableObject;
 
 import TaskManagement.TasksSearcher;
+import TaskObject.Status;
 import TaskObject.Task;
 import javax.swing.table.AbstractTableModel;
+import java.awt.*;
 import java.util.ArrayList;
 
 public class TaskTableModel extends AbstractTableModel {
@@ -19,7 +21,7 @@ public class TaskTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 4;
+        return 5;
     }
 
     @Override
@@ -30,6 +32,7 @@ public class TaskTableModel extends AbstractTableModel {
             case 1: return task.getDate();
             case 2: return task.getDescription();
             case 3: return task.getTaskPriority();
+            case 4: return task.getStatus();
         }
         return null;
     }
@@ -41,6 +44,7 @@ public class TaskTableModel extends AbstractTableModel {
             case 1: return "date";
             case 2: return "description";
             case 3: return "priority";
+            case 4: return "status";
         }
         return null;
     }

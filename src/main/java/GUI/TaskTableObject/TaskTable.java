@@ -9,7 +9,6 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.TableColumnModel;
 import java.awt.*;
-import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
 public class TaskTable {
@@ -54,6 +53,7 @@ public class TaskTable {
         disableColumnResizing();
         taskTable.getColumnModel().getColumn(2).setCellRenderer(new DescriptionColumnRenderer());
         taskTable.setDefaultRenderer(Object.class, new PriorityColumnRenderer());
+        taskTable.getColumnModel().getColumn(4).setCellRenderer(new ColorRenderer());
     }
 
     private void doLastSearch() throws SQLException {
