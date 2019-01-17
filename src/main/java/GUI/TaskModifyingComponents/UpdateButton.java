@@ -1,19 +1,28 @@
 package GUI.TaskModifyingComponents;
 
-import GUI.TaskModifyingComponents.SecondFrameComponents.Calendar;
-import GUI.TaskModifyingComponents.SecondFrameComponents.DescriptionTextArea;
-import GUI.TaskModifyingComponents.SecondFrameComponents.Frame;
-import GUI.TaskModifyingComponents.SecondFrameComponents.PrioritySelector;
+import GUI.TaskModifyingComponents.SecondFrameComponents.*;
 import GUI.TaskTableObject.TaskTable;
+import TaskObject.Status;
+import Utilites.DateUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Date;
+import java.sql.SQLException;
 
 public class UpdateButton {
     private static JButton updateButton = new JButton("Update");
-    private Frame secondFrame = new Frame();
+    private Frame secondFrame;
+
+    {
+        try {
+            secondFrame = new Frame();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
     private Calendar calendar = new Calendar();
     private PrioritySelector prioritySelector = new PrioritySelector();
@@ -23,10 +32,13 @@ public class UpdateButton {
             ActionListener modifyButtonActionListener = new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    secondFrame.getSecondFrame().setVisible(true);
+                    DateUtils.nullifyCalendar(calendar.getCalendar());
+                    Frame.setFrameVisible(true);
                     setTextToDescriptionTextArea();
                     setDateToCalendar();
                     setPriorityLetterToPrioritySelector();
+                    setCheckBoxSelection();
+                    StatusUpdater.refreshCheckBoxEnabled();
                 }
             };
             updateButton.addActionListener(modifyButtonActionListener);
@@ -44,6 +56,13 @@ public class UpdateButton {
 
     private void setPriorityLetterToPrioritySelector() {
         prioritySelector.getPrioritySelectorComboBox().setSelectedItem(TaskTable.getSelectedTaskPriority());
+    }
+
+    private void setCheckBoxSelection() {
+        if(TaskTable.getSelectedTaskStatus().equals(Status.FULFILLED.name()))
+            StatusUpdater.setCheckBoxValue(true);
+        else
+            StatusUpdater.setCheckBoxValue(false);
     }
 
     public JButton getUpdateButton() {

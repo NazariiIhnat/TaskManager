@@ -1,8 +1,11 @@
 package GUI.TaskTableObject;
 
 import GUI.TaskDeletingComponents.DeleteButton;
+import GUI.TaskModifyingComponents.SecondFrameComponents.StatusUpdater;
 import GUI.TaskModifyingComponents.UpdateButton;
 import TaskManagement.TasksSearcher;
+import TaskManagement.TasksUpdater;
+import TaskObject.Status;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -19,6 +22,7 @@ public class TaskTable {
     private TasksSearcher tasksSearcher = new TasksSearcher();
     private DeleteButton deleteButton = new DeleteButton();
     private UpdateButton updateButton = new UpdateButton();
+    private TasksUpdater tasksUpdater = new TasksUpdater();
 
     public TaskTable() throws SQLException {
         taskTableScrollPane.setPreferredSize(new Dimension(350, 300));
@@ -100,6 +104,11 @@ public class TaskTable {
 
     public static String getSelectedTaskPriority() {
         return (String) taskTable.getValueAt(taskTable.getSelectedRow(), 3);
+    }
+
+    public static String getSelectedTaskStatus() {
+        Status status = (Status) taskTable.getValueAt(taskTable.getSelectedRow(), 4);
+        return status.name();
     }
 
     public static void setLastSearchingValue(String lastSearchingValue) {

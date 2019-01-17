@@ -2,12 +2,13 @@ package GUI.TaskModifyingComponents.SecondFrameComponents;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 
 public class Frame {
     private static JFrame secondFrame = new JFrame("Update");
     private ComponentsPanels componentsPanels = new ComponentsPanels();
 
-    public Frame() {
+    public Frame() throws SQLException {
         secondFrame.setLayout(new GridBagLayout());
         secondFrame.setVisible(false);
         addDescriptionTextAreasPanelOnFrame();
@@ -41,7 +42,7 @@ public class Frame {
                 new Insets(1, 1, 1, 1), 0, 0));
     }
 
-    public JFrame getSecondFrame() {
-        return secondFrame;
+    public static void setFrameVisible(boolean flag) {
+        secondFrame.setVisible(flag);
     }
 }

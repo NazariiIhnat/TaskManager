@@ -2,22 +2,24 @@ package GUI.TaskModifyingComponents.SecondFrameComponents;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 
 class ComponentsPanels {
+    private static JPanel textAreaPanel = new JPanel();
+    private static JPanel calendarAndPrioritySelectorPanel = new JPanel();
+    private static JPanel saveButtonPanel = new JPanel();
+    private static JPanel labelsPanel = new JPanel();
     private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
     private Calendar calendar = new Calendar();
     private PrioritySelector prioritySelector = new PrioritySelector();
     private SaveButton saveButton = new SaveButton();
     private ResultLabel label = new ResultLabel();
-    private static JPanel textAreaPanel = new JPanel();
-    private static JPanel calendarAndPrioritySelectorPanel = new JPanel();
-    private static JPanel saveButtonPanel = new JPanel();
-    private static JPanel labelsPanel = new JPanel();
 
-    ComponentsPanels() {
+    ComponentsPanels(){
         addTextAreaOnPanel();
         addCalendarOnPanel();
         addPrioritySelectorOnPanel();
+        addCheckBoxOnPanel();
         addSaveButtonOnPanel();
         addLabelOnPanel();
     }
@@ -29,12 +31,16 @@ class ComponentsPanels {
     }
 
     private void addCalendarOnPanel() {
-        calendarAndPrioritySelectorPanel.setLayout(new GridLayout(1, 2));
+        calendarAndPrioritySelectorPanel.setLayout(new GridLayout(1, 3));
         calendarAndPrioritySelectorPanel.add(calendar.getCalendar());
     }
 
     private void addPrioritySelectorOnPanel() {
         calendarAndPrioritySelectorPanel.add(prioritySelector.getPrioritySelectorComboBox());
+    }
+
+    private void addCheckBoxOnPanel() {
+        calendarAndPrioritySelectorPanel.add(StatusUpdater.getCheckBox());
     }
 
     private void addSaveButtonOnPanel() {

@@ -3,6 +3,7 @@ import Database.DatabaseInitializer;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Status;
 import TaskObject.Task;
+import Utilites.DataVerifier;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -75,17 +76,11 @@ abstract class AbstractTaskManager {
             String description = resultSet.getString("description");
             String priority = resultSet.getString("priority");
             String status;
-            if(isNotFulFilledTask(date))
+            if(DataVerifier.isNotFulFilledTask(date))
                 status = Status.NOT_FULFILLED.name();
             else
                 status = resultSet.getString("status");
             listOfFoundedTaskObjects.add(new Task(rowid, date, description, priority, Status.valueOf(status)));
         }
-    }
-
-    private boolean isNotFulFilledTask(String date){
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate taskDate = LocalDate.parse(date, dateTimeFormatter);
-        return taskDate.isBefore(LocalDate.now());
     }
 }

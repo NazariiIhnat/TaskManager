@@ -2,6 +2,7 @@ package GUI.TaskModifyingComponents.SecondFrameComponents;
 
 import GUI.TaskTableObject.TaskTable;
 import TaskManagement.TasksUpdater;
+import TaskObject.Status;
 import Utilites.ComboBoxUtils;
 import Utilites.DataVerifier;
 import Utilites.DateUtils;
@@ -19,6 +20,7 @@ class SaveButton {
     private PrioritySelector prioritySelector = new PrioritySelector();
     private TasksUpdater tasksUpdater = new TasksUpdater();
     private static TaskTable taskTable;
+    private int selectedTaskIDBeforeSave;
 
     static {
         try {
@@ -31,29 +33,34 @@ class SaveButton {
     SaveButton() {
         if (saveButton.getActionListeners().length == 0)
             saveButton.addActionListener(new ActionListener() {
+
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    if (isCorrectDescription() && isCorrectDate()) {
-                        try {
-                            int id = Integer.parseInt(TaskTable.getSelectedTaskID());
-                            tasksUpdater.updateTaskDate(id, DateUtils.getDate(calendar.getCalendar()));
-                            tasksUpdater.updateTaskDescription(id, descriptionTextArea.getDescriptionTextArea().getText());
-                            tasksUpdater.updateTaskPriority(id,
-                                    ComboBoxUtils.getSelectedPriorityLetter(prioritySelector.getPrioritySelectorComboBox()));
-                            taskTable.refreshTable();
-                            ResultLabel.setMessage("Updates successfully saved", Color.green);
-                        } catch (SQLException e1) {
-                            e1.printStackTrace();
-                        } catch (IndexOutOfBoundsException b) {
-                            descriptionTextArea.getDescriptionTextArea().setText
-                                    ("Task was deleted or you try to update non-existent task.");
-                            calendar.getCalendar().setDate(null);
-                            prioritySelector.getPrioritySelectorComboBox().setSelectedItem(null);
-                        }
-
+                    try {
+                        saveUpdates();
+                        taskTable.refreshTable();
+                        StatusUpdater.refreshCheckBoxEnabled();
+                    } catch (SQLException e1) {
+                        e1.printStackTrace();
+                    } finally {
+                        closeUpdateFrameIfSelectedAnotherTaskAfterSave();
                     }
                 }
             });
+    }
+
+    private void saveUpdates() throws SQLException {
+        selectedTaskIDBeforeSave = Integer.parseInt(TaskTable.getSelectedTaskID());
+        if(isCorrectDescription() && isCorrectDate()) {
+            tasksUpdater.updateTaskDate(selectedTaskIDBeforeSave, DateUtils.getDate(calendar.getCalendar()));
+            tasksUpdater.updateTaskDescription(selectedTaskIDBeforeSave, descriptionTextArea.getDescriptionTextArea().getText());
+            tasksUpdater.updateTaskPriority(selectedTaskIDBeforeSave,
+                    ComboBoxUtils.getSelectedPriorityLetter(prioritySelector.getPrioritySelectorComboBox()));
+            if(StatusUpdater.getCheckBoxSelection())
+                tasksUpdater.updateTaskStatus(selectedTaskIDBeforeSave, Status.FULFILLED);
+            else
+                tasksUpdater.updateTaskStatus(selectedTaskIDBeforeSave, Status.IN_PROGRESS);
+        }
     }
 
     private boolean isCorrectDescription() {
@@ -74,6 +81,16 @@ class SaveButton {
         } else {
             ResultLabel.setMessage(null, Color.BLACK);
             return true;
+        }
+    }
+
+    private void closeUpdateFrameIfSelectedAnotherTaskAfterSave() {
+        try{
+            int selectedTaskIdAfterSave = Integer.parseInt(TaskTable.getSelectedTaskID());
+            if(selectedTaskIDBeforeSave != selectedTaskIdAfterSave)
+                Frame.setFrameVisible(false);
+        } catch (IndexOutOfBoundsException e) {
+            Frame.setFrameVisible(false);
         }
     }
 
