@@ -1,6 +1,7 @@
 package GUI.TaskModifyingComponents.SecondFrameComponents;
 
 import GUI.GUIComponents.GUICalendar;
+import GUI.GUIComponents.TaskDescriptionTextArea;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +11,7 @@ class ComponentsPanels {
     private static JPanel calendarAndPrioritySelectorPanel = new JPanel();
     private static JPanel saveButtonPanel = new JPanel();
     private static JPanel labelsPanel = new JPanel();
-    private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
+    private TaskDescriptionTextArea taskDescriptionTextArea = ModifyingComponents.getTaskDescriptionTextArea();
     private GUICalendar guiCalendar = ModifyingComponents.getGuiCalendar();
     private PrioritySelector prioritySelector = new PrioritySelector();
     private SaveButton saveButton = new SaveButton();
@@ -28,7 +29,7 @@ class ComponentsPanels {
     private void addTextAreaOnPanel() {
         textAreaPanel.setPreferredSize(new Dimension(300, 110));
         textAreaPanel.setLayout(new BorderLayout());
-        textAreaPanel.add(descriptionTextArea.getDescriptionTextAreaScrollPane(), BorderLayout.CENTER);
+        textAreaPanel.add(taskDescriptionTextArea.getScrollPane(), BorderLayout.CENTER);
     }
 
     private void addCalendarOnPanel() {

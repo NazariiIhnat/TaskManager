@@ -1,6 +1,7 @@
 package GUI.TaskModifyingComponents.SecondFrameComponents;
 
 import GUI.GUIComponents.GUICalendar;
+import GUI.GUIComponents.TaskDescriptionTextArea;
 import GUI.TaskTableObject.TaskTable;
 import TaskManagement.TasksUpdater;
 import TaskObject.Status;
@@ -15,7 +16,7 @@ import java.sql.SQLException;
 
 class SaveButton {
     private static JButton saveButton = new JButton("Save");
-    private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
+    private TaskDescriptionTextArea taskDescriptionTextArea = ModifyingComponents.getTaskDescriptionTextArea();
     private GUICalendar guiCalendar = ModifyingComponents.getGuiCalendar();
     private PrioritySelector prioritySelector = new PrioritySelector();
     private TasksUpdater tasksUpdater = new TasksUpdater();
@@ -53,7 +54,7 @@ class SaveButton {
         selectedTaskIDBeforeSave = Integer.parseInt(TaskTable.getSelectedTaskID());
         if(isCorrectDescription() && isCorrectDate()) {
             tasksUpdater.updateTaskDate(selectedTaskIDBeforeSave, guiCalendar.getStringDate());
-            tasksUpdater.updateTaskDescription(selectedTaskIDBeforeSave, descriptionTextArea.getDescriptionTextArea().getText());
+            tasksUpdater.updateTaskDescription(selectedTaskIDBeforeSave, taskDescriptionTextArea.getText());
             tasksUpdater.updateTaskPriority(selectedTaskIDBeforeSave,
                     ComboBoxUtils.getSelectedPriorityLetter(prioritySelector.getPrioritySelectorComboBox()));
             if(StatusUpdater.getCheckBoxSelection())
@@ -64,7 +65,7 @@ class SaveButton {
     }
 
     private boolean isCorrectDescription() {
-        if(DataVerifier.isEmptyInput(descriptionTextArea.getDescriptionTextArea().getText())) {
+        if(DataVerifier.isEmptyInput(taskDescriptionTextArea.getText())) {
             ResultLabel.setMessage("Description couldn't be empty", Color.red);
             return false;
         }

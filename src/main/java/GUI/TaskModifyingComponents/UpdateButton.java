@@ -1,6 +1,7 @@
 package GUI.TaskModifyingComponents;
 
 import GUI.GUIComponents.GUICalendar;
+import GUI.GUIComponents.TaskDescriptionTextArea;
 import GUI.TaskModifyingComponents.SecondFrameComponents.*;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Status;
@@ -14,6 +15,7 @@ import java.sql.SQLException;
 public class UpdateButton {
     private static JButton updateButton = new JButton("Update");
     private GUICalendar guiCalendar = ModifyingComponents.getGuiCalendar();
+    private TaskDescriptionTextArea taskDescriptionTextArea = ModifyingComponents.getTaskDescriptionTextArea();
     private Frame secondFrame;
 
     {
@@ -23,8 +25,6 @@ public class UpdateButton {
             e.printStackTrace();
         }
     }
-
-    private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
     private PrioritySelector prioritySelector = new PrioritySelector();
 
     {
@@ -47,7 +47,7 @@ public class UpdateButton {
     }
 
     private void setTextToDescriptionTextArea() {
-        descriptionTextArea.getDescriptionTextArea().setText(TaskTable.getSelectedTaskDescription());
+        taskDescriptionTextArea.setText(TaskTable.getSelectedTaskDescription());
     }
 
     private void setDateToCalendar() {

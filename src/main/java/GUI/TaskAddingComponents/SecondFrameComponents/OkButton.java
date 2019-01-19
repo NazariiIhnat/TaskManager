@@ -1,6 +1,7 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
 import GUI.GUIComponents.GUICalendar;
+import GUI.GUIComponents.TaskDescriptionTextArea;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Task;
 import Utilites.ComboBoxUtils;
@@ -14,7 +15,7 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 class OkButton {
     private JButton okButton = new JButton("OK");
-    private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
+    private TaskDescriptionTextArea taskDescriptionTextArea = AddingComponents.getTaskDescriptionTextArea();
     private GUICalendar guiCalendar = AddingComponents.getGuiCalendar();
     private Labels labels = new Labels();
     private String usersDate = null;
@@ -52,7 +53,7 @@ class OkButton {
     }
 
     private boolean isEmptyDescription(){
-        usersDescription = descriptionTextArea.getDescriptionTextArea().getText();
+        usersDescription = taskDescriptionTextArea.getText();
         if(DataVerifier.isEmptyInput(usersDescription)) {
             labels.getTaskAddResultLabel().setForeground(Color.red);
             labels.getTaskAddResultLabel().setText("Description couldn't be empty. ");

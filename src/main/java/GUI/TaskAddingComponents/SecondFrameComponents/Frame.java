@@ -1,6 +1,7 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
 import GUI.GUIComponents.GUICalendar;
+import GUI.GUIComponents.TaskDescriptionTextArea;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,7 +9,7 @@ public class Frame {
     private GUICalendar guiCalendar = AddingComponents.getGuiCalendar();
     private JFrame secondFrame = new JFrame("Add");
     private JPanel componentsPanel = new JPanel();
-    private DescriptionTextArea textArea = new DescriptionTextArea();
+    private TaskDescriptionTextArea taskDescriptionTextArea = AddingComponents.getTaskDescriptionTextArea();
     private OkButton okButton = new OkButton();
     private Labels labels = new Labels();
 
@@ -42,7 +43,7 @@ public class Frame {
     }
 
     private void addTextAreaOnPanel() {
-        componentsPanel.add(textArea.getDescriptionScrollPane(), new GridBagConstraints(1, 1, 2, 1, 0, 0,
+        componentsPanel.add(taskDescriptionTextArea.getScrollPane(), new GridBagConstraints(1, 1, 2, 1, 0, 0,
                 GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL, new Insets(1, 1, 1, 1), 0, 0));
     }
 
