@@ -2,10 +2,10 @@ package GUI.TaskModifyingComponents.SecondFrameComponents;
 
 import GUI.MainGUIComponents.GUICalendar;
 import GUI.MainGUIComponents.TaskDescriptionTextArea;
+import GUI.MainGUIComponents.TaskPriorityComboBox;
 import GUI.TaskTableObject.TaskTable;
 import TaskManagement.TasksUpdater;
 import TaskObject.Status;
-import Utilites.ComboBoxUtils;
 import Utilites.DataVerifier;
 
 import javax.swing.*;
@@ -18,7 +18,7 @@ class SaveButton {
     private static JButton saveButton = new JButton("Save");
     private TaskDescriptionTextArea taskDescriptionTextArea = ModifyingComponents.getTaskDescriptionTextArea();
     private GUICalendar guiCalendar = ModifyingComponents.getGuiCalendar();
-    private PrioritySelector prioritySelector = new PrioritySelector();
+    private TaskPriorityComboBox taskPriorityComboBox = ModifyingComponents.getTaskPriorityComboBox();
     private TasksUpdater tasksUpdater = new TasksUpdater();
     private static TaskTable taskTable;
     private int selectedTaskIDBeforeSave;
@@ -55,8 +55,7 @@ class SaveButton {
         if(isCorrectDescription() && isCorrectDate()) {
             tasksUpdater.updateTaskDate(selectedTaskIDBeforeSave, guiCalendar.getStringDate());
             tasksUpdater.updateTaskDescription(selectedTaskIDBeforeSave, taskDescriptionTextArea.getText());
-            tasksUpdater.updateTaskPriority(selectedTaskIDBeforeSave,
-                    ComboBoxUtils.getSelectedPriorityLetter(prioritySelector.getPrioritySelectorComboBox()));
+            tasksUpdater.updateTaskPriority(selectedTaskIDBeforeSave, taskPriorityComboBox.getSelectedPriorityLetter());
             if(StatusUpdater.getCheckBoxSelection())
                 tasksUpdater.updateTaskStatus(selectedTaskIDBeforeSave, Status.FULFILLED);
             else

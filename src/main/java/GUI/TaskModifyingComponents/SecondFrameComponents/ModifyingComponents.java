@@ -2,10 +2,12 @@ package GUI.TaskModifyingComponents.SecondFrameComponents;
 
 import GUI.MainGUIComponents.GUICalendar;
 import GUI.MainGUIComponents.TaskDescriptionTextArea;
+import GUI.MainGUIComponents.TaskPriorityComboBox;
 
 public class ModifyingComponents {
     private static GUICalendar guiCalendar = new GUICalendar();
     private static TaskDescriptionTextArea taskDescriptionTextArea = new TaskDescriptionTextArea();
+    private static TaskPriorityComboBox taskPriorityComboBox = new TaskPriorityComboBox();
 
     static {
         setGUICalendarParameters();
@@ -23,5 +25,9 @@ public class ModifyingComponents {
 
     public static TaskDescriptionTextArea getTaskDescriptionTextArea() {
         return taskDescriptionTextArea;
+    }
+
+    public static TaskPriorityComboBox getTaskPriorityComboBox() {
+        return taskPriorityComboBox;
     }
 }

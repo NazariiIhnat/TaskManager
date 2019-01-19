@@ -1,9 +1,11 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
 import GUI.MainGUIComponents.GUICalendar;
+import GUI.MainGUIComponents.TaskPriorityComboBox;
 
-public class ModifyingComponents {
+public class SearchingComponents {
     private static GUICalendar guiCalendar = new GUICalendar();
+    private static TaskPriorityComboBox taskPriorityComboBox = new TaskPriorityComboBox();
 
     static {
         setGUICalendarParameters();
@@ -17,5 +19,9 @@ public class ModifyingComponents {
 
     public static GUICalendar getGUICalendar() {
         return guiCalendar;
+    }
+
+    public static TaskPriorityComboBox getTaskPriorityComboBox() {
+        return taskPriorityComboBox;
     }
 }

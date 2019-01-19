@@ -1,9 +1,9 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
 import GUI.MainGUIComponents.GUICalendar;
+import GUI.MainGUIComponents.TaskPriorityComboBox;
 import GUI.TaskTableObject.TaskTable;
 import TaskManagement.TasksSearcher;
-import Utilites.ComboBoxUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -16,7 +16,8 @@ class OkButton {
     private DataTypeSelector dataTypeSelector = new DataTypeSelector();
     private ValueReader valueReader = new ValueReader();
     private TasksSearcher tasksSearcher = new TasksSearcher();
-    private GUICalendar guiCalendar = ModifyingComponents.getGUICalendar();
+    private GUICalendar guiCalendar = SearchingComponents.getGUICalendar();
+    private TaskPriorityComboBox taskPriorityComboBox = SearchingComponents.getTaskPriorityComboBox();
 
     OkButton() {
         okButton.addActionListener(new ActionListener() {
@@ -59,9 +60,9 @@ class OkButton {
             TaskTable.setLastSearchingValue(usersInput);
             break;
             case "priority" : tasksSearcher.searchTasksByPriority
-                    (ComboBoxUtils.getSelectedPriorityLetter(PrioritySelector.getPrioritySelector()));
+                    (taskPriorityComboBox.getSelectedPriorityLetter());
             TaskTable.setLastSearchingValue
-                    (ComboBoxUtils.getSelectedPriorityLetter(PrioritySelector.getPrioritySelector()));
+                    (taskPriorityComboBox.getSelectedPriorityLetter());
             break;
         }
         new TaskTable().refreshTable();

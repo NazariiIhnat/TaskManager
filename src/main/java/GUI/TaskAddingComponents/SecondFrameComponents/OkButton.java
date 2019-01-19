@@ -2,9 +2,9 @@ package GUI.TaskAddingComponents.SecondFrameComponents;
 
 import GUI.MainGUIComponents.GUICalendar;
 import GUI.MainGUIComponents.TaskDescriptionTextArea;
+import GUI.MainGUIComponents.TaskPriorityComboBox;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Task;
-import Utilites.ComboBoxUtils;
 import Utilites.DataVerifier;
 
 import javax.swing.*;
@@ -16,6 +16,7 @@ class OkButton {
     private JButton okButton = new JButton("OK");
     private TaskDescriptionTextArea taskDescriptionTextArea = AddingComponents.getTaskDescriptionTextArea();
     private GUICalendar guiCalendar = AddingComponents.getGuiCalendar();
+    private TaskPriorityComboBox taskPriorityComboBox = AddingComponents.getTaskPriorityComboBox();
     private Labels labels = new Labels();
     private String usersDate = null;
     private String usersDescription = null;
@@ -62,7 +63,7 @@ class OkButton {
 
     private boolean isSelectedPriority() {
         try{
-            usersPriority = ComboBoxUtils.getSelectedPriorityLetter(PrioritySelector.getPrioritySelector());
+            usersPriority = taskPriorityComboBox.getSelectedPriorityLetter();
             return true;
         } catch (NullPointerException e) {
             System.out.println(usersPriority);

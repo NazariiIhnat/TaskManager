@@ -2,6 +2,7 @@ package GUI.TaskModifyingComponents.SecondFrameComponents;
 
 import GUI.MainGUIComponents.GUICalendar;
 import GUI.MainGUIComponents.TaskDescriptionTextArea;
+import GUI.MainGUIComponents.TaskPriorityComboBox;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +14,7 @@ class ComponentsPanels {
     private static JPanel labelsPanel = new JPanel();
     private TaskDescriptionTextArea taskDescriptionTextArea = ModifyingComponents.getTaskDescriptionTextArea();
     private GUICalendar guiCalendar = ModifyingComponents.getGuiCalendar();
-    private PrioritySelector prioritySelector = new PrioritySelector();
+    private TaskPriorityComboBox taskPriorityComboBox = ModifyingComponents.getTaskPriorityComboBox();
     private SaveButton saveButton = new SaveButton();
     private ResultLabel label = new ResultLabel();
 
@@ -38,7 +39,7 @@ class ComponentsPanels {
     }
 
     private void addPrioritySelectorOnPanel() {
-        calendarAndPrioritySelectorPanel.add(prioritySelector.getPrioritySelectorComboBox());
+        calendarAndPrioritySelectorPanel.add(taskPriorityComboBox);
     }
 
     private void addCheckBoxOnPanel() {

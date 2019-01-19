@@ -1,6 +1,7 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
 import GUI.MainGUIComponents.GUICalendar;
+import GUI.MainGUIComponents.TaskPriorityComboBox;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,7 +16,8 @@ class DataTypeSelector {
     private static JRadioButton priorityRadioButton = new JRadioButton("By priority", false);
     private static ButtonGroup groupOfSelectors = new ButtonGroup();
     private ValueReader searchingValueReader = new ValueReader();
-    private GUICalendar guiCalendar = ModifyingComponents.getGUICalendar();
+    private GUICalendar guiCalendar = SearchingComponents.getGUICalendar();
+    private TaskPriorityComboBox taskPriorityComboBox = SearchingComponents.getTaskPriorityComboBox();
 
     DataTypeSelector() {
         disableAllValueReaders();
@@ -68,7 +70,7 @@ class DataTypeSelector {
         disableAllValueReaders();
         switch (valueReader) {
             case "date" : guiCalendar.setEnabled(true); break;
-            case "priority" : PrioritySelector.getPrioritySelector().setEnabled(true); break;
+            case "priority" : taskPriorityComboBox.setEnabled(true); break;
             case "text" : searchingValueReader.getSearchingValueTextField().setEnabled(true); break;
         }
     }
@@ -76,7 +78,7 @@ class DataTypeSelector {
     private void disableAllValueReaders() {
         guiCalendar.setEnabled(false);
         searchingValueReader.getSearchingValueTextField().setEnabled(false);
-        PrioritySelector.getPrioritySelector().setEnabled(false);
+        taskPriorityComboBox.setEnabled(false);
     }
 
     JRadioButton getTodayTasksRadioButton() {

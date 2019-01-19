@@ -2,6 +2,7 @@ package GUI.TaskModifyingComponents;
 
 import GUI.MainGUIComponents.GUICalendar;
 import GUI.MainGUIComponents.TaskDescriptionTextArea;
+import GUI.MainGUIComponents.TaskPriorityComboBox;
 import GUI.TaskModifyingComponents.SecondFrameComponents.*;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Status;
@@ -16,6 +17,7 @@ public class UpdateButton {
     private static JButton updateButton = new JButton("Update");
     private GUICalendar guiCalendar = ModifyingComponents.getGuiCalendar();
     private TaskDescriptionTextArea taskDescriptionTextArea = ModifyingComponents.getTaskDescriptionTextArea();
+    private TaskPriorityComboBox taskPriorityComboBox = ModifyingComponents.getTaskPriorityComboBox();
     private Frame secondFrame;
 
     {
@@ -25,7 +27,6 @@ public class UpdateButton {
             e.printStackTrace();
         }
     }
-    private PrioritySelector prioritySelector = new PrioritySelector();
 
     {
         if(updateButton.getActionListeners().length == 0) {
@@ -55,7 +56,7 @@ public class UpdateButton {
     }
 
     private void setPriorityLetterToPrioritySelector() {
-        prioritySelector.getPrioritySelectorComboBox().setSelectedItem(TaskTable.getSelectedTaskPriority());
+        taskPriorityComboBox.setSelectedItem(TaskTable.getSelectedTaskPriority());
     }
 
     private void setCheckBoxSelection() {

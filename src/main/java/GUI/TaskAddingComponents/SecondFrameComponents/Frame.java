@@ -2,14 +2,16 @@ package GUI.TaskAddingComponents.SecondFrameComponents;
 
 import GUI.MainGUIComponents.GUICalendar;
 import GUI.MainGUIComponents.TaskDescriptionTextArea;
+import GUI.MainGUIComponents.TaskPriorityComboBox;
 
 import javax.swing.*;
 import java.awt.*;
 public class Frame {
     private GUICalendar guiCalendar = AddingComponents.getGuiCalendar();
+    private TaskDescriptionTextArea taskDescriptionTextArea = AddingComponents.getTaskDescriptionTextArea();
+    private TaskPriorityComboBox taskPriorityComboBox = AddingComponents.getTaskPriorityComboBox();
     private JFrame secondFrame = new JFrame("Add");
     private JPanel componentsPanel = new JPanel();
-    private TaskDescriptionTextArea taskDescriptionTextArea = AddingComponents.getTaskDescriptionTextArea();
     private OkButton okButton = new OkButton();
     private Labels labels = new Labels();
 
@@ -37,8 +39,8 @@ public class Frame {
     }
 
     private void addPrioritySelectorOnPanel() {
-        PrioritySelector.getPrioritySelector().setEnabled(true);
-        componentsPanel.add(PrioritySelector.getPrioritySelector(), new GridBagConstraints(1, 2, 2, 1, 0, 0,
+        taskPriorityComboBox.setEnabled(true);
+        componentsPanel.add(taskPriorityComboBox, new GridBagConstraints(1, 2, 2, 1, 0, 0,
                 GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL, new Insets(1, 1, 1, 1), 0, 0));
     }
 
