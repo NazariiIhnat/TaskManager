@@ -1,7 +1,7 @@
 package GUI.TaskModifyingComponents;
 
-import GUI.GUIComponents.GUICalendar;
-import GUI.GUIComponents.TaskDescriptionTextArea;
+import GUI.MainGUIComponents.GUICalendar;
+import GUI.MainGUIComponents.TaskDescriptionTextArea;
 import GUI.TaskModifyingComponents.SecondFrameComponents.*;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Status;

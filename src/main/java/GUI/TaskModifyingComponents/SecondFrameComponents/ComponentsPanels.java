@@ -1,7 +1,7 @@
 package GUI.TaskModifyingComponents.SecondFrameComponents;
 
-import GUI.GUIComponents.GUICalendar;
-import GUI.GUIComponents.TaskDescriptionTextArea;
+import GUI.MainGUIComponents.GUICalendar;
+import GUI.MainGUIComponents.TaskDescriptionTextArea;
 
 import javax.swing.*;
 import java.awt.*;

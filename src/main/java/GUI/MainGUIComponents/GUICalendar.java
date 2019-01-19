@@ -1,4 +1,4 @@
-package GUI.GUIComponents;
+package GUI.MainGUIComponents;
 
 import org.jdesktop.swingx.JXDatePicker;
 import org.jdesktop.swingx.JXMonthView;

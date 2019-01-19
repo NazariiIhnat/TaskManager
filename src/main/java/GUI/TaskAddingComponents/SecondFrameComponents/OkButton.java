@@ -1,12 +1,11 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
-import GUI.GUIComponents.GUICalendar;
-import GUI.GUIComponents.TaskDescriptionTextArea;
+import GUI.MainGUIComponents.GUICalendar;
+import GUI.MainGUIComponents.TaskDescriptionTextArea;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Task;
 import Utilites.ComboBoxUtils;
 import Utilites.DataVerifier;
-import Utilites.DateUtils;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,6 +1,6 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
-import GUI.GUIComponents.GUICalendar;
+import GUI.MainGUIComponents.GUICalendar;
 
 import javax.swing.*;
 import java.awt.*;

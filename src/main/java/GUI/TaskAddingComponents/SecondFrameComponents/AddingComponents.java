@@ -1,7 +1,7 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
-import GUI.GUIComponents.GUICalendar;
-import GUI.GUIComponents.TaskDescriptionTextArea;
+import GUI.MainGUIComponents.GUICalendar;
+import GUI.MainGUIComponents.TaskDescriptionTextArea;
 
 public class AddingComponents {
     private static GUICalendar guiCalendar = new GUICalendar();

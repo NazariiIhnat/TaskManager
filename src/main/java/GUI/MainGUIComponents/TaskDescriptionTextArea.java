@@ -1,4 +1,4 @@
-package GUI.GUIComponents;
+package GUI.MainGUIComponents;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;

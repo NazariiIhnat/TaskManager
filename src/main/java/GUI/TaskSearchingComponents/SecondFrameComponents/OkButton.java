@@ -1,10 +1,9 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
-import GUI.GUIComponents.GUICalendar;
+import GUI.MainGUIComponents.GUICalendar;
 import GUI.TaskTableObject.TaskTable;
 import TaskManagement.TasksSearcher;
 import Utilites.ComboBoxUtils;
-import Utilites.DateUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

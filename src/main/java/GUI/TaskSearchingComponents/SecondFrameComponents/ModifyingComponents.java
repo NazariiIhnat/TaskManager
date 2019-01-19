@@ -1,6 +1,6 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
-import GUI.GUIComponents.GUICalendar;
+import GUI.MainGUIComponents.GUICalendar;
 
 public class ModifyingComponents {
     private static GUICalendar guiCalendar = new GUICalendar();
