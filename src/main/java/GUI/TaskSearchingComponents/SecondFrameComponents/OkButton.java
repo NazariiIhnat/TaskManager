@@ -1,5 +1,6 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
+import GUI.GUIComponents.GUICalendar;
 import GUI.TaskTableObject.TaskTable;
 import TaskManagement.TasksSearcher;
 import Utilites.ComboBoxUtils;
@@ -16,6 +17,7 @@ class OkButton {
     private DataTypeSelector dataTypeSelector = new DataTypeSelector();
     private ValueReader valueReader = new ValueReader();
     private TasksSearcher tasksSearcher = new TasksSearcher();
+    private GUICalendar guiCalendar = ModifyingComponents.getGUICalendar();
 
     OkButton() {
         okButton.addActionListener(new ActionListener() {
@@ -43,12 +45,12 @@ class OkButton {
             TaskTable.setLastSearchingValue(usersInput);
             break;
             case "date" :
-                if(Calendar.getJxDatePicker().getDate() != null) {
-                    if (Calendar.getJxDatePicker().getMonthView().getSelection().size() == 1) {
-                        tasksSearcher.searchTasksByDate(DateUtils.getDate(Calendar.getJxDatePicker()));
-                        TaskTable.setLastSearchingValue(DateUtils.getDate(Calendar.getJxDatePicker()));
+                if(guiCalendar.getStringDate() != null) {
+                    if (guiCalendar.getMonthView().getSelection().size() == 1) {
+                        tasksSearcher.searchTasksByDate(guiCalendar.getStringDate());
+                        TaskTable.setLastSearchingValue(guiCalendar.getStringDate());
                     } else {
-                        String[] firstAndLastSelectedDays = DateUtils.getRangeOfDates(Calendar.getJxDatePicker());
+                        String[] firstAndLastSelectedDays = guiCalendar.getRangeOfDates();
                         tasksSearcher.searchTasksByRangeOfDate(firstAndLastSelectedDays[0], firstAndLastSelectedDays[1]);
                         TaskTable.setLastSearchingValue(firstAndLastSelectedDays[0] + " " + firstAndLastSelectedDays[1]);
                     }

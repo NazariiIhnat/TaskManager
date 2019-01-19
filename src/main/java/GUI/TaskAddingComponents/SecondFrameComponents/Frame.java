@@ -1,8 +1,11 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
+import GUI.GUIComponents.GUICalendar;
+
 import javax.swing.*;
 import java.awt.*;
 public class Frame {
+    private GUICalendar guiCalendar = AddingComponents.getGuiCalendar();
     private JFrame secondFrame = new JFrame("Add");
     private JPanel componentsPanel = new JPanel();
     private DescriptionTextArea textArea = new DescriptionTextArea();
@@ -18,7 +21,7 @@ public class Frame {
         addTextAreaOnPanel();
         addCalendarOnPanel();
         addOkButtonOnPanel();
-        //secondFrame.pack();
+        secondFrame.pack();
     }
 
     private void addLabelsOnPanel() {
@@ -44,7 +47,7 @@ public class Frame {
     }
 
     private void addCalendarOnPanel() {
-        componentsPanel.add(Calendar.getJxDatePicker(), new GridBagConstraints(1, 0, 2, 1, 0, 0,
+        componentsPanel.add(guiCalendar, new GridBagConstraints(1, 0, 2, 1, 0, 0,
                 GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL, new Insets(1, 1, 1, 1), 0, 0));
     }
 

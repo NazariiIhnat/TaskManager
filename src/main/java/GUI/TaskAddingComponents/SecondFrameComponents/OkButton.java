@@ -1,5 +1,6 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
+import GUI.GUIComponents.GUICalendar;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Task;
 import Utilites.ComboBoxUtils;
@@ -14,6 +15,7 @@ import java.sql.SQLException;
 class OkButton {
     private JButton okButton = new JButton("OK");
     private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
+    private GUICalendar guiCalendar = AddingComponents.getGuiCalendar();
     private Labels labels = new Labels();
     private String usersDate = null;
     private String usersDescription = null;
@@ -41,7 +43,7 @@ class OkButton {
 
     private boolean isSelectedDate() {
         try {
-            usersDate = DateUtils.getDate(Calendar.getJxDatePicker());
+            usersDate = guiCalendar.getStringDate();
         } catch (NullPointerException e) {
             labels.getTaskAddResultLabel().setForeground(Color.red);
             labels.getTaskAddResultLabel().setText("Date hasn't been selected. ");

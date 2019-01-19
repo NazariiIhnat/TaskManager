@@ -1,9 +1,9 @@
 package GUI.TaskModifyingComponents;
 
+import GUI.GUIComponents.GUICalendar;
 import GUI.TaskModifyingComponents.SecondFrameComponents.*;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Status;
-import Utilites.DateUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,6 +13,7 @@ import java.sql.SQLException;
 
 public class UpdateButton {
     private static JButton updateButton = new JButton("Update");
+    private GUICalendar guiCalendar = ModifyingComponents.getGuiCalendar();
     private Frame secondFrame;
 
     {
@@ -24,7 +25,6 @@ public class UpdateButton {
     }
 
     private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
-    private Calendar calendar = new Calendar();
     private PrioritySelector prioritySelector = new PrioritySelector();
 
     {
@@ -32,7 +32,7 @@ public class UpdateButton {
             ActionListener modifyButtonActionListener = new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    DateUtils.nullifyCalendar(calendar.getCalendar());
+                    guiCalendar.nullifyCalendar();
                     Frame.setFrameVisible(true);
                     setTextToDescriptionTextArea();
                     setDateToCalendar();
@@ -51,7 +51,7 @@ public class UpdateButton {
     }
 
     private void setDateToCalendar() {
-        calendar.getCalendar().setDate(Date.valueOf(TaskTable.getSelectedTaskStartDate()));
+        guiCalendar.setDate(Date.valueOf(TaskTable.getSelectedTaskStartDate()));
     }
 
     private void setPriorityLetterToPrioritySelector() {

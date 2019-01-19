@@ -1,8 +1,9 @@
 package GUI.TaskModifyingComponents.SecondFrameComponents;
 
+import GUI.GUIComponents.GUICalendar;
+
 import javax.swing.*;
 import java.awt.*;
-import java.sql.SQLException;
 
 class ComponentsPanels {
     private static JPanel textAreaPanel = new JPanel();
@@ -10,7 +11,7 @@ class ComponentsPanels {
     private static JPanel saveButtonPanel = new JPanel();
     private static JPanel labelsPanel = new JPanel();
     private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
-    private Calendar calendar = new Calendar();
+    private GUICalendar guiCalendar = ModifyingComponents.getGuiCalendar();
     private PrioritySelector prioritySelector = new PrioritySelector();
     private SaveButton saveButton = new SaveButton();
     private ResultLabel label = new ResultLabel();
@@ -32,7 +33,7 @@ class ComponentsPanels {
 
     private void addCalendarOnPanel() {
         calendarAndPrioritySelectorPanel.setLayout(new GridLayout(1, 3));
-        calendarAndPrioritySelectorPanel.add(calendar.getCalendar());
+        calendarAndPrioritySelectorPanel.add(guiCalendar);
     }
 
     private void addPrioritySelectorOnPanel() {

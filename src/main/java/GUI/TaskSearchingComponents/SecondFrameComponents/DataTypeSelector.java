@@ -1,6 +1,6 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
-import Utilites.DateUtils;
+import GUI.GUIComponents.GUICalendar;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,8 +13,9 @@ class DataTypeSelector {
     private static JRadioButton dateRadioButton = new JRadioButton("By date/dates", false);
     private static JRadioButton descriptionRadioButton = new JRadioButton("By description",false);
     private static JRadioButton priorityRadioButton = new JRadioButton("By priority", false);
-    private ValueReader searchingValueReader = new ValueReader();
     private static ButtonGroup groupOfSelectors = new ButtonGroup();
+    private ValueReader searchingValueReader = new ValueReader();
+    private GUICalendar guiCalendar = ModifyingComponents.getGUICalendar();
 
     DataTypeSelector() {
         disableAllValueReaders();
@@ -47,8 +48,6 @@ class DataTypeSelector {
             public void actionPerformed(ActionEvent e) {
                 if(dateRadioButton.isSelected()){
                     enableValueReader("date");
-                    DateUtils.enableDateEdition(Calendar.getJxDatePicker(), true);
-                    DateUtils.enableToChoosePastDays(Calendar.getJxDatePicker(), true);
                 } else if(priorityRadioButton.isSelected())
                     enableValueReader("priority");
                 else if(descriptionRadioButton.isSelected() || idRadioButton.isSelected())
@@ -68,14 +67,14 @@ class DataTypeSelector {
     private void enableValueReader(String valueReader) {
         disableAllValueReaders();
         switch (valueReader) {
-            case "date" : Calendar.getJxDatePicker().setEnabled(true); break;
+            case "date" : guiCalendar.setEnabled(true); break;
             case "priority" : PrioritySelector.getPrioritySelector().setEnabled(true); break;
             case "text" : searchingValueReader.getSearchingValueTextField().setEnabled(true); break;
         }
     }
 
     private void disableAllValueReaders() {
-        Calendar.getJxDatePicker().setEnabled(false);
+        guiCalendar.setEnabled(false);
         searchingValueReader.getSearchingValueTextField().setEnabled(false);
         PrioritySelector.getPrioritySelector().setEnabled(false);
     }

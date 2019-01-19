@@ -1,11 +1,11 @@
 package GUI.TaskModifyingComponents.SecondFrameComponents;
 
+import GUI.GUIComponents.GUICalendar;
 import GUI.TaskTableObject.TaskTable;
 import TaskManagement.TasksUpdater;
 import TaskObject.Status;
 import Utilites.ComboBoxUtils;
 import Utilites.DataVerifier;
-import Utilites.DateUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +16,7 @@ import java.sql.SQLException;
 class SaveButton {
     private static JButton saveButton = new JButton("Save");
     private DescriptionTextArea descriptionTextArea = new DescriptionTextArea();
-    private Calendar calendar = new Calendar();
+    private GUICalendar guiCalendar = ModifyingComponents.getGuiCalendar();
     private PrioritySelector prioritySelector = new PrioritySelector();
     private TasksUpdater tasksUpdater = new TasksUpdater();
     private static TaskTable taskTable;
@@ -52,7 +52,7 @@ class SaveButton {
     private void saveUpdates() throws SQLException {
         selectedTaskIDBeforeSave = Integer.parseInt(TaskTable.getSelectedTaskID());
         if(isCorrectDescription() && isCorrectDate()) {
-            tasksUpdater.updateTaskDate(selectedTaskIDBeforeSave, DateUtils.getDate(calendar.getCalendar()));
+            tasksUpdater.updateTaskDate(selectedTaskIDBeforeSave, guiCalendar.getStringDate());
             tasksUpdater.updateTaskDescription(selectedTaskIDBeforeSave, descriptionTextArea.getDescriptionTextArea().getText());
             tasksUpdater.updateTaskPriority(selectedTaskIDBeforeSave,
                     ComboBoxUtils.getSelectedPriorityLetter(prioritySelector.getPrioritySelectorComboBox()));
@@ -75,7 +75,7 @@ class SaveButton {
     }
 
     private boolean isCorrectDate() {
-        if(DataVerifier.isEmptyInput(calendar.getCalendar().getEditor().getText())){
+        if(DataVerifier.isEmptyInput(guiCalendar.getStringDate())){
             ResultLabel.setMessage("Choose date", Color.red);
             return false;
         } else {
