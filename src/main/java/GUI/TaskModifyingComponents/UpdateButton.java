@@ -15,9 +15,9 @@ import java.sql.SQLException;
 
 public class UpdateButton {
     private static JButton updateButton = new JButton("Update");
-    private GUICalendar guiCalendar = ModifyingComponents.getGuiCalendar();
-    private TaskDescriptionTextArea taskDescriptionTextArea = ModifyingComponents.getTaskDescriptionTextArea();
-    private TaskPriorityComboBox taskPriorityComboBox = ModifyingComponents.getTaskPriorityComboBox();
+    private GUICalendar guiCalendar = MainModifyingComponents.getGuiCalendar();
+    private TaskDescriptionTextArea taskDescriptionTextArea = MainModifyingComponents.getTaskDescriptionTextArea();
+    private TaskPriorityComboBox taskPriorityComboBox = MainModifyingComponents.getTaskPriorityComboBox();
     private Frame secondFrame;
 
     {

@@ -1,5 +1,6 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
+import GUI.MainGUIComponents.ColoredLabel;
 import GUI.MainGUIComponents.GUICalendar;
 import GUI.MainGUIComponents.TaskDescriptionTextArea;
 import GUI.MainGUIComponents.TaskPriorityComboBox;
@@ -14,10 +15,10 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 class OkButton {
     private JButton okButton = new JButton("OK");
-    private TaskDescriptionTextArea taskDescriptionTextArea = AddingComponents.getTaskDescriptionTextArea();
-    private GUICalendar guiCalendar = AddingComponents.getGuiCalendar();
-    private TaskPriorityComboBox taskPriorityComboBox = AddingComponents.getTaskPriorityComboBox();
-    private Labels labels = new Labels();
+    private TaskDescriptionTextArea taskDescriptionTextArea = MainAddingComponents.getTaskDescriptionTextArea();
+    private GUICalendar guiCalendar = MainAddingComponents.getGuiCalendar();
+    private TaskPriorityComboBox taskPriorityComboBox = MainAddingComponents.getTaskPriorityComboBox();
+    private ColoredLabel resultLabel = MainAddingComponents.getColoredLabel();
     private String usersDate = null;
     private String usersDescription = null;
     private String usersPriority = null;
@@ -26,14 +27,12 @@ class OkButton {
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                labels.getTaskAddResultLabel().setText(null);
-                if(isSelectedDate() && !isEmptyDescription() && isSelectedPriority()) {
+                resultLabel.nullifyColoredLabel();
+                if(isSelectedDate() && !isEmptyDescription()) {
                     try {
                         new Task(usersDate, usersDescription, usersPriority);
-                        labels.getTaskAddResultLabel().setForeground(Color.green);
-                        labels.getTaskAddResultLabel().setText("Task was successfully added");
+                        resultLabel.setColoredText("Task was successfully added", Color.green);
                         new TaskTable().refreshTable();
-
                     } catch (SQLException e1) {
                         e1.printStackTrace();
                     }
@@ -46,8 +45,7 @@ class OkButton {
         try {
             usersDate = guiCalendar.getStringDate();
         } catch (NullPointerException e) {
-            labels.getTaskAddResultLabel().setForeground(Color.red);
-            labels.getTaskAddResultLabel().setText("Date hasn't been selected. ");
+            resultLabel.setColoredText("Date hasn't been selected", Color.red);
             return false;
         } return true;
     }
@@ -55,22 +53,9 @@ class OkButton {
     private boolean isEmptyDescription(){
         usersDescription = taskDescriptionTextArea.getText();
         if(DataVerifier.isEmptyInput(usersDescription)) {
-            labels.getTaskAddResultLabel().setForeground(Color.red);
-            labels.getTaskAddResultLabel().setText("Description couldn't be empty. ");
+            resultLabel.setColoredText("Description couldn't be empty", Color.red);
             return true;
         } else return false;
-    }
-
-    private boolean isSelectedPriority() {
-        try{
-            usersPriority = taskPriorityComboBox.getSelectedPriorityLetter();
-            return true;
-        } catch (NullPointerException e) {
-            System.out.println(usersPriority);
-            labels.getTaskAddResultLabel().setForeground(Color.red);
-            labels.getTaskAddResultLabel().setText("Chose priority letter");
-            return false;
-        }
     }
 
     JButton getOkButton() {

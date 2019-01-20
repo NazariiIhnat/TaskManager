@@ -1,5 +1,6 @@
 package GUI.TaskModifyingComponents.SecondFrameComponents;
 
+import GUI.MainGUIComponents.ColoredLabel;
 import GUI.MainGUIComponents.GUICalendar;
 import GUI.MainGUIComponents.TaskDescriptionTextArea;
 import GUI.MainGUIComponents.TaskPriorityComboBox;
@@ -12,11 +13,11 @@ class ComponentsPanels {
     private static JPanel calendarAndPrioritySelectorPanel = new JPanel();
     private static JPanel saveButtonPanel = new JPanel();
     private static JPanel labelsPanel = new JPanel();
-    private TaskDescriptionTextArea taskDescriptionTextArea = ModifyingComponents.getTaskDescriptionTextArea();
-    private GUICalendar guiCalendar = ModifyingComponents.getGuiCalendar();
-    private TaskPriorityComboBox taskPriorityComboBox = ModifyingComponents.getTaskPriorityComboBox();
+    private TaskDescriptionTextArea taskDescriptionTextArea = MainModifyingComponents.getTaskDescriptionTextArea();
+    private GUICalendar guiCalendar = MainModifyingComponents.getGuiCalendar();
+    private TaskPriorityComboBox taskPriorityComboBox = MainModifyingComponents.getTaskPriorityComboBox();
     private SaveButton saveButton = new SaveButton();
-    private ResultLabel label = new ResultLabel();
+    private ColoredLabel resultLabel = MainModifyingComponents.getColoredLabel();
 
     ComponentsPanels(){
         addTextAreaOnPanel();
@@ -53,7 +54,7 @@ class ComponentsPanels {
 
     private void addLabelOnPanel() {
         labelsPanel.setLayout(new GridLayout(1, 1));
-        labelsPanel.add(label.getLabel());
+        labelsPanel.add(resultLabel);
     }
 
     JPanel getTextAreaPanel() {

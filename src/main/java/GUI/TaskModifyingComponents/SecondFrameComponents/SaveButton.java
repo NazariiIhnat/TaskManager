@@ -1,5 +1,6 @@
 package GUI.TaskModifyingComponents.SecondFrameComponents;
 
+import GUI.MainGUIComponents.ColoredLabel;
 import GUI.MainGUIComponents.GUICalendar;
 import GUI.MainGUIComponents.TaskDescriptionTextArea;
 import GUI.MainGUIComponents.TaskPriorityComboBox;
@@ -16,10 +17,11 @@ import java.sql.SQLException;
 
 class SaveButton {
     private static JButton saveButton = new JButton("Save");
-    private TaskDescriptionTextArea taskDescriptionTextArea = ModifyingComponents.getTaskDescriptionTextArea();
-    private GUICalendar guiCalendar = ModifyingComponents.getGuiCalendar();
-    private TaskPriorityComboBox taskPriorityComboBox = ModifyingComponents.getTaskPriorityComboBox();
+    private TaskDescriptionTextArea taskDescriptionTextArea = MainModifyingComponents.getTaskDescriptionTextArea();
+    private GUICalendar guiCalendar = MainModifyingComponents.getGuiCalendar();
+    private TaskPriorityComboBox taskPriorityComboBox = MainModifyingComponents.getTaskPriorityComboBox();
     private TasksUpdater tasksUpdater = new TasksUpdater();
+    private ColoredLabel resultLabel = MainModifyingComponents.getColoredLabel();
     private static TaskTable taskTable;
     private int selectedTaskIDBeforeSave;
 
@@ -60,27 +62,29 @@ class SaveButton {
                 tasksUpdater.updateTaskStatus(selectedTaskIDBeforeSave, Status.FULFILLED);
             else
                 tasksUpdater.updateTaskStatus(selectedTaskIDBeforeSave, Status.IN_PROGRESS);
+            resultLabel.setColoredText("Task was updated", Color.GREEN);
         }
     }
 
     private boolean isCorrectDescription() {
         if(DataVerifier.isEmptyInput(taskDescriptionTextArea.getText())) {
-            ResultLabel.setMessage("Description couldn't be empty", Color.red);
+            resultLabel.setColoredText("Description couldn't be empty", Color.red);
             return false;
         }
         else {
-            ResultLabel.setMessage(null, Color.BLACK);
+            resultLabel.setColoredText("\n", Color.BLACK);
             return true;
         }
     }
 
     private boolean isCorrectDate() {
-        if(DataVerifier.isEmptyInput(guiCalendar.getStringDate())){
-            ResultLabel.setMessage("Choose date", Color.red);
-            return false;
-        } else {
-            ResultLabel.setMessage(null, Color.BLACK);
+        try{
+            guiCalendar.getStringDate();
+            resultLabel.setColoredText("\n", Color.BLACK);
             return true;
+        } catch (NullPointerException e){
+            resultLabel.setColoredText("Choose date", Color.red);
+            return false;
         }
     }
 

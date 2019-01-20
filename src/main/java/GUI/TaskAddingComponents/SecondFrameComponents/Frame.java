@@ -1,5 +1,6 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
+import GUI.MainGUIComponents.ColoredLabel;
 import GUI.MainGUIComponents.GUICalendar;
 import GUI.MainGUIComponents.TaskDescriptionTextArea;
 import GUI.MainGUIComponents.TaskPriorityComboBox;
@@ -7,13 +8,13 @@ import GUI.MainGUIComponents.TaskPriorityComboBox;
 import javax.swing.*;
 import java.awt.*;
 public class Frame {
-    private GUICalendar guiCalendar = AddingComponents.getGuiCalendar();
-    private TaskDescriptionTextArea taskDescriptionTextArea = AddingComponents.getTaskDescriptionTextArea();
-    private TaskPriorityComboBox taskPriorityComboBox = AddingComponents.getTaskPriorityComboBox();
+    private GUICalendar guiCalendar = MainAddingComponents.getGuiCalendar();
+    private TaskDescriptionTextArea taskDescriptionTextArea = MainAddingComponents.getTaskDescriptionTextArea();
+    private TaskPriorityComboBox taskPriorityComboBox = MainAddingComponents.getTaskPriorityComboBox();
     private JFrame secondFrame = new JFrame("Add");
     private JPanel componentsPanel = new JPanel();
     private OkButton okButton = new OkButton();
-    private Labels labels = new Labels();
+    private ColoredLabel resultLabel = MainAddingComponents.getColoredLabel();
 
     public Frame() {
         componentsPanel.setLayout(new GridBagLayout());
@@ -28,13 +29,7 @@ public class Frame {
     }
 
     private void addLabelsOnPanel() {
-        componentsPanel.add(labels.getDateLabel(), new GridBagConstraints(0, 0, 1, 1, 0, 0,
-                GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(1, 1, 1, 1), 0, 0));
-        componentsPanel.add(labels.getDescriptionLabel(), new GridBagConstraints(0, 1, 1, 1, 0, 0,
-                GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(1, 1, 1, 1), 0, 0));
-        componentsPanel.add(labels.getPriorityLabel(), new GridBagConstraints(0, 2, 1, 1, 0, 0,
-                GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(1, 1, 1, 1), 0, 0));
-        componentsPanel.add(labels.getTaskAddResultLabel(), new GridBagConstraints(0, 4, 3, 1, 0, 0,
+        componentsPanel.add(resultLabel, new GridBagConstraints(0, 4, 3, 1, 0, 0,
                 GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(1, 1, 1, 1), 0, 0));
     }
 
