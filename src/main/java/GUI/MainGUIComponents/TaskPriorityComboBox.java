@@ -8,6 +8,7 @@ public class TaskPriorityComboBox extends JComboBox<String> {
 
     public TaskPriorityComboBox() {
         addPriorityLettersToComboBox();
+        setToolTipText("Priority");
     }
 
     public String getSelectedPriorityLetter() {

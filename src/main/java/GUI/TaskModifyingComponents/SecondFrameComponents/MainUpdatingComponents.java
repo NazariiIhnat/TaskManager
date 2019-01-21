@@ -1,15 +1,15 @@
 package GUI.TaskModifyingComponents.SecondFrameComponents;
 
-import GUI.MainGUIComponents.ColoredLabel;
-import GUI.MainGUIComponents.GUICalendar;
-import GUI.MainGUIComponents.TaskDescriptionTextArea;
-import GUI.MainGUIComponents.TaskPriorityComboBox;
+import GUI.MainGUIComponents.*;
 
-public class MainModifyingComponents {
+public class MainUpdatingComponents {
     private static GUICalendar guiCalendar = new GUICalendar();
     private static TaskDescriptionTextArea taskDescriptionTextArea = new TaskDescriptionTextArea();
     private static TaskPriorityComboBox taskPriorityComboBox = new TaskPriorityComboBox();
     private static ColoredLabel coloredLabel = new ColoredLabel();
+    private static StatusUpdater statusUpdater = new StatusUpdater();
+    private static SecondFrame secondFrame = new SecondFrame(taskDescriptionTextArea, guiCalendar, taskPriorityComboBox,
+            "SAVE", new TaskUpdateActionListener(), coloredLabel, statusUpdater);
 
     static {
         setGUICalendarParameters();
@@ -35,5 +35,13 @@ public class MainModifyingComponents {
 
     static ColoredLabel getColoredLabel() {
         return coloredLabel;
+    }
+
+    public static StatusUpdater getStatusUpdater() {
+        return statusUpdater;
+    }
+
+    public static SecondFrame getSecondFrame() {
+        return secondFrame;
     }
 }

@@ -1,8 +1,6 @@
 package GUI.TaskModifyingComponents;
 
-import GUI.MainGUIComponents.GUICalendar;
-import GUI.MainGUIComponents.TaskDescriptionTextArea;
-import GUI.MainGUIComponents.TaskPriorityComboBox;
+import GUI.MainGUIComponents.*;
 import GUI.TaskModifyingComponents.SecondFrameComponents.*;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Status;
@@ -11,22 +9,14 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Date;
-import java.sql.SQLException;
 
 public class UpdateButton {
     private static JButton updateButton = new JButton("Update");
-    private GUICalendar guiCalendar = MainModifyingComponents.getGuiCalendar();
-    private TaskDescriptionTextArea taskDescriptionTextArea = MainModifyingComponents.getTaskDescriptionTextArea();
-    private TaskPriorityComboBox taskPriorityComboBox = MainModifyingComponents.getTaskPriorityComboBox();
-    private Frame secondFrame;
-
-    {
-        try {
-            secondFrame = new Frame();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+    private GUICalendar guiCalendar = MainUpdatingComponents.getGuiCalendar();
+    private TaskDescriptionTextArea taskDescriptionTextArea = MainUpdatingComponents.getTaskDescriptionTextArea();
+    private TaskPriorityComboBox taskPriorityComboBox = MainUpdatingComponents.getTaskPriorityComboBox();
+    private static SecondFrame secondFrame = MainUpdatingComponents.getSecondFrame();
+    private StatusUpdater statusUpdater = MainUpdatingComponents.getStatusUpdater();
 
     {
         if(updateButton.getActionListeners().length == 0) {
@@ -34,12 +24,12 @@ public class UpdateButton {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     guiCalendar.nullifyCalendar();
-                    Frame.setFrameVisible(true);
+                    secondFrame.setVisible(true);
                     setTextToDescriptionTextArea();
                     setDateToCalendar();
                     setPriorityLetterToPrioritySelector();
                     setCheckBoxSelection();
-                    StatusUpdater.refreshCheckBoxEnabled();
+                    statusUpdater.refreshCheckBoxEnabled();
                 }
             };
             updateButton.addActionListener(modifyButtonActionListener);
@@ -60,10 +50,10 @@ public class UpdateButton {
     }
 
     private void setCheckBoxSelection() {
-        if(TaskTable.getSelectedTaskStatus().equals(Status.FULFILLED.name()))
-            StatusUpdater.setCheckBoxValue(true);
+        if(TaskTable.getSelectedTaskStatus().equals(Status.DONE.name()))
+            statusUpdater.setSelected(true);
         else
-            StatusUpdater.setCheckBoxValue(false);
+            statusUpdater.setSelected(false);
     }
 
     public JButton getUpdateButton() {

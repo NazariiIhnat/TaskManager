@@ -1,7 +1,6 @@
 package GUI.TaskTableObject;
 
 import GUI.TaskDeletingComponents.DeleteButton;
-import GUI.TaskModifyingComponents.SecondFrameComponents.StatusUpdater;
 import GUI.TaskModifyingComponents.UpdateButton;
 import TaskManagement.TasksSearcher;
 import TaskManagement.TasksUpdater;
@@ -22,7 +21,6 @@ public class TaskTable {
     private TasksSearcher tasksSearcher = new TasksSearcher();
     private DeleteButton deleteButton = new DeleteButton();
     private UpdateButton updateButton = new UpdateButton();
-    private TasksUpdater tasksUpdater = new TasksUpdater();
 
     public TaskTable() throws SQLException {
         taskTableScrollPane.setPreferredSize(new Dimension(350, 300));

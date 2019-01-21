@@ -1,7 +1,7 @@
 package TaskObject;
 
 public enum Status {
-    FULFILLED,
-    NOT_FULFILLED,
+    DONE,
+    UNDONE,
     IN_PROGRESS;
 }

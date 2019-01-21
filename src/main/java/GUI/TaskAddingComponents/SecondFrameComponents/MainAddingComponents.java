@@ -1,15 +1,14 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
-import GUI.MainGUIComponents.ColoredLabel;
-import GUI.MainGUIComponents.GUICalendar;
-import GUI.MainGUIComponents.TaskDescriptionTextArea;
-import GUI.MainGUIComponents.TaskPriorityComboBox;
+import GUI.MainGUIComponents.*;
 
 public class MainAddingComponents {
     private static GUICalendar guiCalendar = new GUICalendar();
     private static TaskDescriptionTextArea taskDescriptionTextArea = new TaskDescriptionTextArea();
     private static TaskPriorityComboBox taskPriorityComboBox = new TaskPriorityComboBox();
     private static ColoredLabel coloredLabel = new ColoredLabel();
+    private static SecondFrame secondFrame = new SecondFrame(taskDescriptionTextArea, guiCalendar, taskPriorityComboBox,
+            "ADD", new TaskAddActionListener(), coloredLabel);
 
     static {
         setGUICalendarsParameters();
@@ -20,7 +19,6 @@ public class MainAddingComponents {
         guiCalendar.enableSingleIntervalSelection(false);
         guiCalendar.enableDateEdition(false);
     }
-
     public static GUICalendar getGuiCalendar() {
         return guiCalendar;
     }
@@ -35,5 +33,9 @@ public class MainAddingComponents {
 
     static ColoredLabel getColoredLabel() {
         return coloredLabel;
+    }
+
+    public static SecondFrame getSecondFrame() {
+        return secondFrame;
     }
 }

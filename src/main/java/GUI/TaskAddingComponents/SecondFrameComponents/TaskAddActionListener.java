@@ -13,32 +13,26 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-class OkButton {
-    private JButton okButton = new JButton("OK");
+class TaskAddActionListener implements ActionListener{
     private TaskDescriptionTextArea taskDescriptionTextArea = MainAddingComponents.getTaskDescriptionTextArea();
     private GUICalendar guiCalendar = MainAddingComponents.getGuiCalendar();
-    private TaskPriorityComboBox taskPriorityComboBox = MainAddingComponents.getTaskPriorityComboBox();
     private ColoredLabel resultLabel = MainAddingComponents.getColoredLabel();
+    private TaskPriorityComboBox priorityComboBox = MainAddingComponents.getTaskPriorityComboBox();
     private String usersDate = null;
     private String usersDescription = null;
-    private String usersPriority = null;
 
-    OkButton() {
-        okButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                resultLabel.nullifyColoredLabel();
-                if(isSelectedDate() && !isEmptyDescription()) {
-                    try {
-                        new Task(usersDate, usersDescription, usersPriority);
-                        resultLabel.setColoredText("Task was successfully added", Color.green);
-                        new TaskTable().refreshTable();
-                    } catch (SQLException e1) {
-                        e1.printStackTrace();
-                    }
-                }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        resultLabel.nullifyColoredLabel();
+        if(isSelectedDate() && !isEmptyDescription()) {
+            try {
+                new Task(usersDate, usersDescription, priorityComboBox.getSelectedPriorityLetter());
+                resultLabel.setColoredText("Task was successfully added", Color.green);
+                new TaskTable().refreshTable();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
             }
-        });
+        }
     }
 
     private boolean isSelectedDate() {
@@ -56,9 +50,5 @@ class OkButton {
             resultLabel.setColoredText("Description couldn't be empty", Color.red);
             return true;
         } else return false;
-    }
-
-    JButton getOkButton() {
-        return okButton;
     }
 }

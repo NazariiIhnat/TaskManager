@@ -12,8 +12,8 @@ public class ColorRenderer extends DefaultTableCellRenderer {
         super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         switch ((Status)table.getValueAt(row, 4)){
             case IN_PROGRESS: setBackground(Color.WHITE); break;
-            case FULFILLED: setBackground(Color.GREEN); break;
-            case NOT_FULFILLED: setBackground(Color.RED); break;
+            case DONE: setBackground(Color.GREEN); break;
+            case UNDONE: setBackground(Color.RED); break;
         }
 
         return this;

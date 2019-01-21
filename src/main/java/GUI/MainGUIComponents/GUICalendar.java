@@ -11,6 +11,10 @@ import java.util.Date;
 public class GUICalendar extends JXDatePicker {
     private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
+    public GUICalendar() {
+        setToolTipText("Date");
+    }
+
     public void enableToChoosePastDays(boolean flag) {
         Calendar cal = super.getMonthView().getCalendar();
         cal.setTime(new Date());

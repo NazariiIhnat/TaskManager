@@ -1,13 +1,10 @@
 package TaskManagement;
 import Database.DatabaseInitializer;
-import GUI.TaskTableObject.TaskTable;
 import TaskObject.Status;
 import TaskObject.Task;
 import Utilites.DataVerifier;
 
 import java.sql.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 abstract class AbstractTaskManager {
@@ -77,7 +74,7 @@ abstract class AbstractTaskManager {
             String priority = resultSet.getString("priority");
             String status;
             if(DataVerifier.isNotFulFilledTask(date))
-                status = Status.NOT_FULFILLED.name();
+                status = Status.UNDONE.name();
             else
                 status = resultSet.getString("status");
             listOfFoundedTaskObjects.add(new Task(rowid, date, description, priority, Status.valueOf(status)));

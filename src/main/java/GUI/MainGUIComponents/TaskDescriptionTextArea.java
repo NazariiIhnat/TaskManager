@@ -16,6 +16,7 @@ public class TaskDescriptionTextArea extends JTextArea {
         scrollPane = new JScrollPane(this);
         setTextAndRowsMaxLength();
         setTaskDescriptionTextAreaParameters();
+        setToolTipText("Description");
     }
 
     private void setTextAndRowsMaxLength() {
