@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 abstract class AbstractTaskManager {
     private DatabaseInitializer databaseInitializer = new DatabaseInitializer();
-    static ArrayList<Task> listOfFoundedTaskObjects = new ArrayList<>();
+    static ArrayList<Task> listOfFoundedTaskObjects = new ArrayList<Task>();
 
     final void addTask(Task task) throws SQLException {
         String query = "INSERT INTO task VALUES" +

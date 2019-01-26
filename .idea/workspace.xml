@@ -4,66 +4,22 @@
     <list default="true" id="12436a9f-f8b7-445e-beb5-25e19c1a5238" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tasks.db" beforeDir="false" afterPath="$PROJECT_DIR$/Tasks.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database/TaskManagement/AbstractTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database/TaskManagement/AbstractTaskManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MainFrame/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MainFrame/Frame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MainGUIComponents/ColoredLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/ColoredLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MainGUIComponents/ComponentsPanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/ComponentsPanels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MainGUIComponents/GUICalendar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/GUICalendar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MainGUIComponents/SecondFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/SecondFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MainGUIComponents/StatusUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/StatusUpdater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MainGUIComponents/TaskDescriptionTextArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/DescriptionTextArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MainGUIComponents/TaskPriorityComboBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/PriorityComboBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskAddingComponents/AddButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskAddingComponents/AddButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskAddingComponents/SecondFrameComponents/MainAddingComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskAddingComponents/SecondFrameComponents/MainAddingComponents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskAddingComponents/SecondFrameComponents/TaskAddActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskAddingComponents/SecondFrameComponents/TaskAddActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskModifyingComponents/SecondFrameComponents/MainUpdatingComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/MainUpdatingComponents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskModifyingComponents/SecondFrameComponents/TaskUpdateActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/TaskUpdateSaveActionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskModifyingComponents/UpdateButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/UpdateButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SearchButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SearchButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/ComponentsPanels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/ComponentsPanels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/DataTypeSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/DataTypeSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/SecondFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/OkButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/OkButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/SearchingComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/MainSearchingComponents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/ValueReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/DescriptionAndIDReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskTableObject/ColorRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskTableObject/ColorStatusRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskTableObject/TaskTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskTableObject/TaskTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TaskManagement/AbstractTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TaskManagement/AbstractTaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TaskManagement/TasksSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TaskManagement/TasksSearcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/SecondFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/SecondFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/SecondFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/SecondFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/MainUpdatingComponents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/MainUpdatingComponents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/TaskUpdateSaveActionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/TaskUpdateSaveActionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/UpdateButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/UpdateButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainFrame/Frame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/MainFrame/Frame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainGUIComponents/ColoredLabel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainGUIComponents/ComponentsPanels.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainGUIComponents/GUICalendar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainGUIComponents/SecondFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainGUIComponents/StatusUpdater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainGUIComponents/TaskDescriptionTextArea$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainGUIComponents/TaskDescriptionTextArea$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainGUIComponents/TaskDescriptionTextArea$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainGUIComponents/TaskDescriptionTextArea.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainGUIComponents/TaskPriorityComboBox.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskAddingComponents/AddButton$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskAddingComponents/AddButton$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskAddingComponents/AddButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskAddingComponents/AddButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskAddingComponents/SecondFrameComponents/MainAddingComponents.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskAddingComponents/SecondFrameComponents/MainAddingComponents.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskAddingComponents/SecondFrameComponents/TaskAddActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskAddingComponents/SecondFrameComponents/TaskAddActionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskModifyingComponents/SecondFrameComponents/MainUpdatingComponents.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskModifyingComponents/SecondFrameComponents/TaskUpdateActionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskModifyingComponents/UpdateButton$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskModifyingComponents/UpdateButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SearchButton$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SearchButton$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SearchButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SearchButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SecondFrameComponents/ComponentsPanels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SecondFrameComponents/ComponentsPanels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SecondFrameComponents/DataTypeSelector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SecondFrameComponents/DataTypeSelector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SecondFrameComponents/Frame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SecondFrameComponents/OkButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SecondFrameComponents/OkButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SecondFrameComponents/SearchingComponents.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SecondFrameComponents/ValueReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskTableObject/ColorRenderer$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskTableObject/ColorRenderer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskTableObject/TaskTable$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskTableObject/TaskTable$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskTableObject/TaskTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskTableObject/TaskTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TaskManagement/AbstractTaskManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TaskManagement/AbstractTaskManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TaskManagement/TasksSearcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TaskManagement/TasksSearcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainValueReaders/GUICalendar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/MainValueReaders/GUICalendar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/MainValueReaders/SecondFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/MainValueReaders/SecondFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SecondFrameComponents/SecondFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskSearchingComponents/SecondFrameComponents/SecondFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskUpdatingComponents/SecondFrameComponents/MainUpdatingComponents$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskUpdatingComponents/SecondFrameComponents/MainUpdatingComponents$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskUpdatingComponents/SecondFrameComponents/MainUpdatingComponents.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskUpdatingComponents/SecondFrameComponents/MainUpdatingComponents.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskUpdatingComponents/SecondFrameComponents/TaskUpdateSaveActionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskUpdatingComponents/SecondFrameComponents/TaskUpdateSaveActionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/TaskUpdatingComponents/UpdateButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/TaskUpdatingComponents/UpdateButton.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -81,40 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TaskTable.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskTableObject/TaskTable.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4540#4541#0" expanded="true" />
-                <element signature="e#4623#4624#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UpdateButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/UpdateButton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaskUpdateSaveActionListener.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/TaskUpdateSaveActionListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="820">
-              <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="217">
+              <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -122,39 +49,74 @@
       <file leaf-file-name="Frame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/GUI/MainFrame/Frame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
-              <folding>
-                <element signature="e#2452#2453#0" expanded="true" />
-                <element signature="e#2487#2488#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="201">
+              <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainUpdatingComponents.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/MainUpdatingComponents.java">
+      <file leaf-file-name="SecondFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/SecondFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+            <state relative-caret-position="201">
+              <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdateButton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/UpdateButton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#963#1143#0" expanded="true" />
-                <element signature="e#1142#1143#0" expanded="true" />
-                <element signature="e#1040#1041#0" expanded="true" />
-                <element signature="e#1074#1075#0" expanded="true" />
-                <element signature="e#1501#1502#0" expanded="true" />
-                <element signature="e#1535#1536#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DeleteButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskDeletingComponents/DeleteButton.java">
+      <file leaf-file-name="TaskUpdateSaveActionListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/TaskUpdateSaveActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+            <state relative-caret-position="21">
+              <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainUpdatingComponents.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/MainUpdatingComponents.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1500#1501#0" expanded="true" />
+                <element signature="e#1534#1535#0" expanded="true" />
+                <element signature="e#1600#1601#0" expanded="true" />
+                <element signature="e#1642#1643#0" expanded="true" />
+                <element signature="e#1702#1703#0" expanded="true" />
+                <element signature="e#1741#1742#0" expanded="true" />
+                <element signature="e#1786#1787#0" expanded="true" />
+                <element signature="e#1821#1822#0" expanded="true" />
+                <element signature="e#1875#1876#0" expanded="true" />
+                <element signature="e#1911#1912#0" expanded="true" />
+                <element signature="e#1961#1962#0" expanded="true" />
+                <element signature="e#1995#1996#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecondFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/SecondFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="28" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -182,9 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/GUI/TaskTableObject/ColorRenderer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GUI/TaskModifyingComponents/SecondFrameComponents/Frame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GUI/MainGUIComponents/Frame.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/TaskModifyingComponents/SecondFrameComponents/SaveButton.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/TaskModifyingComponents/SecondFrameComponents/MainModifyingComponents.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/TaskModifyingComponents/SecondFrameComponents/StatusUpdater.java" />
@@ -206,7 +165,6 @@
         <option value="$PROJECT_DIR$/src/main/java/GUI/MainGUIComponents/TaskPriorityComboBox.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/MainGUIComponents/PriorityComboBox.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/Frame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/SecondFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/GUICalendar.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/PriorityComboBox.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/DescriptionTextArea.java" />
@@ -216,7 +174,6 @@
         <option value="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/ComponentsPanels.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/TaskModifyingComponents/SecondFrameComponents/MainUpdatingComponents.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/TaskAddingComponents/SecondFrameComponents/MainAddingComponents.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/SecondFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/TaskManagement/AbstractTaskManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/Test/JTableColumnSelectProgrammatically.java" />
         <option value="$PROJECT_DIR$/src/main/java/Test/MyTableModel.java" />
@@ -226,19 +183,45 @@
         <option value="$PROJECT_DIR$/src/main/java/GUI/TaskModifyingComponents/SecondFrameComponents/TaskUpdateSaveActionListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/TaskTableObject/ColorStatusRenderer.java" />
         <option value="$PROJECT_DIR$/src/main/java/TaskObject/Task.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Database/TaskManagement/AbstractTaskManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/TaskTableObject/TaskTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/TaskDeletingComponents/DeleteButton.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GUI/MainFrame/Frame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/UpdateButton.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/MainUpdatingComponents.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Database/TaskManagement/AbstractTaskManager.java" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Rar$DR02.795/META-INF/MANIFEST.MF" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$USER_HOME$/AppData/Local/Temp/Rar$DR40.9426/META-INF/MANIFEST.MF" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/SecondFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/SecondFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/TaskUpdateSaveActionListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/UpdateButton.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/MainFrame/Frame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/MainUpdatingComponents.java" />
       </list>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="TaskManager" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="TaskManager" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="TaskManager" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="493" />
-    <option name="y" value="59" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="847" />
     <option name="height" value="426" />
   </component>
@@ -248,6 +231,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -279,23 +265,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TaskManager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-              <item name="TaskManagement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TaskManager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -314,7 +283,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="TaskDeletingComponents" type="462c0819:PsiDirectoryNode" />
+              <item name="MainValueReaders" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
@@ -323,7 +292,17 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="TaskTableObject" type="462c0819:PsiDirectoryNode" />
+              <item name="TaskSearchingComponents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="TaskSearchingComponents" type="462c0819:PsiDirectoryNode" />
+              <item name="SecondFrameComponents" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
@@ -344,13 +323,15 @@
               <item name="TaskUpdatingComponents" type="462c0819:PsiDirectoryNode" />
               <item name="SecondFrameComponents" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TaskManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TaskManager" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -382,7 +363,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Frame">
+  <component name="RunManager" selected="JAR Application.TaskManager-1.0-SNAPSHOT.jar">
     <configuration name="Frame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.MainFrame.Frame" />
       <module name="TaskManager" />
@@ -405,30 +386,8 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="JTextAreaTableExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test.JTextAreaTableExample" />
-      <module name="TaskManager" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test.Main" />
-      <module name="TaskManager" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="SwingToolTipSample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test.SwingToolTipSample" />
       <module name="TaskManager" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -457,6 +416,12 @@
       </option>
       <patterns />
     </configuration>
+    <configuration name="TaskManager-1.0-SNAPSHOT.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/TaskManager-1.0-SNAPSHOT.jar" />
+    </configuration>
+    <configuration name="original-TaskManager-1.0-SNAPSHOT.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/original-TaskManager-1.0-SNAPSHOT.jar" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -482,17 +447,17 @@
     <list>
       <item itemvalue="Application.Frame" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.JTextAreaTableExample" />
-      <item itemvalue="Application.SwingToolTipSample" />
       <item itemvalue="Application.JTableColumnSelectProgrammatically" />
+      <item itemvalue="JAR Application.TaskManager-1.0-SNAPSHOT.jar" />
+      <item itemvalue="JAR Application.original-TaskManager-1.0-SNAPSHOT.jar" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.TaskManager-1.0-SNAPSHOT.jar" />
         <item itemvalue="Application.Frame" />
+        <item itemvalue="JAR Application.original-TaskManager-1.0-SNAPSHOT.jar" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.JTableColumnSelectProgrammatically" />
-        <item itemvalue="Application.SwingToolTipSample" />
-        <item itemvalue="Application.JTextAreaTableExample" />
       </list>
     </recent_temporary>
   </component>
@@ -519,13 +484,13 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50073206" side_tool="true" weight="0.33802816" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="6" visible="true" weight="0.17130308" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" weight="0.33802816" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23938507" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23938507" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -542,27 +507,27 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.329429" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" weight="0.33802816" />
       <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23938507" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286385" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39906102" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" weight="0.329429" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50073206" side_tool="true" weight="0.33802816" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.3286385" />
@@ -579,37 +544,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/DescriptionAndIDReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskAddingComponents/SecondFrameComponents/Frame.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/TaskObject/Priority.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test/Model.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/javax/swing/table/AbstractTableModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="260" column="16" selection-start-line="260" selection-start-column="16" selection-end-line="260" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/DataTypeSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1289">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/ComponentsPanels.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/ColoredLabel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -631,13 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/SecondFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskAddingComponents/SecondFrameComponents/MainAddingComponents.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -646,13 +573,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Test/JTableColumnSelectProgrammatically.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Test/Main.java" />
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.desktop/javax/swing/ListSelectionModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -660,20 +581,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test/MyTableModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Test/MyTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Test/MyTableModel.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Test/MyTable.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/xerial/sqlite-jdbc/3.25.2/sqlite-jdbc-3.25.2.jar!/org/sqlite/core/DB.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -744,13 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/SecondFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/ComponentsPanels.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -779,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Database/DatabaseInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/StatusUpdater.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -797,10 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-125">
           <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding>
-            <element signature="e#1021#1022#0" expanded="true" />
-            <element signature="e#1055#1056#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -822,13 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/OkButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-939">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -864,13 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Database/TaskManagement/AbstractTaskManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="76" column="50" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Utilites/DataVerifier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -878,9 +755,12 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TaskManager.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskTableObject/TaskTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
+        <state relative-caret-position="20">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -890,28 +770,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Database/TaskManagement/AbstractTaskManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-943">
+          <caret line="11" column="74" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskDeletingComponents/DeleteButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="121">
           <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DR02.795/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/maven-archiver/pom.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DR40.9426/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Database/DatabaseInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/OkButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/MainValueReaders/SecondFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskSearchingComponents/SecondFrameComponents/SecondFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/TaskUpdateSaveActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/MainFrame/Frame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
-          <folding>
-            <element signature="e#2452#2453#0" expanded="true" />
-            <element signature="e#2487#2488#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="201">
+          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/UpdateButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+        <state relative-caret-position="120">
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -920,26 +875,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/MainUpdatingComponents.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        <state relative-caret-position="325">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#963#1143#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#1074#1075#0" expanded="true" />
-            <element signature="e#1501#1502#0" expanded="true" />
-            <element signature="e#1535#1536#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/TaskUpdatingComponents/SecondFrameComponents/TaskUpdateSaveActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1500#1501#0" expanded="true" />
+            <element signature="e#1534#1535#0" expanded="true" />
+            <element signature="e#1600#1601#0" expanded="true" />
+            <element signature="e#1642#1643#0" expanded="true" />
+            <element signature="e#1702#1703#0" expanded="true" />
+            <element signature="e#1741#1742#0" expanded="true" />
+            <element signature="e#1786#1787#0" expanded="true" />
+            <element signature="e#1821#1822#0" expanded="true" />
+            <element signature="e#1875#1876#0" expanded="true" />
+            <element signature="e#1911#1912#0" expanded="true" />
+            <element signature="e#1961#1962#0" expanded="true" />
+            <element signature="e#1995#1996#0" expanded="true" />
           </folding>
         </state>
       </provider>

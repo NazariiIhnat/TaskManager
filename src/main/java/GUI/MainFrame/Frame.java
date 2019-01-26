@@ -34,6 +34,9 @@ public class Frame {
         tablePanel = new JPanel();
         buttonsPanel = new JPanel();
         frame = new JFrame("Task manager");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setLocation(dim.width/4-frame.getSize().width/4, dim.height/5-frame.getSize().height/5);
         setFrameParameters();
         addTableOnPanel();
         addButtonsOnPanel();
@@ -76,5 +79,9 @@ public class Frame {
 
     public static void setEnabled(boolean flag) {
         frame.setEnabled(flag);
+    }
+
+    public static void alwaysOnTop(boolean flag){
+        frame.setAlwaysOnTop(flag);
     }
 }

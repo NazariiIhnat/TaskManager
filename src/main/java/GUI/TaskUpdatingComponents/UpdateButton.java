@@ -41,9 +41,6 @@ public class UpdateButton {
         updateButton.setEnabled(false);
     }
 
-    public UpdateButton() throws SQLException {
-    }
-
     private void setTextToDescriptionTextArea() {
         descriptionTextArea.setText(TaskTable.getSelectedTaskDescription());
     }

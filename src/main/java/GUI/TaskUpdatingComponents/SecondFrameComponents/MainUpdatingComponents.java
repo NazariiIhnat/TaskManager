@@ -23,7 +23,9 @@ public class MainUpdatingComponents {
             @Override
             public void windowClosing(WindowEvent e) {
                 e.getWindow().dispose();
+                Frame.alwaysOnTop(true);
                 Frame.setEnabled(true);
+                Frame.alwaysOnTop(false);
             }
         });
     }

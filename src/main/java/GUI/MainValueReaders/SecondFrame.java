@@ -31,6 +31,8 @@ public class SecondFrame extends JFrame{
         addCalendarAndPrioritySelectorPanelOnFrame();
         addSaveButtonsPanelOnFrame();
         addLabelsPanelOnFrame();
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation(dim.width/3-getSize().width/3, dim.height/3-getSize().height/3);
         pack();
     }
 

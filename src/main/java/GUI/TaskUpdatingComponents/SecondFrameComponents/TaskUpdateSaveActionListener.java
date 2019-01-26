@@ -32,6 +32,7 @@ class TaskUpdateSaveActionListener implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
+            Frame.alwaysOnTop(true);
             saveUpdates();
             taskTable.refreshTable();
             statusUpdater.refreshCheckBoxEnabled();
@@ -40,6 +41,7 @@ class TaskUpdateSaveActionListener implements ActionListener{
         } finally {
             closeUpdateFrameIfSelectedAnotherTaskAfterSave();
             Frame.setEnabled(true);
+            Frame.alwaysOnTop(false);
         }
     }
 
