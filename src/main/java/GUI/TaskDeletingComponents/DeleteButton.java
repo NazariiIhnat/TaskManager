@@ -1,7 +1,8 @@
 package GUI.TaskDeletingComponents;
 
 import GUI.TaskTableObject.TaskTable;
-import TaskManagement.TasksUpdater;
+import Database.TaskManagement.TasksUpdater;
+import GUI.TaskUpdatingComponents.SecondFrameComponents.MainUpdatingComponents;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

@@ -1,7 +1,7 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
-import GUI.MainGUIComponents.GUICalendar;
-import GUI.MainGUIComponents.TaskPriorityComboBox;
+import GUI.MainValueReaders.GUICalendar;
+import GUI.MainValueReaders.PriorityComboBox;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,9 +15,9 @@ class DataTypeSelector {
     private static JRadioButton descriptionRadioButton = new JRadioButton("By description",false);
     private static JRadioButton priorityRadioButton = new JRadioButton("By priority", false);
     private static ButtonGroup groupOfSelectors = new ButtonGroup();
-    private ValueReader searchingValueReader = new ValueReader();
-    private GUICalendar guiCalendar = SearchingComponents.getGUICalendar();
-    private TaskPriorityComboBox taskPriorityComboBox = SearchingComponents.getTaskPriorityComboBox();
+    private DescriptionAndIDReader searchingDescriptionAndIDReader = new DescriptionAndIDReader();
+    private GUICalendar guiCalendar = MainSearchingComponents.getGUICalendar();
+    private PriorityComboBox priorityComboBox = MainSearchingComponents.getPriorityComboBox();
 
     DataTypeSelector() {
         disableAllValueReaders();
@@ -70,15 +70,15 @@ class DataTypeSelector {
         disableAllValueReaders();
         switch (valueReader) {
             case "date" : guiCalendar.setEnabled(true); break;
-            case "priority" : taskPriorityComboBox.setEnabled(true); break;
-            case "text" : searchingValueReader.getSearchingValueTextField().setEnabled(true); break;
+            case "priority" : priorityComboBox.setEnabled(true); break;
+            case "text" : searchingDescriptionAndIDReader.getSearchingValueTextField().setEnabled(true); break;
         }
     }
 
     private void disableAllValueReaders() {
         guiCalendar.setEnabled(false);
-        searchingValueReader.getSearchingValueTextField().setEnabled(false);
-        taskPriorityComboBox.setEnabled(false);
+        searchingDescriptionAndIDReader.getSearchingValueTextField().setEnabled(false);
+        priorityComboBox.setEnabled(false);
     }
 
     JRadioButton getTodayTasksRadioButton() {

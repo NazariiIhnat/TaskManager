@@ -1,9 +1,8 @@
 package GUI.TaskTableObject;
 
 import GUI.TaskDeletingComponents.DeleteButton;
-import GUI.TaskModifyingComponents.UpdateButton;
-import TaskManagement.TasksSearcher;
-import TaskManagement.TasksUpdater;
+import GUI.TaskUpdatingComponents.UpdateButton;
+import Database.TaskManagement.TasksSearcher;
 import TaskObject.Status;
 
 import javax.swing.*;
@@ -18,12 +17,13 @@ public class TaskTable {
     private static String lastSearchingValue = null;
     private static String nameOfLastSearchingMethod = "all";
     private static JScrollPane taskTableScrollPane = new JScrollPane(taskTable);
+    private static int updatingTaskID = 0;
     private TasksSearcher tasksSearcher = new TasksSearcher();
     private DeleteButton deleteButton = new DeleteButton();
     private UpdateButton updateButton = new UpdateButton();
 
     public TaskTable() throws SQLException {
-        taskTableScrollPane.setPreferredSize(new Dimension(350, 300));
+        taskTableScrollPane.setPreferredSize(new Dimension(455, 300));
         taskTable.getTableHeader().setReorderingAllowed(false);
         taskTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         taskTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
@@ -47,15 +47,15 @@ public class TaskTable {
     }
 
     public void refreshTable() throws SQLException {
-        int numberOfSelectedRowBeforeTableRefreshing = taskTable.getSelectedRow();
         doLastSearch();
         taskTable.setModel(new TaskTableModel());
-        refreshRowSelection(numberOfSelectedRowBeforeTableRefreshing);
         setCellsSize();
         disableColumnResizing();
         taskTable.getColumnModel().getColumn(2).setCellRenderer(new DescriptionColumnRenderer());
         taskTable.setDefaultRenderer(Object.class, new PriorityColumnRenderer());
-        taskTable.getColumnModel().getColumn(4).setCellRenderer(new ColorRenderer());
+        taskTable.getColumnModel().getColumn(4).setCellRenderer(new ColorStatusRenderer());
+        if(taskTable.isShowing())
+            refreshSelection();
     }
 
     private void doLastSearch() throws SQLException {
@@ -71,21 +71,36 @@ public class TaskTable {
         }
     }
 
-    private void refreshRowSelection(int row) {
-        taskTable.getSelectionModel().addSelectionInterval(row, row);
-    }
-
     private void setCellsSize() {
         TableColumnModel columnModel = taskTable.getColumnModel();
-        columnModel.getColumn(0).setPreferredWidth(33);
+        columnModel.getColumn(0).setPreferredWidth(23);
         columnModel.getColumn(1).setPreferredWidth(75);
-        columnModel.getColumn(2).setPreferredWidth(187);
-        columnModel.getColumn(3).setPreferredWidth(40);
+        columnModel.getColumn(2).setPreferredWidth(199);
+        columnModel.getColumn(3).setPreferredWidth(38);
+        columnModel.getColumn(4).setPreferredWidth(90);
+    }
+
+    private void refreshSelection() {
+        int comparingID;
+        for(int i = 0; i < taskTable.getRowCount(); i++) {
+            comparingID = Integer.parseInt(taskTable.getValueAt(i, 0).toString());
+            if (comparingID == updatingTaskID) {
+                taskTable.setRowSelectionInterval(i, i);
+            }
+        }
     }
 
     private void disableColumnResizing() {
         for (int i = 0; i < taskTable.getColumnCount(); i++)
             taskTable.getColumnModel().getColumn(i).setResizable(false);
+    }
+
+    public static void setLastSearchingValue(String lastSearchingValue) {
+        TaskTable.lastSearchingValue = lastSearchingValue;
+    }
+
+    public static void setNameOfLastSearchingMethod(String nameOfLastSearchingMethod) {
+        TaskTable.nameOfLastSearchingMethod = nameOfLastSearchingMethod;
     }
 
     public static String getSelectedTaskID() {
@@ -109,12 +124,8 @@ public class TaskTable {
         return status.name();
     }
 
-    public static void setLastSearchingValue(String lastSearchingValue) {
-        TaskTable.lastSearchingValue = lastSearchingValue;
-    }
-
-    public static void setNameOfLastSearchingMethod(String nameOfLastSearchingMethod) {
-        TaskTable.nameOfLastSearchingMethod = nameOfLastSearchingMethod;
+    public static void setUpdatingTaskID(int id) {
+        updatingTaskID = id;
     }
 
     public JScrollPane getTaskTableScrollPane() {

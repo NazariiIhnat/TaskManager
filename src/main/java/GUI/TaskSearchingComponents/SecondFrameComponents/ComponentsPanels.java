@@ -1,20 +1,20 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
-import GUI.MainGUIComponents.GUICalendar;
-import GUI.MainGUIComponents.TaskPriorityComboBox;
+import GUI.MainValueReaders.GUICalendar;
+import GUI.MainValueReaders.PriorityComboBox;
 
 import javax.swing.*;
 import java.awt.*;
 
 class ComponentsPanels {
     private DataTypeSelector selectors = new DataTypeSelector();
-    private ValueReader valueReader = new ValueReader();
+    private DescriptionAndIDReader descriptionAndIDReader = new DescriptionAndIDReader();
     private JPanel selectorsPanel = new JPanel();
     private JPanel searchingTextFieldPanel = new JPanel();
     private JPanel okButtonPanel = new JPanel();
     private OkButton okButton = new OkButton();
-    private GUICalendar guiCalendar = SearchingComponents.getGUICalendar();
-    private TaskPriorityComboBox taskPriorityComboBox = SearchingComponents.getTaskPriorityComboBox();
+    private GUICalendar guiCalendar = MainSearchingComponents.getGUICalendar();
+    private PriorityComboBox priorityComboBox = MainSearchingComponents.getPriorityComboBox();
 
     ComponentsPanels() {
         addSelectorsOnPanel();
@@ -33,10 +33,10 @@ class ComponentsPanels {
     }
 
     private void addValueReadersOnPanel() {
-        valueReader.nullifySearchingValueTextField();
+        descriptionAndIDReader.nullifySearchingValueTextField();
         searchingTextFieldPanel.setLayout(new GridLayout(4, 1));
-        searchingTextFieldPanel.add(valueReader.getSearchingValueTextField());
-        searchingTextFieldPanel.add(taskPriorityComboBox);
+        searchingTextFieldPanel.add(descriptionAndIDReader.getSearchingValueTextField());
+        searchingTextFieldPanel.add(priorityComboBox);
         searchingTextFieldPanel.add(guiCalendar);
     }
 

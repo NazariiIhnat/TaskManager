@@ -1,23 +1,22 @@
 package GUI.TaskAddingComponents.SecondFrameComponents;
 
-import GUI.MainGUIComponents.ColoredLabel;
-import GUI.MainGUIComponents.GUICalendar;
-import GUI.MainGUIComponents.TaskDescriptionTextArea;
-import GUI.MainGUIComponents.TaskPriorityComboBox;
+import GUI.MainValueReaders.ColoredLabel;
+import GUI.MainValueReaders.GUICalendar;
+import GUI.MainValueReaders.DescriptionTextArea;
+import GUI.MainValueReaders.PriorityComboBox;
 import GUI.TaskTableObject.TaskTable;
 import TaskObject.Task;
 import Utilites.DataVerifier;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 class TaskAddActionListener implements ActionListener{
-    private TaskDescriptionTextArea taskDescriptionTextArea = MainAddingComponents.getTaskDescriptionTextArea();
+    private DescriptionTextArea descriptionTextArea = MainAddingComponents.getDescriptionTextArea();
     private GUICalendar guiCalendar = MainAddingComponents.getGuiCalendar();
     private ColoredLabel resultLabel = MainAddingComponents.getColoredLabel();
-    private TaskPriorityComboBox priorityComboBox = MainAddingComponents.getTaskPriorityComboBox();
+    private PriorityComboBox priorityComboBox = MainAddingComponents.getPriorityComboBox();
     private String usersDate = null;
     private String usersDescription = null;
 
@@ -45,7 +44,7 @@ class TaskAddActionListener implements ActionListener{
     }
 
     private boolean isEmptyDescription(){
-        usersDescription = taskDescriptionTextArea.getText();
+        usersDescription = descriptionTextArea.getText();
         if(DataVerifier.isEmptyInput(usersDescription)) {
             resultLabel.setColoredText("Description couldn't be empty", Color.red);
             return true;

@@ -1,6 +1,6 @@
 package TaskObject;
 
-import TaskManagement.TasksUpdater;
+import Database.TaskManagement.TasksUpdater;
 
 import java.sql.SQLException;
 
@@ -9,7 +9,6 @@ public class Task {
     private String startDate;
     private String description;
     private String priority;
-
     private Status status;
     private TasksUpdater tasksUpdater;
 
@@ -48,17 +47,5 @@ public class Task {
 
     public Status getStatus() {
         return status;
-    }
-
-
-
-    @Override
-    public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", date='" + startDate + '\'' +
-                ", description='" + description + '\'' +
-                ", taskPriority='" + priority + '\'' +
-                '}';
     }
 }

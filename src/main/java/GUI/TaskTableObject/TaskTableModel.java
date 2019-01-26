@@ -1,10 +1,8 @@
 package GUI.TaskTableObject;
 
-import TaskManagement.TasksSearcher;
-import TaskObject.Status;
+import Database.TaskManagement.TasksSearcher;
 import TaskObject.Task;
 import javax.swing.table.AbstractTableModel;
-import java.awt.*;
 import java.util.ArrayList;
 
 public class TaskTableModel extends AbstractTableModel {

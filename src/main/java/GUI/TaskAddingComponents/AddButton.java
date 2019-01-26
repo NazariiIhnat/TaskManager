@@ -1,6 +1,6 @@
 package GUI.TaskAddingComponents;
 
-import GUI.MainGUIComponents.SecondFrame;
+import GUI.MainValueReaders.SecondFrame;
 import GUI.TaskAddingComponents.SecondFrameComponents.MainAddingComponents;
 
 import javax.swing.*;

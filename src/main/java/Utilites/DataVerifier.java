@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class DataVerifier {
 
-    public static boolean isNotFulFilledTask(String date){
+    public static boolean isUndoneTask(String date){
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate taskDate = LocalDate.parse(date, dateTimeFormatter);
         return taskDate.isBefore(LocalDate.now());

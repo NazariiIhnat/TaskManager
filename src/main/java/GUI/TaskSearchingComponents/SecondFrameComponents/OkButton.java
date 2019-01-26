@@ -1,9 +1,9 @@
 package GUI.TaskSearchingComponents.SecondFrameComponents;
 
-import GUI.MainGUIComponents.GUICalendar;
-import GUI.MainGUIComponents.TaskPriorityComboBox;
+import GUI.MainValueReaders.GUICalendar;
+import GUI.MainValueReaders.PriorityComboBox;
 import GUI.TaskTableObject.TaskTable;
-import TaskManagement.TasksSearcher;
+import Database.TaskManagement.TasksSearcher;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -14,10 +14,10 @@ import java.time.LocalDate;
 class OkButton {
     private JButton okButton = new JButton("OK");
     private DataTypeSelector dataTypeSelector = new DataTypeSelector();
-    private ValueReader valueReader = new ValueReader();
+    private DescriptionAndIDReader descriptionAndIDReader = new DescriptionAndIDReader();
     private TasksSearcher tasksSearcher = new TasksSearcher();
-    private GUICalendar guiCalendar = SearchingComponents.getGUICalendar();
-    private TaskPriorityComboBox taskPriorityComboBox = SearchingComponents.getTaskPriorityComboBox();
+    private GUICalendar guiCalendar = MainSearchingComponents.getGUICalendar();
+    private PriorityComboBox priorityComboBox = MainSearchingComponents.getPriorityComboBox();
 
     OkButton() {
         okButton.addActionListener(new ActionListener() {
@@ -33,7 +33,7 @@ class OkButton {
     }
 
     private void searchTasks() throws SQLException {
-        String usersInput = valueReader.getSearchingValueTextField().getText();
+        String usersInput = descriptionAndIDReader.getSearchingValueTextField().getText();
         switch(dataTypeSelector.getGroupOfSelectors().getSelection().getActionCommand()){
             case "today's" : tasksSearcher.searchTasksByDate(String.valueOf(LocalDate.now()));
             TaskTable.setLastSearchingValue(String.valueOf(LocalDate.now()));
@@ -60,9 +60,9 @@ class OkButton {
             TaskTable.setLastSearchingValue(usersInput);
             break;
             case "priority" : tasksSearcher.searchTasksByPriority
-                    (taskPriorityComboBox.getSelectedPriorityLetter());
+                    (priorityComboBox.getSelectedPriorityLetter());
             TaskTable.setLastSearchingValue
-                    (taskPriorityComboBox.getSelectedPriorityLetter());
+                    (priorityComboBox.getSelectedPriorityLetter());
             break;
         }
         new TaskTable().refreshTable();

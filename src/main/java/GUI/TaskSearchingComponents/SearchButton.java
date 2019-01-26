@@ -1,6 +1,6 @@
 package GUI.TaskSearchingComponents;
 
-import GUI.TaskSearchingComponents.SecondFrameComponents.Frame;
+import GUI.TaskSearchingComponents.SecondFrameComponents.SecondFrame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -8,13 +8,13 @@ import java.awt.event.ActionListener;
 
 public class SearchButton {
     private JButton searchButton = new JButton("Search");
-    private Frame secondFrame = new Frame();
+    private SecondFrame secondSecondFrame = new SecondFrame();
 
     public SearchButton() {
         ActionListener searchButtonActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                secondFrame.getSecondFrame().setVisible(true);
+                secondSecondFrame.getSecondFrame().setVisible(true);
             }
         };
         searchButton.addActionListener(searchButtonActionListener);
